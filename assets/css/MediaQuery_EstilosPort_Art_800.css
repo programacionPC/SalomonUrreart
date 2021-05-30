@@ -1,0 +1,136 @@
+@media(max-width: 800px){/*aplicará en cualquier medio con dimensiones menores a lo indicado*/
+	
+    .contenedor_1{/*inicio*/
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+    .contenedor_2{/*inicio*/
+        display: block;
+        width: 100%;
+        height: initial;
+        margin-bottom: 20%;
+    }
+    .contenedor_2__div{
+        width: 90%;
+        height: 60vh;
+        margin: auto;
+        margin-top: 10%;
+    }
+    .contenedor_4--flex{/*inicio*/
+        display: block;
+    }
+    .contenedor_4__div1{
+        width: 100%;
+    }
+    .contenedor_4__div2{
+        width: 100%;
+        padding: 5%;
+    }
+    .contenedor_4--redes{
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+    }
+    .contenedor_2__div--animado_1{
+        opacity: 1;
+        transition: 2s;
+        transform: translate(0, 0vh);
+    }
+    .contenedor_2__div--animado_2{
+        transform: translate(0, -5vh);
+    }
+    .cont_galeria{/*galeria*/
+        column-count: 1 !important;
+        padding-top: 20%;
+        /* column-gap: 15px;
+        column-fill: balance ; */
+    }
+    .ContenedorTitulo{
+        background: linear-gradient(to left, rgba(45, 40, 38, 0), rgba(255, 255, 255, 0));
+        width: 100%;
+        padding-top: 0%;
+        display: block;
+        height: 100vh;
+        text-align: center;
+    }
+    .ContenedorTitulo_div1{
+        width:100%;
+    } 
+    .ContenedorTitulo--h1_1{
+        position: absolute;
+        width: 100%;
+        bottom: 15pt;
+        font-size: 2em;
+    }
+    .ContenedorTitulo--h2_1{
+        position: absolute;
+        width: 100%;
+        bottom: 2pt;
+        font-size: 1em;
+    }
+    .ContenedorTitulo--h3_1{
+        font-size: 1.2em;
+        height: 5vh;
+        width: 100%;
+        text-align: center;
+        color: black;
+        position: absolute;
+        bottom: 0pt;
+        left: 0%;
+    }
+    .header{/*header*/
+        background-color: initial;
+        display: block;
+        height: 45px;
+    }
+    .header--menu{/*inicio*/
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 90%;
+    }
+    .header__menuResponsive{/*Todas las páginas*/
+        padding-top: 0%;
+        /* width: 70%;  */
+        margin-left: 100%;/*oculta el menu responsive*/
+        transition: all 0.5s;
+        position: initial;
+    }
+    .header__menuResponsive ul{/*Todas las páginas*/
+        background-color: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        width: 100%;
+        padding-top: 8%;
+    }
+    .header__menuResponsive li{/*Todas las páginas*/
+        height: 55px;
+        padding-top: 5%;
+        width: 100%;
+        flex-grow: 1;/*distribuye proporcionalmente los elementos internos en el eje horizontal, es necesario que el elemento padre tenga la propiedad display con el valor flex*/
+    }
+    .header__menuResponsive li a{/*header*/
+        color: white;
+        font-size: 1.2em;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        text-align: left;
+        padding-left: 5%;
+    }
+    .header__menuResponsive li a:hover{/*Todas las páginas*/
+        background-color: var(--Hover) !important;
+        color: white !important;
+        font-size: 1.2em;
+        width: 100%;
+    }
+    .icono_3{
+        color: white;
+        font-size: 1.5em;
+    }
+    .imagen_1{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+}

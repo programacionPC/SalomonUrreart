@@ -1,0 +1,17 @@
+#Cambia la configuración del reporte de errores, usado en index.php
+<IfModule mod_env.c>
+    SetEnv CI_ENV development
+</IfModule>
+
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php | images | php | script | styles | js | css)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+#Para que funcione la configuracion de quitar el index.php de la url
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+	RewriteCond $1 !^(index.php|resources|robots.txt)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
