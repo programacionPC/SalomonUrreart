@@ -22,11 +22,11 @@
 			<!-- Barra de navegación -->
 			<nav id="MenuResponsive" class="header__menuResponsive">						
 				<ul id="MenuContenedor">
-					<li><a class="header__a" href="#Seccion_1">Inicio</a></li>
-					<li><a class="header__a" href="#Seccion_2">Galería</a>
-					<li><a class="header__a" href="#Seccion_3">Videos</a></li>
-					<li><a class="header__a" href="#Seccion_4">Sobre mi</a></li>
-					<li><a class="header__a" href="#Seccion_5">Tienda</a></li>
+					<li><a class="header__a li--Enlaces" href="#Seccion_1">Inicio</a></li>
+					<li><a class="header__a li--Enlaces" href="#Seccion_2">Galería</a>
+					<li><a class="header__a li--Enlaces" href="#Seccion_3">Videos</a></li>
+					<li><a class="header__a li--Enlaces" href="#Seccion_4">Sobre mi</a></li>
+					<li><a class="header__a li--Enlaces" href="#Seccion_5">Tienda</a></li>
 				</ul>		
 			</nav>
         </header>

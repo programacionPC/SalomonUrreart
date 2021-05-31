@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h1 class="h1_1">Ponchos</h1> 
 			</div>
 		</div>
-		<div class="contenedor_2" >
+		<div class="contenedor_2 contenedor_2--secundario" >
 			<div class=" contenedor_2__div js">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
 				<h1 class="h1_1">Palet</h1> 

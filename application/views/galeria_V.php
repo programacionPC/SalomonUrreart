@@ -2,7 +2,7 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div style="width: 90%; margin: 5% auto">
+<div class="cont_galeria--principal">
     <i class="fas fa-times-circle cont_Galeria--icono_1" id="Cerrar"></i>
 	<div class="cont_galeria" id="Cont_galeria">
 		<div class="cont_Galeria--item">

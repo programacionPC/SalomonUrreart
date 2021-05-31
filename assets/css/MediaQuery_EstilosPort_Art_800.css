@@ -10,14 +10,19 @@
         width: 100%;
         height: initial;
         margin-bottom: 20%;
+        padding-top: 25%;
+    }
+    .contenedor_2--secundario{
+        padding-top: 10%;
     }
     .contenedor_2__div{
         width: 90%;
         height: 60vh;
         margin: auto;
-        margin-top: 10%;
+        margin-bottom: 30%;
     }
     .contenedor_4--flex{/*inicio*/
+        padding-top: 25%;
         display: block;
     }
     .contenedor_4__div1{
@@ -91,14 +96,16 @@
         left: 90%;
     }
     .header__menuResponsive{/*Todas las páginas*/
+        background-color: rgba(0, 0, 0, 0.8);
         padding-top: 0%;
-        /* width: 70%;  */
+        /* width: 100% !important;  */
+        height: 100vh;
         margin-left: 100%;/*oculta el menu responsive*/
         transition: all 0.5s;
         position: initial;
     }
     .header__menuResponsive ul{/*Todas las páginas*/
-        background-color: rgba(0, 0, 0, 0.8);
+        /* background-color: rgba(0, 0, 0, 0.8); */
         flex-direction: column;
         width: 100%;
         padding-top: 8%;

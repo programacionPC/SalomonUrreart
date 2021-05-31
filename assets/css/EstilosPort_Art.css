@@ -1,38 +1,46 @@
 @charset "UTF-8";
-* {
+*{
     margin: 0;
     padding: 0;
     font-size: 100%;
 	font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
- }
- a{
+}
+a{
     text-decoration: none;	
 	color: black;
- }
- html, body{
+}
+html, body{
     height: 100%;
     scroll-behavior: smooth; /*da el efecto de movimiento a los item del menu principal*/
- }
- iframe{
-    margin: 0;
-    padding: 0;
- }
-  
+}
+iframe{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
 /* ******************************************************************************** */
 	/* DECLARACION DE VARIABLES */
 :root{
-	/* --OficialOscuro: rgb(11, 7, 42); */
-	--OficialClaro: rgba(11, 7, 42, 0.9);
+	--SeccionPortada_fondo: rgb(27, 30, 39); 
+	--HoverEnlaces: rgba(27, 30, 39, 0.7);
+	/* --OficialClaro: rgba(11, 7, 42, 0.9);
 	--Fallos: rgba(255, 0, 0, 0.3);
 	--Hover: rgb(211, 207, 236);
 	--Alerta: orange;
-	--footer: rgb(239, 245, 245);
+	--footer: rgb(239, 245, 245); */
 }
 
 /* ******************************************************************************** */
 /*------ fin de reset CSS-----*/
 
+hr{
+	color: white;
+	width: 30%;
+	margin: 2% 0%;
+}
 .aside_1{/*inicio*/
 	background-color: red;
 	position: fixed;
@@ -54,7 +62,7 @@
 	margin: auto;
 }
 .contenedor_2a{
-	background-color: rgb(208, 211, 212);
+	background-color: rgba(11, 83, 69, 0.6);
 }
 .contenedor_2__div{
 	width: 22%;
@@ -122,6 +130,11 @@
     height: 100vh;
     overflow: hidden /*Evia que la imagen se desborde del contenedor*/
 }
+.cont_galeria--principal{
+	background-color: rgba(185, 119, 14, 0.6);
+	width: 100%; 
+	padding-top: 8%;
+}
 .cont_galeria{/*galeria*/
 	column-count: 3 !important;
    	column-gap: 15px;
@@ -146,7 +159,7 @@
 	cursor: pointer;
 }
 .ContenedorTitulo{
-	background-color: rgb(27, 30, 39);
+	background-color: var(--SeccionPortada_fondo);
 	/* background: linear-gradient(to left, rgba(45, 40, 38, 0.6), rgba(45, 40, 38, 0.5)); */
     width: 100%;
 	display: flex;
@@ -161,7 +174,12 @@
 } 
 .ContenedorTitulo_div2{
 	width: 40%;
-} 
+}
+.ContenedorTitulo_secciones{
+	position: absolute;
+	top: 20%;
+	width: 60%;
+}  
 .ContenedorTitulo--h1_1{
 	color: white;
 	font-family: 'Montserrat';
@@ -286,4 +304,20 @@
 	width: 100%;
 	height: 350px;
     object-fit: cover;
+}
+.ul--panel{
+	margin-left: 20%;
+	text-align: left;
+}
+.li--Enlaces{	
+	color: white;
+	font-size: 1.3em !important;
+	padding:  2%;
+	line-height: 40px;
+}
+.li--Enlaces:hover{
+	background-color: var(--HoverEnlaces);
+	padding: 1% 2%;	
+	color: white;
+	border-radius: 10px;
 }

@@ -6,6 +6,10 @@ class Inicio_C extends CI_Controller {
 	public function index(){
 		$this->load->view('header/header_inicio');
 		$this->load->view('inicio_V');
-		// $this->load->view('construccion_V');
+	}
+
+	public function SUA_panel(){
+		$this->load->view('header/header_inicio');
+		$this->load->view('panel_V');
 	}
 }

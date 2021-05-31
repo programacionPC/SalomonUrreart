@@ -28,20 +28,15 @@ if(screen.width > 1024){
         //Se consulta la distancia en px desde el top de la pantalla hasta el borde superior de cada sección
         let ProfundidadImagen_2 = document.getElementById("Seccion_2")
         let A = ProfundidadImagen_2.getBoundingClientRect().top
-        // console.log("A= ", A)
 
         let ProfundidadImagen_3 = document.getElementById("Seccion_3")
         let B = ProfundidadImagen_3.getBoundingClientRect().top
-        // console.log("B= ", B)
 
         let ProfundidadImagen_4 = document.getElementById("Seccion_4")
         let C = ProfundidadImagen_4.getBoundingClientRect().top
-        // console.log("C= ", C)
         
         let ProfundidadImagen_5 = document.getElementById("Seccion_5")
-        let D = ProfundidadImagen_5.getBoundingClientRect().top
-        // console.log("D= ", D)
-        
+        let D = ProfundidadImagen_5.getBoundingClientRect().top        
             
         if(A < 55 && B > 55){//55 es la altura del header  
             document.getElementById("Header").style.backgroundColor = "rgb(11, 83, 69)" 
@@ -102,19 +97,15 @@ else if(screen.width < 1024){
         //Se consulta la distancia en px desde el top de la pantalla hasta el borde superior de cada sección
         let ProfundidadImagen_2 = document.getElementById("Seccion_2")
         let A = ProfundidadImagen_2.getBoundingClientRect().top
-        // console.log("A= ", A)
 
         let ProfundidadImagen_3 = document.getElementById("Seccion_3")
         let B = ProfundidadImagen_3.getBoundingClientRect().top
-        // console.log("B= ", B)
 
         let ProfundidadImagen_4 = document.getElementById("Seccion_4")
         let C = ProfundidadImagen_4.getBoundingClientRect().top
-        // console.log("C= ", C)
         
         let ProfundidadImagen_5 = document.getElementById("Seccion_5")
         let D = ProfundidadImagen_5.getBoundingClientRect().top
-        // console.log("D= ", D)
             
         if(A < 55 && B > 55){
             document.getElementById("Header").style.backgroundColor = "rgb(11, 83, 69)"            
@@ -147,7 +138,6 @@ window.addEventListener("scroll",function(){
 
     let seccion_2 =  document.getElementById("Seccion_2")
     let DistanciaBottomSeccion_2 = seccion_2.getBoundingClientRect().bottom
-    // console.log(DistanciaBottomSeccion_2)
     
     //se calcula la altura total de la seccion
     let AlturaSeccion_1 = seccion_1.offsetHeight
@@ -230,12 +220,12 @@ let span = document.getElementById("Span_6")
 
 window.addEventListener("click", function(e){
     //obtiendo informacion del DOM del elemento donde se hizo click 
-    var click = e.target
-    console.log(click)
+    // var click = e.target
+    // console.log(click)
     AltoVitrina = document.body.scrollHeight
-    if((div.style.marginLeft == "30%") && (click != div) && (click != span)){
-        console.log("ENTRAMOS")
+    if((div.style.marginLeft == "0%")){
         div.style.marginLeft = "100%"
+        // div.style.transitionDelay = "1s";
         //Se detiene la propagación de los eventos en caso de hacer click en un elemento que contenga algun evento
         e.stopPropagation();
     }
@@ -246,12 +236,10 @@ window.addEventListener("click", function(e){
 function mostrarMenu(){  
     let A = document.getElementById("MenuResponsive")
 
-    if(A.style.marginLeft != "30%"){//Se muestra el menu
-        console.log("ENTRA AL If")
-        A.style.marginLeft = "30%"
+    if(A.style.marginLeft != "0%"){//Se muestra el menu
+        A.style.marginLeft = "0%"
     }
-    else if(A.style.marginLeft == "30%"){//Se oculta el menu
-        console.log("ENTRA AL ELSE")
+    else if(A.style.marginLeft == "0%"){//Se oculta el menu
         A.style.marginLeft = "100%"
     }
 }
