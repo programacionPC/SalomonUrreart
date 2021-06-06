@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/EstilosPort_Art.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/MediaQuery_EstilosPort_Art_800.css"/>
 		
-        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=RLato|Raleway:400|Montserrat|Indie+Flower|Caveat'>
+        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=RLato|Raleway:400|Montserrat|Gruppo'>
         
 		<!-- CDN iconos de font-awesome-->
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'/>
@@ -23,9 +23,20 @@
 			<nav id="MenuResponsive" class="header__menuResponsive">						
 				<ul id="MenuContenedor">
 					<li><a class="header__a li--Enlaces" href="#Seccion_1">Inicio</a></li>
-					<li><a class="header__a li--Enlaces" href="#Seccion_2">Galería</a>
-					<li><a class="header__a li--Enlaces" href="#Seccion_3">Videos</a></li>
-					<li><a class="header__a li--Enlaces" href="#Seccion_4">Sobre mi</a></li>
+					<li><a class="header__a li--Enlaces" href="#Seccion_2">Galería</a></li>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Eventos</a>
+						<ul class="menuContenedor_3" id="MenuContenedor_3">
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_3">Alma silvestre</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS">Prox. evento</a></li>
+						</ul> 	
+					</li>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Sobre mi</a>
+						<ul class="menuContenedor_3" id="MenuContenedor_4">
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">El artista</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS">Paleta</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS">Momentos animales</a></li>
+						</ul> 	
+					</li>
 					<li><a class="header__a li--Enlaces" href="#Seccion_5">Tienda</a></li>
 				</ul>		
 			</nav>

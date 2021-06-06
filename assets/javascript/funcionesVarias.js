@@ -39,21 +39,19 @@ if(screen.width > 1024){
         let D = ProfundidadImagen_5.getBoundingClientRect().top        
             
         if(A < 55 && B > 55){//55 es la altura del header  
-            document.getElementById("Header").style.backgroundColor = "rgb(11, 83, 69)" 
-            document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
-            document.getElementById("Header").style.borderBottomStyle = "solid"
-            document.getElementById("Header").style.borderBottomWidth = "1px"
+            document.getElementById("Header").style.backgroundColor = "rgb(11, 83, 69)" //Cuando es galeria
+            document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(11, 83, 69)" 
+            document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(11, 83, 69)" 
             document.getElementById("Header").style.transitionDuration = "2s"
             let enlacesMenu = document.querySelectorAll("li a.header__a")
             for(let i = 0; i < enlacesMenu.length; i++){
                 enlacesMenu[i].style.color = "white"
             }
-        }
+        } 
         else if(B < 55 && C > 55){   
-            document.getElementById("Header").style.backgroundColor = "rgb(0, 0, 51)" 
-            document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
-            document.getElementById("Header").style.borderBottomStyle = "solid"
-            document.getElementById("Header").style.borderBottomWidth = "1px"
+            document.getElementById("Header").style.backgroundColor = "rgb(0, 0, 51)" //Cuando es evento
+            document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(0, 0, 51)" 
+            document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(0, 0, 51)" 
             document.getElementById("Header").style.transitionDuration = "2s"
             let enlacesMenu = document.querySelectorAll("li a.header__a")
             for(let i = 0; i < enlacesMenu.length; i++){
@@ -61,10 +59,9 @@ if(screen.width > 1024){
             }
         }
         else if(C < 55 && D > 55){          
-            document.getElementById("Header").style.backgroundColor = "rgb(110, 44, 0)" 
-            document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
-            document.getElementById("Header").style.borderBottomStyle = "solid"
-            document.getElementById("Header").style.borderBottomWidth = "1px"
+            document.getElementById("Header").style.backgroundColor = "rgb(110, 44, 0)" //Cuando es sobre mi
+            document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(110, 44, 0)" 
+            document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(110, 44, 0)" 
             document.getElementById("Header").style.transitionDuration = "2s"
             let enlacesMenu = document.querySelectorAll("li a.header__a")
             for(let i = 0; i < enlacesMenu.length; i++){
@@ -72,10 +69,12 @@ if(screen.width > 1024){
             }
         }
         else if(D < 55){           
-            document.getElementById("Header").style.backgroundColor = "rgb(51, 0, 0)" 
-            document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
-            document.getElementById("Header").style.borderBottomStyle = "solid"
-            document.getElementById("Header").style.borderBottomWidth = "1px"
+            document.getElementById("Header").style.backgroundColor = "rgb(51, 0, 0)" //Cuando es tienda
+            document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(51, 0, 0)" 
+            document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(51, 0, 0)" 
+            // document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
+            // document.getElementById("Header").style.borderBottomStyle = "solid"
+            // document.getElementById("Header").style.borderBottomWidth = "1px"
             document.getElementById("Header").style.transitionDuration = "2s"
             let enlacesMenu = document.querySelectorAll("li a.header__a")
             for(let i = 0; i < enlacesMenu.length; i++){
@@ -84,6 +83,8 @@ if(screen.width > 1024){
         }
         else{
             document.getElementById("Header").style.backgroundColor = "initial" //color superior
+            document.getElementById("MenuContenedor_3").style.backgroundColor = "initial" 
+            document.getElementById("MenuContenedor_4").style.backgroundColor = "initial" 
             document.getElementById("Header").style.borderBottomColor = "transparent "
             let enlacesMenu = document.querySelectorAll("li a.header__a")
             for(let i = 0; i < enlacesMenu.length; i++){
@@ -231,7 +232,29 @@ window.addEventListener("click", function(e){
     }
 }, true)
 
-// //************************************************************************************************
+//************************************************************************************************
+//Por medio de delegación de eventos se detectan los item del submenu para ocultrlo al hacer click
+document.getElementById("MenuContenedor").addEventListener('click', function(e){
+    if(e.target.classList[2] == "enlace_JS"){
+        var ID_Elemento = e.target
+        console.log(ID_Elemento)
+        document.getElementById("MenuContenedor_3").style.visibility = "hidden"
+        document.getElementById("MenuContenedor_4").style.visibility = "hidden"
+    }
+}, false)
+
+
+//************************************************************************************************
+//Por medio de delegación de eventos muestra los submenu del menu principal
+window.addEventListener("mouseover",function(e){
+    if(e.target.classList[1] == "MostrarSubMenu_JS"){
+        var ID_Elemento = e.target
+        console.log(ID_Elemento)
+        document.getElementById("MenuContenedor_3").style.visibility = "initial"
+        document.getElementById("MenuContenedor_4").style.visibility = "initial"
+    }
+}, false)
+//************************************************************************************************
 //Muestra el menu principal en formato movil y tablet  
 function mostrarMenu(){  
     let A = document.getElementById("MenuResponsive")
@@ -282,5 +305,5 @@ function mostrarMenu(){
 //Muestra la galeria
 function mostrarGaleria(e){
     // window.open(`Galeria_C/vistaAmpliada/${e.target.id}`, "ventana1", "self")
-    window.open("Galeria_C", "ventana1", "self")
+    window.open("../Galeria_C", "ventana1", "self")
 }

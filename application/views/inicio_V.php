@@ -54,10 +54,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 
-	<!-- VIDEOS -->
+	<!-- EVENTOS -->
 	<div class="contenedor_3" id="Seccion_3">
 		<div>
-			<h1 class="h2_1">Videos</h1> 
+			<h1 class="h2_1">Muestra de la colección "Alma Silvestre"</h1> 
+		</div>
+		<div style="display: flex;">
+			<!-- <div  style="width: 50%;">
+				<img class="imagen--evento" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
+			</div> -->
+			<!-- <div style="width: 50%;">
+				<label>Lugar</label>
+				<input type="text"/>
+				<br>
+				<label>Fecha</label>
+				<input type="text"/>
+				<br>
+				<label>Hora</label>
+				<input type="text"/>
+				<br>
+				<textarea>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</textarea>
+			</div> -->
 		</div>
 	</div>
 
@@ -66,33 +83,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div  class="contenedor_4">
 		<div class="contenedor_4--flex" id="Seccion_4">
 			<div class="contenedor_4__div1">
-				<h1 class="h2_1"><i class="fas fa-user-alt contenedor_4--icono_1"></i></h1> 
+				<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
 			</div>
 			<div class="contenedor_4__div2">
-				<h1 class="h2_1">Sobre mi</h1> 
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-				<br>
-				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-			</div>
-		</div>
-		<div class="contenedor_4--redes">
-			<div>
-				<i class="fab fa-facebook contenedor_4--icono_2"></i>
-			</div>
-			<div>
-				<i class="fab fa-pinterest contenedor_4--icono_2"></i>
-			</div>
-			<div>
-				<i class="fab fa-instagram contenedor_4--icono_2"></i>
-			</div>
-			<div>
-				<i class="fas fa-envelope contenedor_4--icono_2"></i>
-			</div>
-			<div>
-				<i class="fab fa-whatsapp contenedor_4--icono_2"></i>
-			</div>
-			<div>
-				<i class="fab fa-twitter contenedor_4--icono_2"></i>
+				<h1 class="h2_1">Sobre mi</h1>
+				<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
+				<div class="contenedor_4--redes">
+					<div>
+						<i class="fab fa-facebook contenedor_4--icono_2"></i>
+					</div>
+					<div>
+						<i class="fab fa-pinterest contenedor_4--icono_2"></i>
+					</div>
+					<div>
+						<i class="fab fa-instagram contenedor_4--icono_2"></i>
+					</div>
+					<div>
+						<i class="fas fa-envelope contenedor_4--icono_2"></i>
+					</div>
+					<div>
+						<i class="fab fa-whatsapp contenedor_4--icono_2"></i>
+					</div>
+					<div>
+						<i class="fab fa-twitter contenedor_4--icono_2"></i>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -102,10 +117,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="contenedor_5" id="Seccion_5">
 		<div class="">
 			<h1 class="h2_1">Tienda</h1> 
+			<?php //echo $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';?>
 		</div>
 	</div>
 </div>
 
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
+<script src="<?php echo base_url();?>assets/javascript/E_Inicio.js?v=<?php echo rand();?>"></script> 
 
