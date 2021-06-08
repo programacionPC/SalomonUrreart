@@ -97,7 +97,7 @@ document.getElementById("ContenidoPerfil").addEventListener('keydown', function(
 
         //Se crea el clon
         let Div_clon = clonar.cloneNode(true)
-        // console.log("div clon", Div_clon)
+        console.log("div clon", Div_clon)
 
         //Se da una clase (Al parecer no hace ninguna función, pero se elimina y no hace el clon)
         Div_clon.classList = "contenedorUnico"
@@ -128,15 +128,13 @@ document.getElementById("ContenidoPerfil").addEventListener('keydown', function(
     } 
 
 //************************************************************************************************
-
-// **************************************************************************************************
 //ELIMINAR COLECCIONES
 //Por medio de delegación de eventos se detecta la coleccion a eliminar
 window.addEventListener('click', function(e){
     // console.log("______Desde funcion anonima que aplica listerner para eliminar colecciones______")
 
     var ElementoSeleccionado = e.target.classList[3]
-    console.log(ElementoSeleccionado)
+    console.log("Elementos Seleccionado= ", ElementoSeleccionado)
 
     //Se ubica el id del elemento seleccionado
     let ID_ElementoSeleccionado = e.target.id
@@ -177,7 +175,7 @@ window.addEventListener('click', function(e){
             }
 
             //Se procede a eliminar del servidor
-            Llamar_EliminarSeccion(ID_ElementoSeleccionado, colecciones)
+            Llamar_EliminarSeccion(ID_ElementoSeleccionado, Padrecolecciones.childElementCount)
         }  
     }  
 }, false)

@@ -24,17 +24,17 @@
             // print_r($this->dbh);
             // exit;
         }
+    
+
+
+// ********************************************************************************************************
+// ********************************************************************************************************
         
+
         //INSERT de colecciones
         public function insertarColecciones($Colecciones){ 
             for($i = 0; $i<count($Colecciones); $i++){
-                // foreach($Colecciones[$i] as $key){
-                //     $key;  
-                // }
                 $stmt = $this->dbh->prepare("INSERT INTO colecciones(nombre_coleccion, fecha_creacion) VALUES (:NOMBRE, CURDATE())");
-
-                // insertar una fila
-                // $Coleccion = $Colecciones['Nombre'];
 
                 //Se vinculan los valores de las sentencias preparadas, stmt es una abreviatura de statement
                 $stmt->bindParam(':NOMBRE', $Colecciones[$i]);
@@ -42,11 +42,35 @@
                 //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
                 $stmt->execute();
             }
+        }   
+
+        // INSERT de ponchos
+        public function insertarPoncho($Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho){
+            $stmt = $this->dbh->prepare("INSERT INTO ponchos(nombrePoncho, nombre_ImgPoncho, tamanio_ImgPoncho, tipo_ImgPoncho, fecha) VALUES (:NOMBRE, :NOMBRE_IMG, :TAMANIO_IMG, :TIPO_IMG, CURDATE())");
+
+            //Se vinculan los valores de las sentencias preparadas, stmt es una abreviatura de statement
+            $stmt->bindParam(':NOMBRE', $Poncho);
+            $stmt->bindParam(':NOMBRE_IMG', $nombre_ImgPoncho);
+            $stmt->bindParam(':TAMANIO_IMG', $tamanio_ImgPoncho);
+            $stmt->bindParam(':TIPO_IMG', $tipo_ImgPoncho);
+
+            //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
+            if($stmt->execute()){
+                //se recupera el ID del registro insertado
+                return true;
+            }
+            else{
+                return false;
+            }
         }
+    
 
 
+// ********************************************************************************************************
+// ********************************************************************************************************
 
-        // INSERT de datos de perfil
+
+        // UODATE de datos de perfil
         public function actualizarPerfil($Perfil){            
             $stmt = $this->dbh->prepare("UPDATE artista SET perfil = :PERFIL");
 
@@ -63,7 +87,7 @@
             }
         }
 
-        // INSERT de fotografia de perfil
+        // UPDATE de fotografia de perfil
         public function actualizarFotografia($nombre_Fotografia, $tipo_Fotografia, $tamanio_Fotografia){
             $stmt = $this->dbh->prepare("UPDATE artista SET nombre_Fotografia = :NOMBRE_FOTO, tipo_Fotografia = :TIPO_FOTO, tamanio_Fotografia = :TAMANIO_FOTO");
 
@@ -100,5 +124,22 @@
         public function consultarcolecciones(){
             $stmt = $this->dbh->query("SELECT ID_Coleccion, nombre_coleccion FROM colecciones");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function consultarponchos(){
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+
+// ********************************************************************************************************
+// ********************************************************************************************************
+
+       
+        //DELETE de coleccion 
+        public function eliminarColeccion($ID_Coleccion){
+            $stmt = $this->dbh->prepare("DELETE FROM colecciones WHERE ID_Coleccion = :ID_COLECCION");
+            $stmt->bindValue(':ID_COLECCION', $ID_Coleccion, PDO::PARAM_INT);
+            $stmt->execute();          
         }
     }

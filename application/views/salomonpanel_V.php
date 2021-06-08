@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Se coloca en SDN para la libreria JQuery, necesaria para la previsualización de la imagen--> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<div>
 	<div class="contenedor_1" id="Seccion_1">
 		<div class="ContenedorTitulo">
 			<div class="ContenedorTitulo_div1">
@@ -17,12 +16,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
             <div class="ContenedorTitulo_secciones">
                 <ul class="ul--panel">
-                    <li><a class="li--Enlaces" href="#Colecciones">Colecciones</a></li>
-                    <li><a class="li--Enlaces" href="#Galeria">Galerias</a></li>
-                    <li><a class="li--Enlaces" href="#">Videos</a></li>
-                    <li><a class="li--Enlaces" href="#SobreMi">Sobre mi</a></li>
+                    <li><a class="li--Enlaces" href="#Colecciones">Pinturas</a></li>
+                    <li><a class="li--Enlaces" href="#Galeria">Ponchos</a></li>
+                    <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
+                    <li><a class="li--Enlaces" href="#">Contacto</a></li>
                     <li><hr></li>
-                    <li><a class="li--Enlaces" href="PaginaInicio">Sitio web</a></li>
+                    <li><a class="li--Enlaces" href="SalomonPanel_C/PaginaInicio">Sitio web</a></li>
                 </ul>
             </div>
 		</div>
@@ -30,11 +29,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     
     <!-- COLECCIONES -->
-    <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeColecciones" method="POST" enctype="multipart/form-data" autocomplete="off" >
-        <fieldset class="fieldset_1 fieldset_3">
-            <a id="Colecciones" class="ancla_2"></a>
-            <legend class="legend_1">Colecciones</legend>
-            <div>
+    <fieldset class="fieldset_1 fieldset_3">
+        <a id="Colecciones" class="ancla_2"></a>
+        <legend class="legend_1">Pinturas</legend>
+        <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeColecciones" method="POST" autocomplete="off">       
+            <!-- <div> -->
                 <div id="Contenedor_79">
                     <!-- div a clonar sin eventos y oculto mediante z-index = -1 -->
                     <div class="contenedor_80A" id="Contenedor_80A">
@@ -46,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
+
                     <div style="width:70%;" id="Contenedor_70A">
                         <?php   
                         // echo "<pre>";
@@ -70,8 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 ?>                                
                                 <div class="contenedor_80" id="Contenedor_80">
                                     <input class="input_13 input_13A input_12 borde_1 seccionesJS" type="text" name="coleccion[]" id="Coleccion<?php echo $Contador;?>" value="<?php echo $NombreColeccion;?>" onblur="Llamar_ActualizarSeccion(this.value,'<?php echo $ID_Coleccion;?>')"/>
-                                    <!-- Icono de eliminar -->
-                                    <div style="width:15%;"">
+                                    <div style="width: 15%;"">
                                         <span class="span_10"><i class="fas fa-times contenedor_80--eliminar  span_14_js" id="<?php echo $ID_Coleccion;?>"></i><span> 
                                         <input class="contador-coleccion contador_JS" id="Contador_<?php echo $Contador;?>" type="text" value="25"/>
                                     </div>
@@ -82,58 +81,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         }   ?>
                     </div>
                 </div>
-                <div style="width: 40%;">
+                <div style="width: 70%;">
                     <label class="label_4" id="Label_5">Añadir colección</label>
                 </div>
-            </div>
+            <!-- </div> -->
             <input class="label_4" type="submit" value="Guardar colecciones"/>
-        </fieldset>
-    </form>
+        </form>
+    </fieldset>
 
-        <!-- GALERIA -->
-        <div class="" id="muestrasImg_2"></div>  
-            <a id="Galeria" class=""></a>
-            <fieldset class="fieldset_1 fieldset_3">
-                <legend class="legend_1">Galería</legend>
+    <!-- PONCHOS -->
+    <fieldset class="fieldset_1 fieldset_3"> 
+        <legend class="legend_1">Ponchos</legend>
+        <a id="Galeria" class=""></a>
+        <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <div class="" id="muestrasImg_2"></div> 
                 <div style="display: flex;">
-                    <div style="width: 20%;">
-                        <label for="MostrarColeccion">Colección</label>
-                        <input type="radio" name="mostrarColeccion" id="MostrarColeccion">
+                    <div>
+                        <input type="text" name="nombre_Poncho" placeholder="Nombre de la obra"/>
                     </div>
                     <div>
                         <p class="p_5">Añadir imagenes no mayores a 2 Mb de peso</p>
-                        <label class="label_5 label_23" for="ImgInp_2">Añadir imagen</label>
-                        <input class="ocultar" type="file" name="imagenes[]" multiple="multiple" id="ImgInp_2" onchange="muestraImg()"/>                  
+                        <label class="label_5 label_23" for="ImgInp_1">Añadir imagen</label>
+                        <input class="" type="file" name="imagen_Poncho" id="ImgInp_1" onchange="muestraImg()"/>                  
                     </div>
-                </div>
-            </fieldset>
-        </div>    
-
-        <!-- VIDEOS -->
-        <div class="" id="muestrasImg_2"></div>  
-            <a id="Videos" class=""></a>
-            <fieldset class="fieldset_1 fieldset_3">
-                <legend class="legend_1">Videos</legend>
-                <div style="display: flex;">
-                    <div style="width: 20%;">
-                        <label for="MostrarColeccion">Videos</label>
-                        <input type="radio" name="mostrarColeccion" id="MostrarColeccion">
-                    </div>
-                    <div>
-                        <p class="p_5">Añadir imagenes no mayores a 2 Mb de peso</p>
-                        <label class="label_5 label_23" for="ImgInp_2">Añadir imagen</label>
-                        <input class="ocultar" type="file" name="imagenes[]" multiple="multiple" id="ImgInp_2" onchange="muestraImg()"/>                  
-                    </div>
-                </div>
-            </fieldset>
-        </div>    
+                </div>   
+            </div>   
+            <input class="label_4" type="submit" value="Guardar poncho"/>
+        </form>
         
-        <!-- SOBRE MI -->    
-            <fieldset class="fieldset_1 fieldset_3">
-            <a id="SobreMi" class=""></a>
-                <legend class="legend_1">Sobre Mi</legend>
-    <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeSobreMi" method="POST" enctype="multipart/form-data" autocomplete="off" >
-        <div>
+        <?php 
+        foreach($datosPoncho as $Row){
+            $Nombre_Poncho = $Row['nombrePoncho'];            
+            $Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
+            <div style="display: flex;">
+                <div>
+                    <input type="text" name="nombre_Poncho" value="<?php echo $Nombre_Poncho;?>"/>
+                    <label>Eliminar</label>
+                    <label>Acutalizar</label>
+                </div>
+                <div>
+                    <img class="imagen_2"  alt="Fotografia de poncho" src="<?php echo base_url();?>assets/images/ponchos/<?php echo $Nombre_ImgPoncho;?>"/>    
+                </div>
+            </div>
+            <?php
+        }   ?>
+    </fieldset> 
+  
+        
+    <!-- SOBRE MI -->    
+    <fieldset class="fieldset_1 fieldset_3">
+        <legend class="legend_1">Sobre Mi</legend>
+        <a id="SobreMi" class=""></a>
+        <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeSobreMi" method="POST" enctype="multipart/form-data" autocomplete="off" >
+            <div>
                 <div style="display: flex;">
                     <div class="contenedor_119 borde_1 borde_2">
                         <img class="contenedor_119__img" id="blah_2" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $datosArtista['nombre_Fotografia'];?>"/>
@@ -145,33 +145,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <input class="contador" id="ID_Contador" type="text" value="700"/>
                     </div>
                 </div>
-        </div>   
-        <input class="label_4" type="submit" value="Guardar perfil"/>
-    </form> 
-            </fieldset>
-</div>
+            </div>   
+            <input class="label_4" type="submit" value="Guardar perfil"/>
+        </form> 
+    </fieldset>
 
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script>
-
 <script src="<?php echo base_url();?>assets/javascript/E_SalomonPanel.js?v=<?php echo rand();?>"></script> 
+<script src="<?php echo base_url();?>assets/javascript/A_SalomonPanel.js?v=<?php echo rand();?>"></script> 
 
 <script> 
-        //Da una vista previa de la imagen de perfil
-        function readImage(input, id_Label){
-            // console.log("______Desde readImage()______", input + ' | ' + id_Label)
-            if(input.files && input.files[0]){
-                var reader = new FileReader();
-                reader.onload = function(e){
-                    id_Label.attr('src', e.target.result); //Renderizamos la imagen
-                }
-                reader.readAsDataURL(input.files[0]);
+    //Da una vista previa de las imagenes
+    function readImage(input, id_Label){
+        // console.log("______Desde readImage()______", input + ' | ' + id_Label)
+        if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                id_Label.attr('src', e.target.result); //Renderizamos la imagen
             }
-        }        
-        $("#imgInp_2").change(function(){
-            // Código a ejecutar cuando se detecta un cambio de imagen de tienda
-            var id_Label = $('#blah_2');
-            readImage(this, id_Label);
-        });
-    </script>
+            reader.readAsDataURL(input.files[0]);
+        }
+    }        
+    $("#imgInp_2").change(function(){
+        // Código a ejecutar cuando se detecta un cambio de imagen de tienda
+        var id_Label = $('#blah_2');
+        readImage(this, id_Label);
+    });
+</script>
 

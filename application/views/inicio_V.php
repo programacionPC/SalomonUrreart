@@ -13,80 +13,83 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
 				<h2 class="ContenedorTitulo--h2_1">Pinto por y para la naturaleza</h2>
 			</div>
+            <div class="ContenedorTitulo_secciones">
+                <ul class="ul--panel">
+                    <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
+						<ul class="menuContenedor_3" id="MenuContenedor_3">
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_2">Fauna</a></li>
+						</ul> 	
+					</li>
+                    <li><a class="li--Enlaces" href="#Seccion_3">PONCHOS</a></li>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
+						<ul class="menuContenedor_3" id="MenuContenedor_3">
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">Mascota</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#">Animal favorito</a></li>
+						</ul> 	
+					</li>
+                    <li><hr></li>
+                    <li><a class="li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
+                    <li><a class="li--Enlaces" href="#Seccion_6">Tienda</a></li>
+                    <li><a class="li--Enlaces" href="Seccion_7">Contacto</a></li>
+                </ul>
+            </div>
 		</div>
 	</div>
 
-	
-	<!-- GALERÍA -->
-	<div class="contenedor_2a">
-		<div class="contenedor_2" id="Seccion_2">
+	<!-- PINTURAS -->
+	<div class="contenedor_3" style="background-color: darkblue" id="Seccion_2">
+		<h1 style="color: white; ">PINTURAS -- fauna</h1>
+	</div>
+
+	<!-- PONCHOS -->
+	<div class="contenedor_2a" id="Seccion_3">
+		<div class="contenedor_2" id="Seccion_3a">
 			<div class="contenedor_2__div" id="Watercolor">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
-				<h1 class="h1_1">Watercolor</h1> 
+				<h1 class="h1_1">Poncho_1</h1> 
 			</div>
 			<div class="contenedor_2__div" id="Sketches">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
-				<h1 class="h1_1">Sketches</h1> 
+				<h1 class="h1_1">Poncho_2</h1> 
 			</div>
 			<div class="contenedor_2__div" id="Animal">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
-				<h1 class="h1_1">Animal moments</h1> 
+				<h1 class="h1_1">Poncho_3</h1> 
 			</div>
 			<div class="contenedor_2__div" id="Ponchos">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
-				<h1 class="h1_1">Ponchos</h1> 
+				<h1 class="h1_1">Poncho_4</h1> 
 			</div>
 		</div>
-		<div class="contenedor_2 contenedor_2--secundario" >
+		<div class="contenedor_2 contenedor_2--secundario"">
 			<div class=" contenedor_2__div js">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
-				<h1 class="h1_1">Palet</h1> 
+				<h1 class="h1_1">Poncho_5</h1> 
 			</div>
 			<div class=" contenedor_2__div js">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
-				<h1 class="h1_1">Oil</h1> 
+				<h1 class="h1_1">Poncho_6</h1> 
 			</div>
 			<div class=" contenedor_2__div js">
 				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
-				<h1 class="h1_1">Acrylic</h1> 
+				<h1 class="h1_1">Poncho_7</h1> 
 			</div>
 		</div>
 	</div>
-
-
-	<!-- EVENTOS -->
-	<div class="contenedor_3" id="Seccion_3">
-		<div>
-			<h1 class="h2_1">Muestra de la colección "Alma Silvestre"</h1> 
-		</div>
-		<div style="display: flex;">
-			<!-- <div  style="width: 50%;">
-				<img class="imagen--evento" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
-			</div> -->
-			<!-- <div style="width: 50%;">
-				<label>Lugar</label>
-				<input type="text"/>
-				<br>
-				<label>Fecha</label>
-				<input type="text"/>
-				<br>
-				<label>Hora</label>
-				<input type="text"/>
-				<br>
-				<textarea>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</textarea>
-			</div> -->
-		</div>
+	
+	<!-- ENCARGOS -->
+	<div class="contenedor--encargos" style="background-color: darkblue" id="Seccion_4">
+		<h1 style="color: white;">ENCARGOS</h1>
 	</div>
 
-	
 	<!-- SOBRE MI -->
-	<div  class="contenedor_4">
-		<div class="contenedor_4--flex" id="Seccion_4">
+	<div  class="contenedor_4" id="Seccion_5">
+		<div class="contenedor_4--flex contenedor_4__div" id="Seccion_5a">
 			<div class="contenedor_4__div1">
 				<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
 			</div>
 			<div class="contenedor_4__div2">
-				<h1 class="h2_1">Sobre mi</h1>
 				<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
 				<div class="contenedor_4--redes">
 					<div>
@@ -112,12 +115,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 
-
 	<!-- TIENDA -->
-	<div class="contenedor_5" id="Seccion_5">
+	<div class="contenedor_5" id="Seccion_6">
 		<div class="">
-			<h1 class="h2_1">Tienda</h1> 
-			<?php //echo $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';?>
+			<h1 style="color: white;">TIENDA</h1>
+		</div>
+	</div>
+	
+	<!-- CONTACTO -->
+	<div class="contenedor_5" id="Seccion_7">
+		<div class="contenedor_5__div">
+			<h1 style="color: white;">CONTACTO</h1>
 		</div>
 	</div>
 </div>
