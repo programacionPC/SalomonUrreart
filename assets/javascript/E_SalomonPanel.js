@@ -1,5 +1,4 @@
-
-document.getElementById("Label_5").addEventListener('click', clonarSeccion, false)
+// document.getElementById("Label_5").addEventListener('click', clonarSeccion, false)
 
 document.addEventListener("DOMContentLoaded", function(){autosize('ContenidoPerfil')}, false) 
 document.addEventListener("DOMContentLoaded", function(){resize('ContenidoPerfil')}, false) 
@@ -134,11 +133,11 @@ window.addEventListener('click', function(e){
     // console.log("______Desde funcion anonima que aplica listerner para eliminar colecciones______")
 
     var ElementoSeleccionado = e.target.classList[3]
-    console.log("Elementos Seleccionado= ", ElementoSeleccionado)
+    // console.log("Elementos Seleccionado= ", ElementoSeleccionado)
 
     //Se ubica el id del elemento seleccionado
     let ID_ElementoSeleccionado = e.target.id
-    console.log("ID_Coleccion a eliminar= ", ID_ElementoSeleccionado)
+    // console.log("ID_Coleccion a eliminar= ", ID_ElementoSeleccionado)
 
     if(ElementoSeleccionado == "span_14_js"){
         let ConfirmaEliminar = confirm("Se eliminará la coleccion y todas las obras incluidas en ella")
@@ -179,3 +178,21 @@ window.addEventListener('click', function(e){
         }  
     }  
 }, false)
+
+function eliminarPoncho(ID_Javascript, ID_PHP){
+    console.log(ID_Javascript)
+
+    //Se obtiene el elemento a eliminar
+    // elementoEliminar = document.getElementById(ID_Javascript) 
+    console.log("div a eliminar", ID_Javascript)
+
+    // Se obtiene el elemento padre donde se encuentra el poncho donde se hizo click
+    elementoPadre = ID_Javascript.parentElement
+    console.log("elemento padre", elementoPadre)
+
+    //Se elimina la sección
+    elementoPadre.removeChild(ID_Javascript)  
+
+    //Se elimina de la BD
+    llamar_eliminarPoncho(ID_PHP)
+}

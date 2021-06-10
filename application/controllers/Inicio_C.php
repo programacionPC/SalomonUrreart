@@ -12,13 +12,17 @@ class Inicio_C extends CI_Controller {
 	public function index(){
 		//CONSULTA las coleciones del sitio web
 		$ColeccionesSalomon = $this->Inicio_M->consultarColeccionSalomon();
+		
+		//CONSULTA los ponchos
+		$PonchosSalomon = $this->Inicio_M->consultarPonchosSalomon();
 
 		//CONSULTA el perfil de Salomon
 		$PerfilSalomon = $this->Inicio_M->consultarPerfilSalomon();
 
 		$Datos = [
 			'perfilArtista' => $PerfilSalomon, //perfil, nombre_Fotografia
-			'coleccionArtista' => $ColeccionesSalomon //ID_Coleccion, nombre_coleccion
+			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
+			'Ponchos' => $PonchosSalomon // nombrePoncho, nombre_ImgPoncho
 		];
 
 		// echo '<pre>';

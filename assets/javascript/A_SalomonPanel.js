@@ -30,22 +30,23 @@ function conexionAJAX(){
     } 
 
 // *************************************************************************************************
-    //Muestra todas las categorias que existen; invocada desde E_Cuenta_editar.js por medo de función anonima
-    function Llamar_categorias(){
-        var url = "../Cuenta_C/Categorias/"
+    //Elimina un poncho
+    function llamar_eliminarPoncho(ID_Poncho){
+        console.log("______Desde llamar_eliminarPoncho()______", ID_Poncho)
+        
+        var url = "SalomonPanel_C/eliminarPoncho/" + ID_Poncho
         http_request.open('GET', url, true)  
-        peticion.onreadystatechange = respuesta_categorias
+        peticion.onreadystatechange = respuesta_eliminarPoncho
         peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
         peticion.send("null")
-    }                                                           
-    function respuesta_categorias(){
+    }                                                                        
+    function respuesta_eliminarPoncho(){
         if(peticion.readyState == 4){
-            if(peticion.status == 200){    
-                document.getElementById("Mostrar_Categorias").style.display = "block"
-                document.getElementById('Mostrar_Categorias').innerHTML = peticion.responseText
+            if(peticion.status == 200){  
+                //No hace falta traer una respuesta del servidor, la operacion se hace y ya
             } 
             else{
-                alert('Hubo problemas con la petición.')
+                alert('Problemas con la petición.')
             }
         }
         else{ //en caso contrario, mostramos un gif simulando una precarga
@@ -111,21 +112,20 @@ function conexionAJAX(){
     }
 
 // *************************************************************************************************
-    //Verifica si la tienda puede mostrarse al publico
-    function llamar_publicarTienda(){
-        // console.log("______Desde llamar_publicarTienda()______")
+    //Cambia el nombre de una sección cuando se avandona el foco
+    function Llamar_actualizarPoncho(ID_Poncho){
+        // console.log("______Desde Llamar_ActualizarSeccion()______",Seccion + " / "  + ID_Poncho)
 
-        var url = "../Cuenta_C/publicarTienda/"
+        var url = "../Cuenta_C/ActualizarPoncho/" + ID_Poncho
         http_request.open('GET', url, true)  
-        peticion.onreadystatechange = respuesta_publicarTienda
+        peticion.onreadystatechange = respuesta_ActualizarPoncho
         peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
         peticion.send("null")
     }                                                                        
-    function respuesta_publicarTienda(){
+    function respuesta_ActualizarPoncho(){
         if(peticion.readyState == 4){
             if(peticion.status == 200){  
-                document.getElementById('Mostrar_tienda').innerHTML = peticion.responseText 
-                // document.getElementById('Publicar').checked = false
+                document.getElementById('ReadOnly').innerHTML = peticion.responseText 
             } 
             else{
                 alert('Problemas con la petición.')

@@ -13,6 +13,10 @@ class SalomonPanel_C extends CI_Controller {
 	public function index(){ 
 		//CONSULTA las coleciones del sitio web
 		$ColeccionesSalomon = $this->SalomonPanel_M->consultarcolecciones();
+		// echo '<pre>';
+		// print_r($ColeccionesSalomon);
+		// echo '</pre>';
+		// exit;
 
 		//CONSULTA los ponchos del sitio web
 		$PonchosSalomon = $this->SalomonPanel_M->consultarponchos();
@@ -23,11 +27,15 @@ class SalomonPanel_C extends CI_Controller {
 
 		//CONSULTA el perfil de Salomon
 		$PerfilSalomon = $this->SalomonPanel_M->consultarPerfilSalomon();
+		// echo '<pre>';
+		// print_r($PerfilSalomon);
+		// echo '</pre>';
+		// exit;
 
 		$Datos = [
 			'datosArtista' => $PerfilSalomon, //ID_Coleccion, nombre_coleccion
 			'coleccionArtista' => $ColeccionesSalomon, //d
-			'datosPoncho' => $PonchosSalomon //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'datosPoncho' => $PonchosSalomon, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
 		];
 	
 		$this->load->view('header/header_SoloEstilos');
@@ -164,5 +172,47 @@ class SalomonPanel_C extends CI_Controller {
 		$this->SalomonPanel_M->eliminarColeccion($ID_Coleccion);
 
 		redirect('');
+	}
+
+	public function eliminarPoncho($ID_Poncho){
+		//Se ELIMINA el poncho en BD
+		$this->SalomonPanel_M->eliminar_Poncho($ID_Poncho);
+
+		redirect('SalomonPanel_C');
+	}
+
+	public function ActualizarPoncho($ID_Poncho){
+		if($_FILES['imagen_Poncho']["name"][0] != ""){
+			$Poncho = $_POST['nombre_Poncho'];		
+			$nombre_ImgPoncho = $_FILES['imagen_Poncho']['name'];
+			$tipo_ImgPoncho = $_FILES['imagen_Poncho']['type'];
+			$tamanio_ImgPoncho = $_FILES['imagen_Poncho']['size'];
+
+			// echo "Poncho: " . $Poncho . '<br>';
+			// echo "nombre_ImgPoncho: " .  $nombre_ImgPoncho . '<br>';
+			// echo "tipo_ImgPoncho: " .  $tipo_ImgPoncho . '<br>';
+			// echo "tamanio_ImgPoncho: " .  $tamanio_ImgPoncho . '<br>';
+			// exit;
+			
+			//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
+			if($Poncho != ""){
+				//Usar en remoto
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+				
+				// usar en local
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
+				
+				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
+				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
+
+				//Se INSERTA los datos del poncho en BD
+				$this->SalomonPanel_M->insertarPoncho($Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
+			}
+		}
+		
+		//Se ACTUALIZA el poncho en BD
+		$this->SalomonPanel_M->actualizar_Poncho($ID_Poncho);
+
+		redirect('SalomonPanel_C');
 	}
 }

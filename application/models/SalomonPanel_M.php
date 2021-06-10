@@ -86,6 +86,24 @@
                 return false;
             }
         }
+        
+        // UODATE de datos de poncho
+        public function actualizar_Poncho($ID_Poncho){            
+            $stmt = $this->dbh->prepare("UPDATE poncho SET nombrePoncho = :NOMBRE_PONCHO WHERE ID_Poncho = :ID_PONCHO");
+
+            // Se vinculan los valores de las sentencias preparadas
+            $stmt->bindParam(':ID_PONCHO', $ID_Poncho);
+            $stmt->bindParam(':NOMBRE_PONCHO', $ID_Poncho);
+            
+            //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
+            if($stmt->execute()){
+                // se recupera el ID del registro insertado
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 
         // UPDATE de fotografia de perfil
         public function actualizarFotografia($nombre_Fotografia, $tipo_Fotografia, $tamanio_Fotografia){
@@ -126,8 +144,9 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        //SELECT de los ponchos
         public function consultarponchos(){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho DESC");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
@@ -142,4 +161,11 @@
             $stmt->bindValue(':ID_COLECCION', $ID_Coleccion, PDO::PARAM_INT);
             $stmt->execute();          
         }
+
+        //DELETE de ponchos 
+        public function eliminar_Poncho($ID_Poncho){
+            $stmt = $this->dbh->prepare("DELETE FROM ponchos WHERE ID_Poncho = :ID_PONCHO");
+            $stmt->bindValue(':ID_PONCHO', $ID_Poncho, PDO::PARAM_INT);
+            $stmt->execute();    
     }
+}

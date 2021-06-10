@@ -31,55 +31,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><hr></li>
                     <li><a class="li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
                     <li><a class="li--Enlaces" href="#Seccion_6">Tienda</a></li>
-                    <li><a class="li--Enlaces" href="Seccion_7">Contacto</a></li>
+                    <li><a class="li--Enlaces" href="#Seccion_7">Contacto</a></li>
                 </ul>
             </div>
 		</div>
 	</div>
 
 	<!-- PINTURAS -->
-	<div class="contenedor_3" style="background-color: darkblue" id="Seccion_2">
+	<div class="contenedor_3" id="Seccion_2">
 		<h1 style="color: white; ">PINTURAS -- fauna</h1>
 	</div>
 
 	<!-- PONCHOS -->
 	<div class="contenedor_2a" id="Seccion_3">
 		<div class="contenedor_2" id="Seccion_3a">
-			<div class="contenedor_2__div" id="Watercolor">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
-				<h1 class="h1_1">Poncho_1</h1> 
-			</div>
-			<div class="contenedor_2__div" id="Sketches">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
-				<h1 class="h1_1">Poncho_2</h1> 
-			</div>
-			<div class="contenedor_2__div" id="Animal">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
-				<h1 class="h1_1">Poncho_3</h1> 
-			</div>
-			<div class="contenedor_2__div" id="Ponchos">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
-				<h1 class="h1_1">Poncho_4</h1> 
-			</div>
+			<?php 
+			foreach($Ponchos as $Row){
+				$Nombre_Poncho = $Row['nombrePoncho'];            
+				$Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
+				<div class="contenedor_2__div" id="Watercolor">
+					<img class="imagen_1" src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>"/>
+					<h1 class="h1_1"><?php echo $Nombre_Poncho;?></h1> 
+				</div>
+				<?php
+			}   ?>
 		</div>
-		<div class="contenedor_2 contenedor_2--secundario"">
+		<!-- <div class="contenedor_2 contenedor_2--secundario"">
 			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
+				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Lapa.jpg"/>
 				<h1 class="h1_1">Poncho_5</h1> 
 			</div>
 			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
+				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Camaleon.png"/>
 				<h1 class="h1_1">Poncho_6</h1> 
 			</div>
 			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Pavoreal.jpg"/>
 				<h1 class="h1_1">Poncho_7</h1> 
 			</div>
-		</div>
+		</div> -->
 	</div>
 	
 	<!-- ENCARGOS -->
-	<div class="contenedor--encargos" style="background-color: darkblue" id="Seccion_4">
+	<div class="contenedor--encargos" id="Seccion_4">
 		<h1 style="color: white;">ENCARGOS</h1>
 	</div>
 
