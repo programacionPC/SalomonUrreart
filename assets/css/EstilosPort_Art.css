@@ -430,6 +430,10 @@ hr{
 .header__menuResponsive li a:hover{/*Todas las páginas*/
 	font-size: 19px;
 }
+.hr_1{/*inicio*/
+	display: block;
+	margin: 5%;
+}
 .icono--cerrar{
 	font-size: 2.2em;
 	position: fixed;
@@ -513,6 +517,9 @@ hr{
 	background-color: var(--HoverEnlaces);
 	border-radius: 10px;
 	cursor: pointer;
+}
+.li--Enlaces--minusculas{
+	line-height: 25px;
 }
 .span_10{
 	font-size: 1.2em;

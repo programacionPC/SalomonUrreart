@@ -28,10 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#">Animal favorito</a></li>
 						</ul> 	
 					</li>
-                    <li><hr></li>
-                    <li><a class="li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
-                    <li><a class="li--Enlaces" href="#Seccion_6">Tienda</a></li>
-                    <li><a class="li--Enlaces" href="#Seccion_7">Contacto</a></li>
+                    <li><hr class="hr_1"></li>
+                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_5">Sobre el artista</a></li>
+                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_6">Tienda</a></li>
+                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_7">Contacto</a></li>
                 </ul>
             </div>
 		</div>
