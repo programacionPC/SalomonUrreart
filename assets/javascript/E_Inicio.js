@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(){resize('Cont_Perfil')}, false) 
-document.getElementById('Watercolor').addEventListener('click', mostrarGaleria);
-
 
 
 //************************************************************************************************ 
@@ -11,6 +9,21 @@ var ImagenesGaleria = (function(){
         
     if(A <= 620 ){
         document.getElementById("Header").style.display = "none" 
+    }
+})();
+
+//************************************************************************************************ 
+//Función autoejecuble que muestra el menu horizontal cuando se vienen de header_DetallesPonchos.php
+var ImagenesGaleria = (function(){ 
+    let ProfundidadImagen_2 = document.getElementById("Seccion_1")
+        let A = ProfundidadImagen_2.getBoundingClientRect().top
+        console.log(A)
+    if(A == 0){
+        document.getElementById("Header").style.display = "none" 
+    }
+    else{
+        console.log("ENTRA EN EL ELSE")
+        document.getElementById("Header").style.display = "block" 
     }
 })();
 
@@ -130,6 +143,17 @@ document.getElementById("MenuContenedor").addEventListener('click', function(e){
         console.log(ID_Elemento)
         document.getElementById("MenuContenedor_3").style.visibility = "hidden"
         document.getElementById("MenuContenedor_4").style.visibility = "hidden"
+    }
+}, false)
+
+//************************************************************************************************
+//Por medio de delegación de eventos se detectan los ponchos para ver sus detalles
+document.getElementById("Seccion_3a").addEventListener('click', function(e){
+    if(e.target.classList[0] == "imagen_1"){
+        var ID_Poncho = e.target.id
+        console.log(ID_Poncho)
+        
+        window.location.replace("DetallePoncho_C/index/" + ID_Poncho);
     }
 }, false)
 

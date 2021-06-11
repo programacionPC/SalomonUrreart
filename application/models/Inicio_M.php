@@ -91,7 +91,7 @@
 
         //SELECT de los ponchos
         public function consultarPonchosSalomon(){
-            $stmt = $this->dbh->query("SELECT nombrePoncho, nombre_ImgPoncho FROM ponchos");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

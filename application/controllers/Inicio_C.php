@@ -22,7 +22,7 @@ class Inicio_C extends CI_Controller {
 		$Datos = [
 			'perfilArtista' => $PerfilSalomon, //perfil, nombre_Fotografia
 			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
-			'Ponchos' => $PonchosSalomon // nombrePoncho, nombre_ImgPoncho
+			'Ponchos' => $PonchosSalomon // ID_Poncho, nombrePoncho, nombre_ImgPoncho
 		];
 
 		// echo '<pre>';

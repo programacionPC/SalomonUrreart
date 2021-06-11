@@ -47,29 +47,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="contenedor_2" id="Seccion_3a">
 			<?php 
 			foreach($Ponchos as $Row){
+				$ID_Poncho = $Row['ID_Poncho']; 
 				$Nombre_Poncho = $Row['nombrePoncho'];            
 				$Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
-				<div class="contenedor_2__div" id="Watercolor">
-					<img class="imagen_1" src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>"/>
+				<div class="contenedor_2__div Poncho_JS"">
+					<img class="imagen_1" id="<?php echo $ID_Poncho?>" src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>"/>
 					<h1 class="h1_1"><?php echo $Nombre_Poncho;?></h1> 
 				</div>
 				<?php
 			}   ?>
 		</div>
-		<!-- <div class="contenedor_2 contenedor_2--secundario"">
-			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Lapa.jpg"/>
-				<h1 class="h1_1">Poncho_5</h1> 
-			</div>
-			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Camaleon.png"/>
-				<h1 class="h1_1">Poncho_6</h1> 
-			</div>
-			<div class=" contenedor_2__div js">
-				<img class="imagen_1" src="<?php //echo base_url();?>assets/images/Pavoreal.jpg"/>
-				<h1 class="h1_1">Poncho_7</h1> 
-			</div>
-		</div> -->
+		<div class="" id="MuestraPonchoViaAjax" style="color: white;"></div>
 	</div>
 	
 	<!-- ENCARGOS -->
@@ -127,4 +115,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
 <script src="<?php echo base_url();?>assets/javascript/E_Inicio.js?v=<?php echo rand();?>"></script> 
+<script src="<?php echo base_url();?>assets/javascript/A_Inicio.js?v=<?php echo rand();?>"></script> 
 
