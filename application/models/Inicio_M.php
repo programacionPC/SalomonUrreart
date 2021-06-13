@@ -83,7 +83,7 @@
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
-        // SELECT de las colecciones exitentes
+        // SELECT de las colecciones existentes
         public function consultarColeccionSalomon(){
             $stmt = $this->dbh->query("SELECT ID_Coleccion, nombre_coleccion FROM colecciones");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -91,7 +91,7 @@
 
         //SELECT de los ponchos
         public function consultarPonchosSalomon(){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

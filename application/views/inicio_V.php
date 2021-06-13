@@ -38,8 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<!-- PINTURAS -->
-	<div class="contenedor_3" id="Seccion_2">
-		<h1 style="color: white; ">PINTURAS -- fauna</h1>
+	<div  id="Seccion_2"> <!--class="contenedor_3"--->
+		<!-- <h1 style="color: white; ">PINTURAS -- fauna</h1> -->
 	</div>
 
 	<!-- PONCHOS -->
@@ -61,9 +61,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	
 	<!-- ENCARGOS -->
-	<div class="contenedor--encargos" id="Seccion_4">
+	<!-- <div class="contenedor--encargos" id="Seccion_4">
 		<h1 style="color: white;">ENCARGOS</h1>
-	</div>
+	</div> -->
 
 	<!-- SOBRE MI -->
 	<div  class="contenedor_4" id="Seccion_5">
@@ -98,16 +98,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<!-- TIENDA -->
-	<div class="contenedor_5" id="Seccion_6">
+	<!-- <div class="contenedor_5" id="Seccion_6">
 		<div class="">
 			<h1 style="color: white;">TIENDA</h1>
 		</div>
-	</div>
+	</div> -->
 	
 	<!-- CONTACTO -->
-	<div class="contenedor_5" id="Seccion_7">
-		<div class="contenedor_5__div">
-			<h1 style="color: white;">CONTACTO</h1>
+	<div class="cont_contacto">
+		<div class="ContenedorTitulo" id="Seccion_7">
+			<div class="ContenedorTitulo_div1">
+				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+			</div>
+			<div class="ContenedorTitulo_div2  cont_contacto--titulo">
+				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
+				<h2 class="ContenedorTitulo--h2_1">Pinto por y para la naturaleza</h2>
+			</div>
+		</div>
+		<div class="cont_Formulario">
+			<form action="<?php echo base_url();?>SalomonPanel_C/recibeContacto" method="POST" autocomplete="off" onsubmit="return validarDatos()">
+				<label class="cont_Formulario--label">Contactame</label>
+				<input class="cont_Formulario--input" type="text" name="nombre" placeholder="Nombre"/>
+				<input class="cont_Formulario--input" type="text" name="correo" placeholder="correo"/>
+				<input class="cont_Formulario--input" type="text"  name="ciudad" placeholder="ciudad / pais"/>
+				<textarea class="cont_Formulario--textarea" name="asunto" placeholder="asunto"></textarea> 
+				<input class="cont_Formulario--submit" type="submit" value="Enviar"/>
+			</form>
 		</div>
 	</div>
 </div>

@@ -113,10 +113,10 @@ class SalomonPanel_C extends CI_Controller {
 		//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
 		if($nombre_Fotografia != ""){
 			//Usar en remoto
-			// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+			$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
 			
 			// usar en local
-			$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/';
+			// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/';
 			
 			//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 			move_uploaded_file($_FILES['imagen_Perfil']['tmp_name'], $Directorio.$nombre_Fotografia);
@@ -146,10 +146,10 @@ class SalomonPanel_C extends CI_Controller {
 			//Si existe imagen_Poncho y tiene un tamaño correcto se procede a recibirla y guardar en BD
 			if($Nombre_Poncho != ""){
 				//Usar en remoto
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
 				
 				// usar en local
-				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
 				
 				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
@@ -199,10 +199,10 @@ class SalomonPanel_C extends CI_Controller {
 			//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
 			if($Poncho != ""){
 				//Usar en remoto
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
 				
 				// usar en local
-				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
 				
 				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
@@ -216,5 +216,24 @@ class SalomonPanel_C extends CI_Controller {
 		$this->SalomonPanel_M->actualizar_Poncho($ID_Poncho);
 
 		redirect('SalomonPanel_C');
+	}
+
+	public function recibeContacto(){
+		$Nombre = $_POST['nombre'];		
+		$Correo = $_POST['correo'];	
+		$Ciudad = $_POST['ciudad'];		
+		$Asunto = $_POST['asunto'];	
+
+		// echo "Nombre: " . $Nombre . "<br>";
+		// echo "Correo: " . $Correo . "<br>";
+		// echo "Ciudad: " . $Ciudad . "<br>";
+		// echo "Asunto: " . $Asunto . "<br>";
+
+		$Datos = [
+			'nombre' => $Nombre, 
+		];
+		
+		$this->load->view('header/header_acuseRecibo');
+		$this->load->view('acuseRecibo_V', $Datos);
 	}
 }

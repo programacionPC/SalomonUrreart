@@ -66,16 +66,15 @@ hr{
     width: 90%;
     min-height: 100vh;
 	margin: auto;
+	padding-top: 5%;
 }
 .contenedor_2a{
 	background-color: rgb(16, 20, 23);
 }
 .contenedor_2__div{
-	width: 22%;
-	/* height: 50vh; */
+	width: 22%;	
+	margin: auto 25px;
 	margin-top: 10vh;
-	/* opacity: 0;
-	transition: 2s; */
 	cursor: pointer;
 }
 .contenedor_2__div--animado_1{
@@ -330,6 +329,44 @@ hr{
 .cont_muestrasImgPanel--flex___input{
 	border-style: none;
 }
+.cont_contacto{
+	position: relative;
+}
+.cont_Formulario{
+	position: absolute;
+	top: 40%;
+	left: 68%;
+	width: 30%;
+}
+.cont_Formulario--label{
+	color: white;
+	font-size: 1.5em;
+}
+.cont_Formulario--submit{
+	padding: 1%;
+	cursor: pointer;
+}
+.cont_Formulario--input{
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 80%;
+	display: block;
+	margin-bottom: 2%;
+	border-radius: 5px;
+	padding: 1% 2%;
+}
+.cont_Formulario--textarea{
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 80%;
+	height: 25vh;
+	display: block;
+	margin-bottom: 2%;
+	border-radius: 5px;
+	padding: 1% 2%;
+	resize: none;
+}
+.cont_contacto--titulo{
+	padding-top: 5%;
+}
 .ContenedorTitulo{
 	background-color: rgb(16, 20, 23);
     width: 100%;
@@ -372,6 +409,30 @@ hr{
 	position: absolute;
 	bottom: 0pt;
 	left: 0%;
+}
+.cont_acuseRecibo{
+	position: absolute;
+	top: 40%;
+	left: 68%;
+	width: 30%;
+}
+.cont_acuseRecibo--p{
+	color: white;
+	font-size: 1.3em;
+}
+.cont_acuseRecibo--visitante{
+	color: white;
+	font-size: 2.5em;
+	margin-top: 15%;
+}
+.cont_AcuseRecibo--img{
+	/* width: 60%; */
+	background-color: red;
+}
+.cont_AcuseRecibo--leyenda{
+	position: absolute;
+	top: 20%;
+	left: 50%;
 }
 .cont_vistaAmpliada{
 	display: flex;
