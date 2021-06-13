@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
                     <!-- <li><a class="li--Enlaces" href="#">Contacto</a></li> -->
                     <li><hr></li>
-                    <li><a class="li--Enlaces" href="SalomonPanel_C/PaginaInicio">Sitio web</a></li>
+                    <li><a class="li--Enlaces" href="<?php echo base_url();?>">Sitio web</a></li>
                 </ul>
             </div>
 		</div>

@@ -31,19 +31,20 @@ function conexionAJAX(){
 
 // *************************************************************************************************
     //Cambia el nombre de una sección cuando se avandona el foco
-    function Llamar_sliderPoncho()(ID_Poncho){
-        console.log("______Desde Llamar_MostrarPoncho()______", ID_Poncho)
+    function Llamar_sliderPoncho(ID_Poncho, Recorrido){
+        console.log("______Desde Llamar_sliderPoncho()______", ID_Poncho + "/" + Recorrido)
 
-        var url = "DetallePoncho_C/index/" + ID_Poncho
+        var url = "../../DetallePoncho_C/slider/" + ID_Poncho  + "/" + Recorrido
         http_request.open('GET', url, true)  
-        peticion.onreadystatechange = respuesta_MostrarPoncho
+        peticion.onreadystatechange = respuesta_sliderPoncho
+        console.log(peticion.onreadystatechange)
         peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
         peticion.send("null")
     }                                                                        
-    function respuesta_MostrarPoncho(){
+    function respuesta_sliderPoncho(){
         if(peticion.readyState == 4){
             if(peticion.status == 200){  
-                document.getElementById('MuestraPonchoViaAjax').innerHTML = peticion.responseText 
+                document.getElementById('Cont_PonchoDetalle').innerHTML = peticion.responseText 
             } 
             else{
                 alert('Problemas con la petición.')

@@ -45,4 +45,7 @@
 		<!--div utilizado para tapar el body mientras esta el menu responsive -->
 		<div class="tapa" id="Tapa"></div>
 		
+		<!-- CDN iconos de font-awesome-->
+		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'/>
+		
    <!-- No se cierrra la etiqueta <body> porque se cierra es el footer -->
