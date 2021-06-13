@@ -16,21 +16,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="ContenedorTitulo_secciones">
                 <ul class="ul--panel">
                     <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
-					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
+					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_2">Fauna</a></li>
 						</ul> 	
-					</li>
+					</li> -->
                     <li><a class="li--Enlaces" href="#Seccion_3">PONCHOS</a></li>
-					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
+					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">Mascota</a></li>
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#">Animal favorito</a></li>
 						</ul> 	
-					</li>
+					</li> -->
                     <li><hr class="hr_1"></li>
                     <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_5">Sobre el artista</a></li>
-                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_6">Tienda</a></li>
+                    <!-- <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_6">Tienda</a></li> -->
                     <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_7">Contacto</a></li>
                 </ul>
             </div>

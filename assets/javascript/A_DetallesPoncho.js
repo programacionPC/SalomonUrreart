@@ -32,12 +32,11 @@ function conexionAJAX(){
 // *************************************************************************************************
     //Cambia el nombre de una sección cuando se avandona el foco
     function Llamar_sliderPoncho(ID_Poncho, Recorrido){
-        console.log("______Desde Llamar_sliderPoncho()______", ID_Poncho + "/" + Recorrido)
+        // console.log("______Desde Llamar_sliderPoncho()______", ID_Poncho + "/" + Recorrido)
 
         var url = "../../DetallePoncho_C/slider/" + ID_Poncho  + "/" + Recorrido
         http_request.open('GET', url, true)  
         peticion.onreadystatechange = respuesta_sliderPoncho
-        console.log(peticion.onreadystatechange)
         peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
         peticion.send("null")
     }                                                                        

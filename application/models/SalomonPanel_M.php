@@ -45,11 +45,13 @@
         }   
 
         // INSERT de ponchos
-        public function insertarPoncho($Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho){
-            $stmt = $this->dbh->prepare("INSERT INTO ponchos(nombrePoncho, nombre_ImgPoncho, tamanio_ImgPoncho, tipo_ImgPoncho, fecha) VALUES (:NOMBRE, :NOMBRE_IMG, :TAMANIO_IMG, :TIPO_IMG, CURDATE())");
+        public function insertarPoncho($Nombre_Poncho, $Medidas_Poncho, $Tecnica_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho){
+            $stmt = $this->dbh->prepare("INSERT INTO ponchos(nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho, tamanio_ImgPoncho, tipo_ImgPoncho, fecha) VALUES (:NOMBRE, :MEDIDAS, :TECNICA, :NOMBRE_IMG, :TAMANIO_IMG, :TIPO_IMG, CURDATE())");
 
             //Se vinculan los valores de las sentencias preparadas, stmt es una abreviatura de statement
-            $stmt->bindParam(':NOMBRE', $Poncho);
+            $stmt->bindParam(':NOMBRE', $Nombre_Poncho);
+            $stmt->bindParam(':MEDIDAS', $Medidas_Poncho);
+            $stmt->bindParam(':TECNICA', $Tecnica_Poncho);
             $stmt->bindParam(':NOMBRE_IMG', $nombre_ImgPoncho);
             $stmt->bindParam(':TAMANIO_IMG', $tamanio_ImgPoncho);
             $stmt->bindParam(':TIPO_IMG', $tipo_ImgPoncho);
@@ -146,7 +148,7 @@
 
         //SELECT de los ponchos
         public function consultarponchos(){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho DESC");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho DESC");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 

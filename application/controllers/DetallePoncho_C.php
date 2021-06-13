@@ -10,7 +10,7 @@ class DetallePoncho_C extends CI_Controller {
 	}
 
 	public function index($ID_Poncho){
-		//CONSULTA los detaales del poncho seleccionado
+		//CONSULTA los detalles del poncho seleccionado
 		$DetallePoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
 
 		$Datos = [
@@ -28,19 +28,20 @@ class DetallePoncho_C extends CI_Controller {
 
 	public function slider($ID_Poncho, $Recorrido){
 		if($Recorrido == 'Retroceder'){
-			//Se resta una unidad al ID_Poncho para obtener la imagen anterior enla BD
-			$ID_PonchoAnterior = $ID_Poncho - 1;
+			// Se consulta el nombre de la imagen que se va amostrar en detalle
+			$SliderPoncho = $this->DetallePoncho_M->consultarPonchoAnterior($ID_Poncho);
 		}
 		else if($Recorrido == 'Avanzar'){
-			//Se resta una unidad al ID_Poncho para obtener la imagen anterior enla BD
-			$ID_PonchoAnterior = $ID_Poncho + 1;
+			// Se consulta el nombre de la imagen que se va amostrar en detalle
+			$SliderPoncho = $this->DetallePoncho_M->consultarPonchoPosterior($ID_Poncho);
 		}
 
 		// Se consulta el nombre de la imagen que se va amostrar en detalle
-		$SliderPoncho = $this->DetallePoncho_M->consultarPoncho($ID_PonchoAnterior);
+		// $SliderPoncho = $this->DetallePoncho_M->consultarPoncho($ID_PonchoAnterior);
 
 		$Datos = [
 			'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'finslider' => false,
 		];
 
 		// echo '<pre style="color:white">';
@@ -48,15 +49,18 @@ class DetallePoncho_C extends CI_Controller {
 		// echo '<pre>';
 		// exit;
 		
+		//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio
 		if($SliderPoncho != Array()){
 			$this->load->view('A_sliderPoncho_V', $Datos);
 		}
-		else{			
+		else{ //Cuando el slidr llega a un extremo
 			// Se consulta el nombre de la imagen que se va amostrar en detalle
 			$SliderPoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
 
 			$Datos = [
 				'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+				// 'finslider_Left' => true,
+				// 'finslider_Right' => true,
 			];
 			
 			$this->load->view('A_sliderPoncho_V', $Datos);

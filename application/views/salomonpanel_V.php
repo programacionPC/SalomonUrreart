@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <fieldset class="fieldset_1 fieldset_3" id="Galeria"> 
         <legend class="legend_1">Ponchos</legend>
         <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
-            <div class="" id="muestrasImg_2"></div> 
+            <div id="muestrasImg_2"></div> 
                 <p class="p_5">Añadir imagenes no mayores a 5 Mb de peso</p> 
                 <div>
                     <?php 
@@ -101,6 +101,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         $datosPoncho['nombre_ImgPoncho'] = 'imagen.png';
                     }?>
                     <input class="input_1" type="text" name="nombre_Poncho" placeholder="Nombre de la obra"/>
+                    <br>
+                    <input class="input_1" type="text" name="medidas_Poncho" placeholder="Medidas de la obra"/>
+                    <br>
+                    <input class="input_1" type="text" name="tecnica_Poncho" placeholder="Tecnica de la obra"/>
                     <br>
                     <img class="cont_Poncho__img" id="Blah_1" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ponchos/<?php echo $datosPoncho['nombre_ImgPoncho'];?>"/>
                     <label class="label_1" for="ImgInp_1">Añadir imagen</label>
@@ -118,6 +122,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $file_data = array(
                    'ID_Poncho' => isset($Row['ID_Poncho']) ? $Row['ID_Poncho'] : '',
                    'Nombre_Poncho' => isset($Row['nombrePoncho']) ? $Row['nombrePoncho'] : '', 
+                   'Medida_Poncho' => isset($Row['medidaPoncho']) ? $Row['medidaPoncho'] : '', 
+                   'Tecnica_Poncho' => isset($Row['tecnicaPoncho']) ? $Row['tecnicaPoncho'] : '', 
                    'Nombre_ImgPoncho' => isset($Row['nombre_ImgPoncho']) ? $Row['nombre_ImgPoncho'] : '',   
                 );  
                 ?>
@@ -127,6 +133,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div>
                         <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Nombre_Poncho'];?>"/>
+                        <br>
+                        <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Medida_Poncho'];?>"/>
+                        <br>
+                        <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Tecnica_Poncho'];?>"/>
                         <br>
                         <label class="label_1" onclick="eliminarPoncho(<?php echo 'EliminarPoncho_' . $Contador;?>, <?php echo $file_data['ID_Poncho'];?>)">Eliminar</label>
                     </div> 

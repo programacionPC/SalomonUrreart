@@ -245,15 +245,18 @@ hr{
 	margin: auto;
 }
 .cont_ponchoDetalle--img{
-	width: 60%;
-	height: 100%;
+	margin-top: 5%;
+	width: 70%;
+	height: 80%;
 }
 .cont_ponchoDetalle--leyenda{
+	width: 50%;
 	position: relative;
 	top: 25%;
 	left: 5%;
 }
 .cont_ponchoDetalle--h1{
+	width: 100%;
 	color: white;
 	font-size: 2em;
 }

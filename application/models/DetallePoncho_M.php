@@ -32,7 +32,17 @@
 
         //SELECT de los ponchos
         public function consultarPoncho($ID_Poncho){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos WHERE ID_Poncho = $ID_Poncho");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho FROM ponchos WHERE ID_Poncho = $ID_Poncho");
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function consultarPonchoAnterior($ID_Poncho){
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho FROM ponchos WHERE ID_Poncho < $ID_Poncho ORDER BY ID_Poncho DESC LIMIT 1");
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function consultarPonchoPosterior($ID_Poncho){
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho FROM ponchos WHERE ID_Poncho > $ID_Poncho ORDER BY ID_Poncho LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }

@@ -130,7 +130,9 @@ class SalomonPanel_C extends CI_Controller {
 
 	public function recibePoncho(){
 		if($_FILES['imagen_Poncho']["name"][0] != ""){
-			$Poncho = $_POST['nombre_Poncho'];		
+			$Nombre_Poncho = $_POST['nombre_Poncho'];		
+			$Medidas_Poncho = $_POST['medidas_Poncho'];	
+			$Tecnica_Poncho = $_POST['tecnica_Poncho'];	
 			$nombre_ImgPoncho = $_FILES['imagen_Poncho']['name'];
 			$tipo_ImgPoncho = $_FILES['imagen_Poncho']['type'];
 			$tamanio_ImgPoncho = $_FILES['imagen_Poncho']['size'];
@@ -141,10 +143,10 @@ class SalomonPanel_C extends CI_Controller {
 			// echo "tamanio_ImgPoncho: " .  $tamanio_ImgPoncho . '<br>';
 			// exit;
 			
-			//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
-			if($Poncho != ""){
+			//Si existe imagen_Poncho y tiene un tamaño correcto se procede a recibirla y guardar en BD
+			if($Nombre_Poncho != ""){
 				//Usar en remoto
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
 				
 				// usar en local
 				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
@@ -153,7 +155,7 @@ class SalomonPanel_C extends CI_Controller {
 				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
 
 				//Se INSERTA los datos del poncho en BD
-				$this->SalomonPanel_M->insertarPoncho($Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
+				$this->SalomonPanel_M->insertarPoncho($Nombre_Poncho, $Medidas_Poncho, $Tecnica_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
 			}
 		}
 
@@ -197,7 +199,7 @@ class SalomonPanel_C extends CI_Controller {
 			//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
 			if($Poncho != ""){
 				//Usar en remoto
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
 				
 				// usar en local
 				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
