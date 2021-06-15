@@ -31,27 +31,27 @@ function conexionAJAX(){
 
 // *************************************************************************************************
     //Cambia el nombre de una sección cuando se avandona el foco
-    function Llamar_sliderPoncho()(ID_Poncho){
-        console.log("______Desde Llamar_MostrarPoncho()______", ID_Poncho)
+    // function Llamar_sliderPoncho()(ID_Poncho){
+    //     console.log("______Desde Llamar_sliderPoncho()______", ID_Poncho)
 
-        var url = "DetallePoncho_C/index/" + ID_Poncho
-        http_request.open('GET', url, true)  
-        peticion.onreadystatechange = respuesta_MostrarPoncho
-        peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
-        peticion.send("null")
-    }                                                                        
-    function respuesta_MostrarPoncho(){
-        if(peticion.readyState == 4){
-            if(peticion.status == 200){  
-                document.getElementById('MuestraPonchoViaAjax').innerHTML = peticion.responseText 
-            } 
-            else{
-                alert('Problemas con la petición.')
-            }
-        }
-        else{ //en caso contrario, mostramos un gif simulando una precarga
-            // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
-        }
-    }
+    //     var url = "DetallePoncho_C/index/" + ID_Poncho
+    //     http_request.open('GET', url, true)  
+    //     peticion.onreadystatechange = respuesta_MostrarPoncho
+    //     peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
+    //     peticion.send("null")
+    // }                                                                        
+    // function respuesta_MostrarPoncho(){
+    //     if(peticion.readyState == 4){
+    //         if(peticion.status == 200){  
+    //             document.getElementById('MuestraPonchoViaAjax').innerHTML = peticion.responseText 
+    //         } 
+    //         else{
+    //             alert('Problemas con la petición.')
+    //         }
+    //     }
+    //     else{ //en caso contrario, mostramos un gif simulando una precarga
+    //         // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
+    //     }
+    // }
 
 // *************************************************************************************************

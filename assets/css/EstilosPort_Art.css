@@ -110,20 +110,17 @@ hr{
     width: 100%;
     min-height: 100vh;
 }
-.contenedor_4__div{
-	/* opacity: 0;
-	transition: 2s; */
-}
-.contenedor_4__div--animado{
-	/* opacity: 1;
-	transition: 2s;
-	transform: translateY( -5vh); */
-}
 .contenedor_4--flex{/*inicio*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 6%;
+	padding-top: 20%;
+	opacity: 0;
+}
+.contenedor_4-flex--animado{
+	opacity: 1;
+	transition: 2s;
+	transform: translate(0, -25vh);
 }
 .contenedor_4__div1{
 	width: 30%;

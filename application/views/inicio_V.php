@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php
 			}   ?>
 		</div>
-		<div class="" id="MuestraPonchoViaAjax" style="color: white;"></div>
+		<div id="MuestraPonchoViaAjax" style="color: white;"></div>
 	</div>
 	
 	<!-- ENCARGOS -->
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<!-- SOBRE MI -->
 	<div  class="contenedor_4" id="Seccion_5">
-		<div class="contenedor_4--flex contenedor_4__div" id="Seccion_5a">
+		<div class="contenedor_4--flex" id="Seccion_5a">
 			<div class="contenedor_4__div1">
 				<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
 			</div>
@@ -131,5 +131,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
 <script src="<?php echo base_url();?>assets/javascript/E_Inicio.js?v=<?php echo rand();?>"></script> 
-<script src="<?php echo base_url();?>assets/javascript/A_Inicio.js?v=<?php echo rand();?>"></script> 
+<!-- <script src="<?php echo base_url();?>assets/javascript/A_Inicio.js?v=<?php echo rand();?>"></script>  -->
 

@@ -160,13 +160,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <input class="ocultar" type="file" name="imagen_Perfil" id="imgInp_2"/>
                     </div>
 
-
-
-
-
-
-
-
                     <div style="width: 90%;">
                         <textarea class="textarea_2" id="ContenidoPerfil" name="perfil"><?php echo $datosArtista['perfil'];?></textarea>
                         <input class="contador" id="ID_Contador" type="text" value="700"/>
