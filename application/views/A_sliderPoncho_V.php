@@ -4,7 +4,7 @@
 		if($ultimoID_Poncho['ID_Poncho'] == $sliderPoncho['ID_Poncho']){?>
 			<style>
 				.ultimoPoncho{
-					color: rgba(255, 255, 255, 0.3);
+					color: rgba(255, 255, 255, 0.2);
 					cursor: default;
 				}
 			</style>
@@ -15,7 +15,7 @@
 		if($primerID_Poncho['ID_Poncho'] == $sliderPoncho['ID_Poncho']){	?>
 			<style>
 				.primerPoncho{
-					color: rgba(255, 255, 255, 0.3);
+					color: rgba(255, 255, 255, 0.2);
 					cursor: default;
 				}
 			</style>

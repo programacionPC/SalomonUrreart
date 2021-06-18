@@ -29,11 +29,11 @@ class DetallePintura_C extends CI_Controller {
 // ********************************************************************************************************
 	public function slider($ID_Pintura, $Recorrido){
 		if($Recorrido == 'Retroceder'){
-			// Se consulta el nombre de la imagen que se va amostrar en detalle
+			// Se consulta el nombre de la imagen anterior que se va amostrar en detalle
 			$SliderPintura = $this->DetallePintura_M->consultarPinturaAnterior($ID_Pintura);
 		}
 		else if($Recorrido == 'Avanzar'){
-			// Se consulta el nombre de la imagen que se va amostrar en detalle
+			// Se consulta el nombre de la imagen posterior que se va amostrar en detalle
 			$SliderPintura = $this->DetallePintura_M->consultarPinturaPosterior($ID_Pintura);
 		}
 
@@ -42,7 +42,7 @@ class DetallePintura_C extends CI_Controller {
 
 		$Datos = [
 			'sliderPintura' => $SliderPintura, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
-			'finslider' => false,
+			// 'finslider' => false,
 		];
 
 		// echo '<pre style="color:white">';
@@ -50,7 +50,7 @@ class DetallePintura_C extends CI_Controller {
 		// echo '<pre>';
 		// exit;
 				
-	// 	//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio
+		//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio
 		if($SliderPintura != Array()){
 			$this->load->view('A_sliderPintura_V', $Datos);
 		}
@@ -87,7 +87,7 @@ class DetallePintura_C extends CI_Controller {
 			else if($Datos['primerID_Pintura']['ID_Pintura'] == $Datos['sliderPintura']['ID_Pintura']){
 				array_push($Datos, 'primero');
 			
-				// echo '<pre style="color:white">';
+				// echo '<pre style="color:yellow">';
 				// print_r($Datos);
 				// echo '<pre>';
 				// exit;

@@ -3,8 +3,8 @@
 	if(!empty($ultimoID_Pintura['ID_Pintura'])){	
 		if($ultimoID_Pintura['ID_Pintura'] == $sliderPintura['ID_Pintura']){?>
 			<style>
-				.ultimoPintura{
-					color: rgba(255, 255, 255, 0.3);
+				.ultimoPoncho{
+					color: rgba(255, 255, 255, 0.2);
 					cursor: default;
 				}
 			</style>
@@ -14,8 +14,8 @@
 	if(!empty($primerID_Pintura['ID_Pintura'])){	
 		if($primerID_Pintura['ID_Pintura'] == $sliderPintura['ID_Pintura']){	?>
 			<style>
-				.primerPintura{
-					color: rgba(255, 255, 255, 0.3);
+				.primerPoncho{
+					color: rgba(255, 255, 255, 0.2);
 					cursor: default;
 				}
 			</style>
@@ -27,7 +27,7 @@
 <i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft primerPoncho" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Retroceder')"></i>
 <i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight ultimoPoncho" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Avanzar')"></i>
 
-<div class="cont_pinturaDetalle--img">
+<div class="cont_ponchoDetalle--img">
 	<img class="imagen_3" src="<?php echo base_url() . "assets/images/pinturas/" . $sliderPintura['nombre_ImgPintura'];?>"/>
 </div>
 <div class="cont_ponchoDetalle--leyenda">
