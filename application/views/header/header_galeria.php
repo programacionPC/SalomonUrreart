@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
     <head>
         <title><?php //echo NOMBRESITIO;?></title>
@@ -12,11 +12,11 @@
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=RLato|Raleway:400|Montserrat|Indie+Flower|Caveat'>
         
 		<!-- CDN iconos de font-awesome-->
-		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'/>
-    </head>
+		<!-- <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'/> -->
+    <!-- </head>
     <body>		
 		<header class="header--galeria">   
             <h1 class="header--galeria__h1">Watercolor</h1>
-        </header>
+        </header>  -->
 		
    <!-- No se cierrra la etiqueta <body> porque se cierra es el footer -->

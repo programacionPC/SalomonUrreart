@@ -9,12 +9,18 @@ class SalomonPanel_C extends CI_Controller {
 		$this->load->model('SalomonPanel_M');
 	}
 
-
 	public function index(){ 
 		//CONSULTA las coleciones del sitio web
 		$ColeccionesSalomon = $this->SalomonPanel_M->consultarcolecciones();
 		// echo '<pre>';
 		// print_r($ColeccionesSalomon);
+		// echo '</pre>';
+		// exit;
+
+		//CONSULTA las pinuras del sitio web
+		$PinturasSalomon = $this->SalomonPanel_M->consultarpinturas();
+		// echo '<pre>';
+		// print_r($PinturasSalomon);
 		// echo '</pre>';
 		// exit;
 
@@ -36,6 +42,7 @@ class SalomonPanel_C extends CI_Controller {
 			'datosArtista' => $PerfilSalomon, //ID_Coleccion, nombre_coleccion
 			'coleccionArtista' => $ColeccionesSalomon, //d
 			'datosPoncho' => $PonchosSalomon, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'datosPintura' => $PinturasSalomon //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
 		];
 	
 		$this->load->view('header/header_SoloEstilos');
@@ -94,7 +101,79 @@ class SalomonPanel_C extends CI_Controller {
 		
 		redirect('SalomonPanel_C');
 	}
+
+	public function recibePintura(){
+		if($_FILES['imagen_Pintura']["name"][0] != ""){
+			$Nombre_Pintura = $_POST['nombre_Pintura'];		
+			$Medidas_Pintura = $_POST['medidas_Pintura'];	
+			$Tecnica_Pintura = $_POST['tecnica_Pintura'];	
+			$nombre_ImgPintura = $_FILES['imagen_Pintura']['name'];
+			$tipo_ImgPintura = $_FILES['imagen_Pintura']['type'];
+			$tamanio_ImgPintura = $_FILES['imagen_Pintura']['size'];
+
+			// echo "Pintura: " . $Nombre_Pintura . '<br>';
+			// echo "Medidas Pintura: " . $Medidas_Pintura . '<br>';
+			// echo "Tecnica Pintura: " . $Tecnica_Pintura . '<br>';
+			// echo "nombre ImgPintura: " .  $nombre_ImgPintura . '<br>';
+			// echo "tipo_ImgPintura: " .  $tipo_ImgPintura . '<br>';
+			// echo "tamanio_ImgPintura: " .  $tamanio_ImgPintura . '<br>';
+			// exit;
+			
+			//Si existe imagen_Pintura y tiene un tamaño correcto se procede a recibirla y guardar en BD
+			if($Nombre_Pintura != ""){
+				//Usar en remoto
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/pinturas/';
+				
+				// usar en local
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/pinturas/';
+				
+				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
+				move_uploaded_file($_FILES['imagen_Pintura']['tmp_name'], $Directorio.$nombre_ImgPintura);
+
+				//Se INSERTA los datos del poncho en BD
+				$this->SalomonPanel_M->insertarPintura($Nombre_Pintura, $Medidas_Pintura, $Tecnica_Pintura, $nombre_ImgPintura, $tipo_ImgPintura, $tamanio_ImgPintura);
+			}
+		}
+
+		redirect('SalomonPanel_C');
+	}
 	
+	public function recibePoncho(){
+		if($_FILES['imagen_Poncho']["name"][0] != ""){
+			$Nombre_Poncho = $_POST['nombre_Poncho'];		
+			$Medidas_Poncho = $_POST['medidas_Poncho'];	
+			$Tecnica_Poncho = $_POST['tecnica_Poncho'];	
+			$nombre_ImgPoncho = $_FILES['imagen_Poncho']['name'];
+			$tipo_ImgPoncho = $_FILES['imagen_Poncho']['type'];
+			$tamanio_ImgPoncho = $_FILES['imagen_Poncho']['size'];
+
+			// echo "Nombre Poncho: " . $Nombre_Poncho . '<br>';
+			// echo "Medidas Poncho: " . $Medidas_Poncho . '<br>';
+			// echo "Tecnica sPoncho: " . $Tecnica_Poncho . '<br>';
+			// echo "nombre_ImgPoncho: " .  $nombre_ImgPoncho . '<br>';
+			// echo "tipo_ImgPoncho: " .  $tipo_ImgPoncho . '<br>';
+			// echo "tamanio_ImgPoncho: " .  $tamanio_ImgPoncho . '<br>';
+			// exit;
+			
+			//Si existe imagen_Poncho y tiene un tamaño correcto se procede a recibirla y guardar en BD
+			if($Nombre_Poncho != ""){
+				//Usar en remoto
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
+				
+				// usar en local
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
+				
+				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
+				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
+
+				//Se INSERTA los datos del poncho en BD
+				$this->SalomonPanel_M->insertarPoncho($Nombre_Poncho, $Medidas_Poncho, $Tecnica_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
+			}
+		}
+
+		redirect('SalomonPanel_C');
+	}
+
 	public function recibeSobreMi(){
 		$Perfil = $_POST['perfil'];		
 		$nombre_Fotografia = $_FILES['imagen_Perfil']['name'];
@@ -113,10 +192,10 @@ class SalomonPanel_C extends CI_Controller {
 		//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
 		if($nombre_Fotografia != ""){
 			//Usar en remoto
-			$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+			// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
 			
 			// usar en local
-			// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/';
+			$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/';
 			
 			//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 			move_uploaded_file($_FILES['imagen_Perfil']['tmp_name'], $Directorio.$nombre_Fotografia);
@@ -128,39 +207,6 @@ class SalomonPanel_C extends CI_Controller {
 		redirect('SalomonPanel_C');
 	}
 
-	public function recibePoncho(){
-		if($_FILES['imagen_Poncho']["name"][0] != ""){
-			$Nombre_Poncho = $_POST['nombre_Poncho'];		
-			$Medidas_Poncho = $_POST['medidas_Poncho'];	
-			$Tecnica_Poncho = $_POST['tecnica_Poncho'];	
-			$nombre_ImgPoncho = $_FILES['imagen_Poncho']['name'];
-			$tipo_ImgPoncho = $_FILES['imagen_Poncho']['type'];
-			$tamanio_ImgPoncho = $_FILES['imagen_Poncho']['size'];
-
-			// echo "Poncho: " . $Poncho . '<br>';
-			// echo "nombre_ImgPoncho: " .  $nombre_ImgPoncho . '<br>';
-			// echo "tipo_ImgPoncho: " .  $tipo_ImgPoncho . '<br>';
-			// echo "tamanio_ImgPoncho: " .  $tamanio_ImgPoncho . '<br>';
-			// exit;
-			
-			//Si existe imagen_Poncho y tiene un tamaño correcto se procede a recibirla y guardar en BD
-			if($Nombre_Poncho != ""){
-				//Usar en remoto
-				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
-				
-				// usar en local
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
-				
-				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
-				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
-
-				//Se INSERTA los datos del poncho en BD
-				$this->SalomonPanel_M->insertarPoncho($Nombre_Poncho, $Medidas_Poncho, $Tecnica_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
-			}
-		}
-
-		redirect('SalomonPanel_C');
-	}
 
 	public function PaginaInicio(){
 		require_once(APPPATH . 'controllers/Inicio_C.php');
@@ -174,6 +220,13 @@ class SalomonPanel_C extends CI_Controller {
 		$this->SalomonPanel_M->eliminarColeccion($ID_Coleccion);
 
 		redirect('');
+	}
+
+	public function eliminarPintura($ID_Pintura){
+		//Se ELIMINA el poncho en BD
+		$this->SalomonPanel_M->eliminar_Pintura($ID_Pintura);
+
+		redirect('SalomonPanel_C');
 	}
 
 	public function eliminarPoncho($ID_Poncho){
@@ -199,10 +252,10 @@ class SalomonPanel_C extends CI_Controller {
 			//Si existe foto_Producto y tiene un tamaño correcto se procede a recibirla y guardar en BD
 			if($Poncho != ""){
 				//Usar en remoto
-				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ponchos/';
 				
 				// usar en local
-				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ponchos/';
 				
 				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);

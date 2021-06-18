@@ -16,7 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
             <div class="ContenedorTitulo_secciones">
                 <ul class="ul--panel">
-                    <!-- <li><a class="li--Enlaces" href="#Colecciones">Pinturas</a></li> -->
+                    <li><a class="li--Enlaces" href="#Colecciones">Categoria de pinturas</a></li>
+                    <li><a class="li--Enlaces" href="#Pinturas">Pinturas</a></li>
                     <li><a class="li--Enlaces" href="#Galeria">Ponchos</a></li>
                     <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
                     <!-- <li><a class="li--Enlaces" href="#">Contacto</a></li> -->
@@ -28,14 +29,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
     
-    <!-- COLECCIONES -->
-    <!-- <fieldset class="fieldset_1 fieldset_3">
+    <!-- CATEGORIA DE PINTURAS -->
+    <fieldset class="fieldset_1 fieldset_3" id="Colecciones">
         <a id="Colecciones" class="ancla_2"></a>
-        <legend class="legend_1">Pinturas</legend>
-        <form action="<?php //echo base_url(); ?>SalomonPanel_C/recibeColecciones" method="POST" autocomplete="off">       
-            <!-- <div> -->
-                <!-- <div id="Contenedor_79">
-                    <!-- div a clonar sin eventos y oculto mediante z-index = -1 
+        <legend class="legend_1">Categoría de pinturas</legend>
+        <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeColecciones" method="POST" autocomplete="off">       
+            <div>
+                <div id="Contenedor_79">
+                    <!-- div a clonar sin eventos y oculto mediante z-index = -1  -->
                     <div class="contenedor_80A" id="Contenedor_80A">
                         <div class="contenedor_80C" id="Contenedor_80C">
                             <input class="input_13 input_13A input_12" type="text"/>
@@ -44,50 +45,108 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <input class="contador-coleccion contador_2--seccion" type="text" value="25"/>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- <div style="width:70%;" id="Contenedor_70A"> -->
+                    <div style="width:70%;" id="Contenedor_70A">
                         <?php   
                         // echo "<pre>";
-                        // print_r($Coleccion[0]);
+                        // print_r($coleccionArtista);
                         // echo "</pre>";
                         //Entra en el IF cuando no hay secciones creadas   
-                        // if($coleccionArtista == Array ( )){    ?>
-                            <!-- <div class="contenedor_80" id="Contenedor_80">
-                             <input class="input_13 input_13A input_12 borde_1 seccionesJS" type="text" name="coleccion[]" id="Coleccion" placeholder="Indica una nueva colección"/>
+                        if($coleccionArtista == Array ( )){    ?>
+                            <div class="contenedor_80" id="Contenedor_80">
+                             <input class="input_13 input_13A input_12 borde_1 seccionesJS" type="text" name="coleccion[]" id="Coleccion" placeholder="Indica una nueva categoría"/>
                                  <div id="EtiquetaIcono">
                                      <span class="span_10"><i class="fas fa-times contenedor_80--eliminar  span_14_js"></i><span> 
                                      <input class="contador-coleccion contador_JS" id="Contador_<?php //echo $Contador;?>" type="text" value="25"/>
                                  </div>
-                             </div> -->
+                             </div>
                             <?php
-                        // }   
-                        // else{  //Entra en el ELSE cuando hay secciones creadas  
-                        //     $Contador = 1;
-                        //     foreach($coleccionArtista as $row) :
-                        //         $ID_Coleccion = $row['ID_Coleccion'];
-                        //         $NombreColeccion = $row['nombre_coleccion'];
+                        }   
+                        else{  //Entra en el ELSE cuando hay secciones creadas  
+                            $Contador = 1;
+                            foreach($coleccionArtista as $row) :
+                                $ID_Coleccion = $row['ID_Coleccion'];
+                                $NombreColeccion = $row['nombre_coleccion'];
                                 ?>                                
-                                <!-- <div class="contenedor_80" id="Contenedor_80">
-                                    <input class="input_13 input_13A input_12 borde_1 seccionesJS" type="text" name="coleccion[]" id="Coleccion<?php //echo $Contador;?>" value="<?php //echo $NombreColeccion;?>" onblur="Llamar_ActualizarSeccion(this.value,'<?php //echo $ID_Coleccion;?>')"/>
+                                <div class="contenedor_80" id="Contenedor_80">
+                                    <input class="input_13 input_13A input_12 borde_1 seccionesJS" type="text" name="coleccion[]" id="Coleccion<?php echo $Contador;?>" value="<?php echo $NombreColeccion;?>" onblur="Llamar_ActualizarSeccion(this.value,'<?php echo $ID_Coleccion;?>')"/>
                                     <div style="width: 15%;"">
-                                        <span class="span_10"><i class="fas fa-times contenedor_80--eliminar  span_14_js" id="<?php //echo $ID_Coleccion;?>"></i><span> 
-                                        <input class="contador-coleccion contador_JS" id="Contador_<?php //echo $Contador;?>" type="text" value="25"/>
+                                        <span class="span_10"><i class="fas fa-times contenedor_80--eliminar  span_14_js" id="<?php echo $ID_Coleccion;?>"></i><span> 
+                                        <input class="contador-coleccion contador_JS" id="Contador_<?php echo $Contador;?>" type="text" value="25"/>
                                     </div>
-                                </div> -->
+                                </div>
                                 <?php
-                                // $Contador++;
-                        //     endforeach;   
-                        // }   ?>
-               <!--     </div>
+                                $Contador++;
+                            endforeach;   
+                        }   ?>
+               </div>
                 </div>
                 <div style="width: 70%;">
-                    <label class="label_4" id="Label_5">Añadir colección</label>
+                    <label class="label_4" id="Label_5">Añadir categoría</label>
                 </div>
             </div> 
-            <input class="label_4" type="submit" value="Guardar colecciones"/>
+            <input class="label_4" type="submit" value="Guardar categorías"/>
         </form>
-    </fieldset> -->
+    </fieldset>
+
+    <!-- AÑADIR PINTURAS -->
+    <fieldset class="fieldset_1 fieldset_3" id="Pinturas"> 
+        <legend class="legend_1">Pinturas</legend>
+        <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePintura" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <div id="muestrasImg_2"></div> 
+                <p class="p_5">Añadir imagenes no mayores a 5 Mb de peso</p> 
+                <div>
+                    <?php 
+                    if(!isset($datosPintura['nombre_ImgPintura'])){
+                        $datosPintura['nombre_ImgPintura'] = 'imagen.png';
+                    }?>
+                    <input class="input_1" type="text" name="nombre_Pintura" placeholder="Nombre de la obra"/>
+                    <br>
+                    <input class="input_1" type="text" name="medidas_Pintura" placeholder="Medidas de la obra"/>
+                    <br>
+                    <input class="input_1" type="text" name="tecnica_Pintura" placeholder="Tecnica de la obra"/>
+                    <br>
+                    <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
+                    <label class="label_1" for="Etiqueta_ImgPintura">Añadir imagen</label>
+                    <input class="ocultar" type="file" name="imagen_Pintura" id="Etiqueta_ImgPintura"/>                  
+                    </div>
+                </div>   
+            </div>   
+            <input class="label_4" type="submit" value="Guardar pintura"/>
+        </form>
+
+        <div class="cont_muestrasImgPanel">
+            <?php 
+            $ContadorPintura = 1;
+            foreach($datosPintura as $Row) :                
+                $file_data = array(
+                'ID_Pintura' => isset($Row['ID_Pintura']) ? $Row['ID_Pintura'] : '',
+                'Nombre_Pintura' => isset($Row['nombre_pintura']) ? $Row['nombre_pintura'] : '', 
+                'Medida_Pintura' => isset($Row['medida_pintura']) ? $Row['medida_pintura'] : '', 
+                'Tecnica_Pintura' => isset($Row['tecnica_pintura']) ? $Row['tecnica_pintura'] : '', 
+                'Nombre_ImgPintura' => isset($Row['nombre_ImgPintura']) ? $Row['nombre_ImgPintura'] : '',   
+                );  
+                ?>
+                <div class="cont_muestrasImgPanel--flex" id="<?php echo 'EliminarPintura_' . $ContadorPintura;?>">
+                    <div class="cont_muestrasImgPanel--flex__div-1">
+                        <img class="imagen_2" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $file_data['Nombre_ImgPintura']?>"/>    
+                    </div>
+                    <div>
+                        <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Pintura'];?>"/>
+                        <br>
+                        <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Medida_Pintura'];?>"/>
+                        <br>
+                        <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Tecnica_Pintura'];?>"/>
+                        <br>
+                        <label class="label_1" onclick="eliminarPintura(<?php echo 'EliminarPintura_' . $ContadorPintura;?>, <?php echo $file_data['ID_Pintura'];?>)">Eliminar</label>
+                    </div> 
+                </div>
+                <?php                
+                $ContadorPintura ++;
+            endforeach;   ?>
+        </div> 
+    </fieldset> 
 
     <!-- PONCHOS -->
     <fieldset class="fieldset_1 fieldset_3" id="Galeria"> 
@@ -145,8 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $Contador ++;
             endforeach;   ?>
         </div>
-    </fieldset> 
-  
+    </fieldset>   
         
     <!-- SOBRE MI -->    
     <fieldset class="fieldset_1 fieldset_3" id="SobreMi">
@@ -192,6 +250,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         // Código a ejecutar cuando se detecta un cambio de imagen de tienda
         var id_Label = $('#Blah_1');
         readImagePoncho(this, id_Label);
+    });
+
+    // *****************************************************************************************
+    //Da una vista previa de las pinturas
+    function readImagePintura(input, id_Label){
+        console.log("______Desde readImagePintura()______", input + ' | ' + id_Label)
+        if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                id_Label.attr('src', e.target.result); //Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }        
+    $("#Etiqueta_ImgPintura").change(function(){
+        console.log("Desde cargar poncho")
+        // Código a ejecutar cuando se detecta un cambio de imagen de tienda
+        var id_Label = $('#Img_Pinturas');
+        readImagePintura(this, id_Label);
     });
 
     // *****************************************************************************************

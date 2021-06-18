@@ -16,11 +16,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="ContenedorTitulo_secciones">
                 <ul class="ul--panel">
                     <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
-					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_2">Fauna</a></li>
 						</ul> 	
-					</li> -->
+					</li>
                     <li><a class="li--Enlaces" href="#Seccion_3">PONCHOS</a></li>
 					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
@@ -38,8 +38,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<!-- PINTURAS -->
-	<div  id="Seccion_2"> <!--class="contenedor_3"--->
-		<!-- <h1 style="color: white; ">PINTURAS -- fauna</h1> -->
+	<div class="contenedor_3" id="Seccion_2"> 
+		<div class="cont_galeria--principal">
+			<!-- <i class="fas fa-times-circle cont_Galeria--icono_1" id="Cerrar"></i> -->
+			<div class="cont_galeria" id="Cont_galeria">
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img imagen_2--JS" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Buho" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="v" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Lapa" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Camaleon" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Salomon_1" src="<?php echo base_url();?>assets/images/Salomon_1.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Salomon_2" src="<?php echo base_url();?>assets/images/Salomon_2.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Salomon_3" src="<?php echo base_url();?>assets/images/Salomon_3.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="DSC_9538-45_2" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img"  id="Buho_2" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
+				</div>
+				<div class="cont_Galeria--item">
+					<img class="cont_Galeria--img" id="Camaleon_2" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- PONCHOS -->
@@ -66,32 +109,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div> -->
 
 	<!-- SOBRE MI -->
-	<div  class="contenedor_4" id="Seccion_5">
-		<div class="contenedor_4--flex" id="Seccion_5a">
-			<div class="contenedor_4__div1">
-				<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
-			</div>
-			<div class="contenedor_4__div2">
-				<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
-				<div class="contenedor_4--redes">
-					<div>
-						<i class="fab fa-facebook contenedor_4--icono_2"></i>
-					</div>
-					<div>
-						<i class="fab fa-pinterest contenedor_4--icono_2"></i>
-					</div>
-					<div>
-						<i class="fab fa-instagram contenedor_4--icono_2"></i>
-					</div>
-					<div>
-						<i class="fas fa-envelope contenedor_4--icono_2"></i>
-					</div>
-					<div>
-						<i class="fab fa-whatsapp contenedor_4--icono_2"></i>
-					</div>
-					<div>
-						<i class="fab fa-twitter contenedor_4--icono_2"></i>
-					</div>
+	<div class="contenedor_4--flex" id="Seccion_5">
+		<div class="contenedor_4__div1">
+			<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
+		</div>
+		<div class="contenedor_4__div2">
+			<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
+			<div class="contenedor_4--redes">
+				<div>
+					<i class="fab fa-facebook contenedor_4--icono_2"></i>
+				</div>
+				<div>
+					<i class="fab fa-pinterest contenedor_4--icono_2"></i>
+				</div>
+				<div>
+					<i class="fab fa-instagram contenedor_4--icono_2"></i>
+				</div>
+				<div>
+					<i class="fas fa-envelope contenedor_4--icono_2"></i>
+				</div>
+				<div>
+					<i class="fab fa-whatsapp contenedor_4--icono_2"></i>
+				</div>
+				<div>
+					<i class="fab fa-twitter contenedor_4--icono_2"></i>
 				</div>
 			</div>
 		</div>

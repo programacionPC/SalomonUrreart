@@ -13,7 +13,7 @@
             $Host= 'localhost';
             $Usuario= 'root';
             $Password= '';
-            $Nombre_base= 'galeriaSalomon';
+            $Nombre_base= 'galeriasalomon';
 
             
             $dsn= "mysql:host=" . $Host . ";dbname=" . $Nombre_base;
@@ -73,9 +73,6 @@
 
 // ********************************************************************************************************
 // ********************************************************************************************************
-
-
-
         //SELECT del perfil 
         public function consultarPerfilSalomon(){
             $stmt = $this->dbh->query("SELECT perfil, nombre_Fotografia FROM artista ORDER BY ID_Artista DESC

@@ -30,6 +30,31 @@ function conexionAJAX(){
     } 
 
 // *************************************************************************************************
+    //Elimina un pintura
+    function llamar_eliminarPintura(ID_Pintura){
+        console.log("______Desde llamar_eliminarPintura()______", ID_Pintura)
+        
+        var url = "SalomonPanel_C/eliminarPintura/" + ID_Pintura
+        http_request.open('GET', url, true)  
+        peticion.onreadystatechange = respuesta_eliminarPintura
+        peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
+        peticion.send("null")
+    }                                                                        
+    function respuesta_eliminarPintura(){
+        if(peticion.readyState == 4){
+            if(peticion.status == 200){  
+                //No hace falta traer una respuesta del servidor, la operacion se hace y ya
+            } 
+            else{
+                alert('Problemas con la petición.')
+            }
+        }
+        else{ //en caso contrario, mostramos un gif simulando una precarga
+            // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
+        }
+    }
+
+// *************************************************************************************************
     //Elimina un poncho
     function llamar_eliminarPoncho(ID_Poncho){
         console.log("______Desde llamar_eliminarPoncho()______", ID_Poncho)
@@ -57,19 +82,19 @@ function conexionAJAX(){
 // *************************************************************************************************
     //Elimina una seccion
     function Llamar_EliminarSeccion(ID_Coleccion, CantSeccion){
-        console.log("______Desde Llamar_EliminarSeccion()______", ID_Coleccion + " / " + CantSeccion)
+        // console.log("______Desde Llamar_EliminarSeccion()______", ID_Coleccion + " / " + CantSeccion)
         
         //Si hay una sola sección se detiene el proceso de eliminación
-        if(CantSeccion == 1){
-            return
-        }
-        else{
+        // if(CantSeccion == 1){
+        //     return
+        // }
+        // else{
             var url = "SalomonPanel_C/eliminarColeccion/" + ID_Coleccion
             http_request.open('GET', url, true)  
             peticion.onreadystatechange = respuesta_EliminarSeccion
             peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
             peticion.send("null")
-        }
+        // }
     }                                                                        
     function respuesta_EliminarSeccion(){
         if(peticion.readyState == 4){

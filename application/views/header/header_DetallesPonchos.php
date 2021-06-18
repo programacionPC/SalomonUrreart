@@ -23,11 +23,11 @@
 			<nav id="MenuResponsive" class="header__menuResponsive">						
 				<ul id="MenuContenedor">
 					<li><a class="header__a li--Enlaces" href="../../Inicio_C">Inicio</a></li>
-					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Pinturas</a>
+					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Pinturas</a>
 						<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_3">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_2">Fauna</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="../../Inicio_C#Seccion_2">Fauna</a></li>
 						</ul> 	
-					</li> -->
+					</li>
 					<li><a class="header__a li--Enlaces" href="../../Inicio_C#Seccion_3">Ponchos</a></li>
 					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Encargos</a>
 						<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_4">

@@ -1,4 +1,4 @@
-// document.getElementById("Label_5").addEventListener('click', clonarSeccion, false)
+document.getElementById("Label_5").addEventListener('click', clonarSeccion, false)
 
 document.addEventListener("DOMContentLoaded", function(){autosize('ContenidoPerfil')}, false) 
 document.addEventListener("DOMContentLoaded", function(){resize('ContenidoPerfil')}, false) 
@@ -14,6 +14,7 @@ document.getElementById("ContenidoPerfil").addEventListener('keyup', function(){
 document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){autosize('ContenidoPerfil')}, false)
 
 //************************************************************************************************
+
     //Indica la cantidad de caracteres que quedan mientras se escribe
     function contarCaracteres(ID_Contador, ContenidoPerfil, Max){
         // console.log("______Desde contarCaracteres()______", ID_Contador + " / " + ContenidoPerfil + " / " + Max) 
@@ -116,10 +117,10 @@ document.getElementById("ContenidoPerfil").addEventListener('keydown', function(
         Div_clon.getElementsByClassName("input_12")[0].value = "" 
 
         //El placeholder del nuevo input 
-        Div_clon.getElementsByClassName("input_12")[0].placeholder="Indica una colección"
+        Div_clon.getElementsByClassName("input_12")[0].placeholder="Indica una categoría"
         
         //Se da un ID al input contador
-        Div_clon.getElementsByClassName("contador_2--coleccion")[0].id = 'Contador_' + incrementoSeccion 
+        // Div_clon.getElementsByClassName("contador_2--coleccion")[0].id = 'Contador_' + incrementoSeccion 
         
         //Se especifica el div padre, donde se insertará el nuevo nodo (aparecerá de ultimo)
         Padre.appendChild(Div_clon)
@@ -128,6 +129,16 @@ document.getElementById("ContenidoPerfil").addEventListener('keydown', function(
 
 //************************************************************************************************
 //ELIMINAR COLECCIONES
+
+            //*********DEBUG *************DEBUG *****************DEBUG **************
+            //Función autoejecuble que oculta el menu horizontal
+            // var ImagenesGaleria = (function(){ 
+            //     let Padrecolecciones = document.getElementById("Contenedor_70A")
+            //     console.log("Contenedor padre= ", Padrecolecciones)
+            //     console.log("Elementos en contenedor padre= ", Padrecolecciones.childElementCount)
+            // })();
+            //*********DEBUG *************DEBUG *****************DEBUG **************
+
 //Por medio de delegación de eventos se detecta la coleccion a eliminar
 window.addEventListener('click', function(e){
     // console.log("______Desde funcion anonima que aplica listerner para eliminar colecciones______")
@@ -145,10 +156,10 @@ window.addEventListener('click', function(e){
         if(ConfirmaEliminar == true){            
             //Contenedor padre de colecciones
             let Padrecolecciones = document.getElementById("Contenedor_70A")
-            console.log("Elementos en contenedor padre= ", Padrecolecciones.childElementCount)
+            // console.log("Contenedor padre= ", Padrecolecciones)
             
             //Si hay más de una coleccion la elimina
-            if(Padrecolecciones.childElementCount >= 3){
+            if(Padrecolecciones.childElementCount > 1){
                 console.log("Entra en el IF");
                 // Se obtiene el elemento padre donde se encuentra el boton donde se hizo click
                 current_1 = e.target.parentElement
@@ -179,6 +190,26 @@ window.addEventListener('click', function(e){
     }  
 }, false)
 
+//************************************************************************************************
+function eliminarPintura(ID_Javascript, ID_PHP){
+    console.log(ID_Javascript)
+
+    //Se obtiene el elemento a eliminar
+    // elementoEliminar = document.getElementById(ID_Javascript) 
+    console.log("div a eliminar", ID_Javascript)
+
+    // Se obtiene el elemento padre donde se encuentra el poncho donde se hizo click
+    elementoPadre = ID_Javascript.parentElement
+    console.log("elemento padre", elementoPadre)
+
+    //Se elimina la sección
+    elementoPadre.removeChild(ID_Javascript)  
+
+    //Se elimina de la BD
+    llamar_eliminarPintura(ID_PHP)
+}
+
+//************************************************************************************************
 function eliminarPoncho(ID_Javascript, ID_PHP){
     console.log(ID_Javascript)
 

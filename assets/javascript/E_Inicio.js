@@ -158,6 +158,17 @@ document.getElementById("Seccion_3a").addEventListener('click', function(e){
 }, false)
 
 //************************************************************************************************
+//Por medio de delegación de eventos se detectan las pinturas para ver sus detalles
+document.getElementById("Cont_galeria").addEventListener('click', function(e){
+    if(e.target.classList[1] == "imagen_2--JS"){
+        var ID_Pintura = e.target.id
+        console.log(ID_Pintura)
+        
+        window.location.replace("DetallePintura_C/index/" + ID_Pintura);
+    }
+}, false)
+
+//************************************************************************************************
 //Se muestran elementos progresivamnete con efecto de animación segun se haga scroll
 window.addEventListener("scroll",function(){
     //Se consulta la distancia en px desde el top de la pantalla hasta el borde inferior de cada sección
@@ -186,23 +197,21 @@ window.addEventListener("scroll",function(){
     // console.log("Altura seccion_4 = ", AlturaSeccion_4)
     if(DistanciaBottomSeccion_2 < AlturaSeccion_2/2){
         document.querySelectorAll(".contenedor_2__div")[0].classList.add("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[1].classList.add("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[2].classList.add("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[3].classList.add("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[1].classList.add("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[2].classList.add("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[3].classList.add("contenedor_2__div--animado_1")
     }
     else{
         document.querySelectorAll(".contenedor_2__div")[0].classList.remove("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[1].classList.remove("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[2].classList.remove("contenedor_2__div--animado_1")
-        document.querySelectorAll(".contenedor_2__div")[3].classList.remove("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[1].classList.remove("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[2].classList.remove("contenedor_2__div--animado_1")
+        // document.querySelectorAll(".contenedor_2__div")[3].classList.remove("contenedor_2__div--animado_1")
     }
     if(DistanciaBottomSeccion_3 <  AlturaSeccion_3/3){   
-        console.log("HOLA")
-        document.getElementById("Seccion_5a").classList.add("contenedor_4-flex--animado")
+        // document.getElementById("Seccion_5a").classList.add("contenedor_4-flex--animado")
     }
     else{     
-        document.getElementById("Seccion_5a").classList.remove("contenedor_4-flex--animado")
-        console.log("ADIOS")
+        // document.getElementById("Seccion_5a").classList.remove("contenedor_4-flex--animado")
     }
     // if(DistanciaBottomSeccion_4 <  AlturaSeccion_4/1.4){   
     //     document.getElementById("Seccion_5a").classList.add("contenedor_4__div--animado")
