@@ -41,47 +41,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- PINTURAS -->
 	<div class="contenedor_3" id="Seccion_2"> 
 		<div class="cont_galeria--principal">
-			<!-- <div class="cont_galeria" id="Cont_galeria">
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '1'?>" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '2'?>" src="<?php echo base_url();?>assets/images/Buho.jpg" alt="Buho"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '3'?>" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Lapa" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Camaleon" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_1" src="<?php echo base_url();?>assets/images/Salomon_1.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_2" src="<?php echo base_url();?>assets/images/Salomon_2.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_3" src="<?php echo base_url();?>assets/images/Salomon_3.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="DSC_9538-45_2" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy"  id="Buho_2" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
-				</div>
-				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Camaleon_2" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
-				</div>
-			</div> -->
 			<div class="cont_galeria" id="Cont_galeria">	
 				<?php 
 				foreach($Pinturas as $RowPinturas){
