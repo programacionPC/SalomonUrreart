@@ -296,13 +296,6 @@ hr{
 .cont_Galeria--img{
 	width: 100%;
 }
-.cont_Galeria--icono_1{
-	font-size: 2.2em;
-	position: fixed;
-	left: 96%;
-	top: 1%;
-	cursor: pointer;
-}
 .cont_muestrasImgPanel{
 	padding: 1%;
 	border-radius: 10px;
@@ -577,8 +570,6 @@ hr{
 	display: inline-block;
 }
 .input_13{/*salomonpanel*/
-	/* font-size: 1.3em; */
-	/* line-height: 30px; */
 	padding-left: 5%;
 	width: 100%;
 	margin: 1% auto 2% auto;

@@ -2,12 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+
 <div>
 <!-- PORTADA -->
 	<div class="contenedor_1" id="Seccion_1">
 		<div class="ContenedorTitulo">
 			<div class="ContenedorTitulo_div1">
-				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
+				<img class="imagen--portada" loading="lazy" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
 			</div>
 			<div class="ContenedorTitulo_div2">
 				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
@@ -40,46 +41,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- PINTURAS -->
 	<div class="contenedor_3" id="Seccion_2"> 
 		<div class="cont_galeria--principal">
-			<!-- <i class="fas fa-times-circle cont_Galeria--icono_1" id="Cerrar"></i> -->
 			<div class="cont_galeria" id="Cont_galeria">
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img imagen_2--JS" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '1'?>" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Buho" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '2'?>" src="<?php echo base_url();?>assets/images/Buho.jpg" alt="Buho"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="v" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '3'?>" src="<?php echo base_url();?>assets/images/Pajaro.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Lapa" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Lapa" src="<?php echo base_url();?>assets/images/Lapa.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Camaleon" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Camaleon" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Salomon_1" src="<?php echo base_url();?>assets/images/Salomon_1.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_1" src="<?php echo base_url();?>assets/images/Salomon_1.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Salomon_2" src="<?php echo base_url();?>assets/images/Salomon_2.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_2" src="<?php echo base_url();?>assets/images/Salomon_2.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Salomon_3" src="<?php echo base_url();?>assets/images/Salomon_3.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Salomon_3" src="<?php echo base_url();?>assets/images/Salomon_3.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Pavoreal" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="DSC_9538-45_2" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="DSC_9538-45_2" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img"  id="Buho_2" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy"  id="Buho_2" src="<?php echo base_url();?>assets/images/Buho.jpg"/>
 				</div>
 				<div class="cont_Galeria--item">
-					<img class="cont_Galeria--img" id="Camaleon_2" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
+					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Camaleon_2" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
 				</div>
 			</div>
 		</div>
@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$Nombre_Poncho = $Row['nombrePoncho'];            
 				$Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
 				<div class="contenedor_2__div Poncho_JS"">
-					<img class="imagen_1" id="<?php echo $ID_Poncho?>" src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>"/>
+					<img class="imagen_1" id="<?php echo $ID_Poncho?>" loading="lazy" src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>"/>
 					<h1 class="h1_1"><?php echo $Nombre_Poncho;?></h1> 
 				</div>
 				<?php
@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- SOBRE MI -->
 	<div class="contenedor_4--flex" id="Seccion_5">
 		<div class="contenedor_4__div1">
-			<img class="contenedor_4__div1__img" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
+			<img class="contenedor_4__div1__img" loading="lazy" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>"/>
 		</div>
 		<div class="contenedor_4__div2">
 			<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
@@ -149,7 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="cont_contacto">
 		<div class="ContenedorTitulo" id="Seccion_7">
 			<div class="ContenedorTitulo_div1">
-				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
+				<img class="imagen--portada" loading="lazy" src="<?php echo base_url();?>assets/images/Pavoreal.jpg"/>
 			</div>
 			<div class="ContenedorTitulo_div2  cont_contacto--titulo">
 				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
@@ -172,5 +172,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
 <script src="<?php echo base_url();?>assets/javascript/E_Inicio.js?v=<?php echo rand();?>"></script> 
-<!-- <script src="<?php echo base_url();?>assets/javascript/A_Inicio.js?v=<?php echo rand();?>"></script>  -->
 
+</body>
+</html>

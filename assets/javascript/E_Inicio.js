@@ -17,12 +17,10 @@ var ImagenesGaleria = (function(){
 var ImagenesGaleria = (function(){ 
     let ProfundidadImagen_2 = document.getElementById("Seccion_1")
         let A = ProfundidadImagen_2.getBoundingClientRect().top
-        console.log(A)
     if(A == 0){
         document.getElementById("Header").style.display = "none" 
     }
     else{
-        console.log("ENTRA EN EL ELSE")
         document.getElementById("Header").style.display = "block" 
     }
 })();
@@ -162,7 +160,7 @@ document.getElementById("Seccion_3a").addEventListener('click', function(e){
 document.getElementById("Cont_galeria").addEventListener('click', function(e){
     if(e.target.classList[1] == "imagen_2--JS"){
         var ID_Pintura = e.target.id
-        console.log(ID_Pintura)
+        console.log("ID_Pintura", ID_Pintura)
         
         window.location.replace("DetallePintura_C/index/" + ID_Pintura);
     }
