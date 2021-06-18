@@ -91,4 +91,10 @@
             $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        //SELECT de las pinturas
+        public function consultarPinturasSalomon(){
+            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }

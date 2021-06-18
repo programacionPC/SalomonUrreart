@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- PINTURAS -->
 	<div class="contenedor_3" id="Seccion_2"> 
 		<div class="cont_galeria--principal">
-			<div class="cont_galeria" id="Cont_galeria">
+			<!-- <div class="cont_galeria" id="Cont_galeria">
 				<div class="cont_Galeria--item">
 					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="<?php echo '1'?>" src="<?php echo base_url();?>assets/images/DSC_9538-45.jpg"/>
 				</div>
@@ -81,6 +81,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="cont_Galeria--item">
 					<img class="cont_Galeria--img imagen_2--JS" loading="lazy" id="Camaleon_2" src="<?php echo base_url();?>assets/images/Camaleon.png"/>
 				</div>
+			</div> -->
+			<div class="cont_galeria" id="Cont_galeria">	
+				<?php 
+				foreach($Pinturas as $RowPinturas){
+					$ID_Pintura = $RowPinturas['ID_Pintura']; 
+					$Nombre_Pintura = $RowPinturas['nombre_pintura'];            
+					$Nombre_ImgPintura = $RowPinturas['nombre_ImgPintura']  ?>
+					<div class="cont_Galeria--item"">
+						<img class="cont_Galeria--img imagen_2--JS" id="<?php echo $ID_Pintura?>" loading="lazy" src="<?php echo base_url() . "assets/images/pinturas/" . $Nombre_ImgPintura;?>"/>
+					</div>
+					<?php
+				}   ?>
 			</div>
 		</div>
 	</div>

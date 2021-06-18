@@ -24,8 +24,8 @@
 	}
 ?>
 
-<i class="fas fa-chevron-left cont_pinturaDetalle--iconoLeft primerPintura" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Retroceder')">hola</i>
-<i class="fas fa-chevron-right cont_pinturaDetalle--iconoRight ultimoPintura" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Avanzar')">Adios</i>
+<i class="fas fa-chevron-left cont_pinturaDetalle--iconoLeft primerPintura" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Retroceder')"></i>
+<i class="fas fa-chevron-right cont_pinturaDetalle--iconoRight ultimoPintura" onclick="Llamar_sliderPintura('<?php echo $sliderPintura['ID_Pintura'];?>', 'Avanzar')"></i>
 
 <div class="cont_pinturaDetalle--img">
 	<img class="imagen_3" src="<?php echo base_url() . "assets/images/pinturas/" . $sliderPintura['nombre_ImgPintura'];?>"/>
