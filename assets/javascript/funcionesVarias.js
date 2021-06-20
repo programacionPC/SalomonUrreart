@@ -1,5 +1,5 @@
 
-// document.getElementById('Icono_3').addEventListener('click', mostrarMenu);
+document.getElementById('Icono_3').addEventListener('click', mostrarMenu);
 
 //************************************************************************************************
     //obtiendo informacion del DOM para identificar el elemento donde se hizo click 

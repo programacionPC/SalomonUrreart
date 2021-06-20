@@ -1,27 +1,30 @@
 document.addEventListener("DOMContentLoaded", function(){resize('Cont_Perfil')}, false) 
 
-
 //************************************************************************************************ 
-//Función autoejecuble que oculta el menu horizontal
+//Función autoejecuble solo en PC, que oculta el menu horizontal en la primera seccion
 var ImagenesGaleria = (function(){ 
-    let ProfundidadImagen_2 = document.getElementById("Seccion_2")
-        let A = ProfundidadImagen_2.getBoundingClientRect().top
-        
-    if(A <= 620 ){
-        document.getElementById("Header").style.display = "none" 
+    if(screen.width > 1024){ 
+        let ProfundidadImagen_2 = document.getElementById("Seccion_2")
+            let A = ProfundidadImagen_2.getBoundingClientRect().top
+            
+        if(A <= 620 ){
+            document.getElementById("Header").style.display = "none" 
+        }
     }
 })();
 
 //************************************************************************************************ 
-//Función autoejecuble que muestra el menu horizontal cuando se vienen de header_DetallesPonchos.php
+//Función autoejecuble solo en PC, que muestra el menu horizontal cuando se vienen de header_DetallesPonchos.php
 var ImagenesGaleria = (function(){ 
-    let ProfundidadImagen_2 = document.getElementById("Seccion_1")
-        let A = ProfundidadImagen_2.getBoundingClientRect().top
-    if(A == 0){
-        document.getElementById("Header").style.display = "none" 
-    }
-    else{
-        document.getElementById("Header").style.display = "block" 
+    if(screen.width > 1024){ 
+        let ProfundidadImagen_2 = document.getElementById("Seccion_1")
+            let A = ProfundidadImagen_2.getBoundingClientRect().top
+        if(A == 0){
+            document.getElementById("Header").style.display = "none" 
+        }
+        else{
+            document.getElementById("Header").style.display = "block" 
+        }
     }
 })();
 
@@ -220,11 +223,12 @@ window.addEventListener("scroll",function(){
 })
 
 //************************************************************************************************ 
-    //ajusta la altura de un texarea con respecto al contenido que trae de la BD
-    function resize(id){
-        let text = document.getElementById(id);
-        text.style.height = 'auto';
-        text.style.height = text.scrollHeight + 'px';
-    }
+//ajusta la altura de un texarea con respecto al contenido que trae de la BD
+function resize(id){
+    console.log("_____ Desde resize _____", id)
+    let text = document.getElementById(id);
+    text.style.height = 'auto';
+    text.style.height = text.scrollHeight + 'px';
+}
 
 //************************************************************************************************

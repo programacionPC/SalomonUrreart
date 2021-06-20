@@ -9,7 +9,6 @@
         display: block;
         width: 100%;
         height: initial;
-        margin-bottom: 20%;
         padding-top: 25%;
     }
     .contenedor_2--secundario{
@@ -20,6 +19,9 @@
         height: 60vh;
         margin: auto;
         margin-bottom: 30%;
+    }
+    .contenedor_2a{
+        padding-bottom: 5%;
     }
     .contenedor_4--flex{/*inicio*/
         padding-top: 5%;
@@ -33,6 +35,9 @@
         width: 100%;
         height: initial;
         padding: 5%;
+    }
+    .contenedor_4__div2--textarea_1{
+        /* height: max-content !important; */
     }
     .contenedor_4--redes{
         justify-content: space-between;
@@ -53,6 +58,59 @@
         /* column-gap: 15px;
         column-fill: balance ; */
     }
+    .cont_Formulario{/*inicio*/
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        width: 80%;
+    }
+    .cont_Formulario--input{/*inicio*/
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 1.3em;
+        font-weight: bold;
+        color: black;
+        width: 100%;
+    }
+    .cont_Formulario--textarea{/*inicio*/
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 1.3em;
+        font-weight: bold;
+        color: black;
+        width: 100%;
+    }
+    .cont_ponchoDetalle{
+        width: 100%;
+        display: block;
+        padding-top: 15%;
+    }
+    .cont_ponchoDetalle--img{
+        margin-top: 0%;
+        width: 100%;
+        height: auto;
+    }
+    .cont_ponchoDetalle--iconoLeft{
+        font-size: 1.5em;
+    }
+    .cont_ponchoDetalle--iconoRight{
+        font-size: 1.5em;
+        left: 92%;
+    }
+    .cont_ponchoDetalle--leyenda{
+        background-color:rgba(45, 40, 38, 0.6) ;
+        width: 100%;
+        position: fixed;
+        top: 85%; 
+        left: 0%;
+        /* height: 80px; */
+    }
+    .cont_ponchoDetalle--h1{
+        font-size: 1.7em;
+        padding-left: 3%;
+    }
+    .cont_ponchoDetalle--p1{
+        font-size: 1.1em;
+        padding-left: 3%;
+    }
     .ContenedorTitulo{
         background: linear-gradient(to left, rgba(45, 40, 38, 0), rgba(255, 255, 255, 0));
         width: 100%;
@@ -63,17 +121,27 @@
     }
     .ContenedorTitulo_div1{
         width:100%;
-    } 
-    .ContenedorTitulo--h1_1{
+    }  
+    .ContenedorTitulo_div2{/*inicio*/
+        background-color: rgba(45, 40, 38, 0.6);
+        /* border-top-left-radius: 100px 40px;
+        border-top-right-radius: 100px 40px ; */
         position: absolute;
         width: 100%;
-        bottom: 15pt;
+        height: 10%;
+        bottom: 0pt;
+        padding-top: 0%;
+    } 
+    .ContenedorTitulo_div2--sinfondo{/*inicio*/
+        background-color: rgba(45, 40, 38, 0);
+    }
+    .ContenedorTitulo--h1_1{/*inicio*/
+        position: relative;
         font-size: 2em;
     }
-    .ContenedorTitulo--h2_1{
-        position: absolute;
-        width: 100%;
-        bottom: 2pt;
+    .ContenedorTitulo--h2_1{/*inicio*/
+        position: relative;
+        bottom: 5pt;
         font-size: 1em;
     }
     .ContenedorTitulo--h3_1{
@@ -86,19 +154,23 @@
         bottom: 0pt;
         left: 0%;
     }
-    .header{/*header*/
+    .ContenedorTitulo_secciones{/*inicio*/
+        display: none;
+    }  
+    .header{/*header_inicio*/
         background-color: initial;
         display: block;
         height: 45px;
     }
-    .header__a{/*header*/
+    .header__a{/*header_inicio*/
         width: 100%;
     }
-    .header--menu{/*inicio*/
+    .header--menu{/*header_inicio*/
         display: block;
         position: absolute;
         top: 15%;
         left: 90%;
+        z-index: 5;
     }
     .header__menuResponsive{/*Todas las páginas*/
         background-color: rgba(0, 0, 0, 0.8);
@@ -136,8 +208,8 @@
         font-size: 1.2em;
         width: 100%;
     }
-    .icono_3{
-        color: white;
+    .icono_3{/*header_inicio*/
+        color: white !important;
         font-size: 1.5em;
     }
     .imagen_1{
@@ -172,5 +244,9 @@
     }
     .menuLi_2{/*header_AfiCom*/
         padding-top: 0%;
+    }
+    .ul--menu{/*header_inicio*/
+        padding-top: 1%;
+        margin-left: 40% !important;
     }
 }
