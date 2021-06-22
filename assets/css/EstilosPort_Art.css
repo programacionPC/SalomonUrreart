@@ -258,7 +258,7 @@ hr{
 	font-size: 1.4em;
 }
 .cont_ponchoDetalle--iconoLeft{
-	color: white;
+	color: rgba(255, 255, 255, 0.7);
 	font-size: 2em;
 	position: absolute;
 	z-index: 1;
@@ -267,7 +267,7 @@ hr{
 	cursor: pointer;
 }
 .cont_ponchoDetalle--iconoRight{
-	color: white;
+	color: rgba(255, 255, 255, 0.7);
 	font-size: 2em;
 	position: absolute;
 	z-index: 1;
@@ -354,24 +354,25 @@ hr{
 .ContenedorTitulo{
 	background-color: rgb(16, 20, 23);
     width: 100%;
-	display: flex;
+	/* display: flex; */
 	justify-content: space-between;
 	height: 100vh;
     text-align: center;
 }
 .ContenedorTitulo_div1{
 	overflow: hidden; 
-	width: 60%;
+	width: 100%;
 } 
 .ContenedorTitulo_div2{/*inicio*/
+	position: absolute;
 	width: 40%;
 	height: 15%;
-	margin-top: 3%;
+	top: 3%;
 }
 .ContenedorTitulo_secciones{/*inicio*/
 	position: absolute;
 	top: 30%;
-	left: 60%;
+	/* left: 60%; */
 	width: 30%;
 }  
 .ContenedorTitulo--h1_1{

@@ -6,8 +6,8 @@
 		<meta http-equiv="content-type"  content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/EstilosPort_Art.css"/>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/MediaQuery_EstilosPort_Art_800.css"/>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/EstilosPort_Art.css?v=<?php echo rand();?>"/>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/MediaQuery_EstilosPort_Art_800.css?v=<?php echo rand();?>"/>
 		
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=RLato|Raleway:400|Montserrat|Gruppo'>
         
