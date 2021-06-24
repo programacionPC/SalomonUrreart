@@ -37,7 +37,7 @@
 					</li> -->
                     <li><a class="li--Enlaces" href="../../Inicio_C#Seccion_5">Sobre el artista</a></li>
                     <!-- <li><a class="li--Enlaces" href="#Seccion_6">Tienda</a></li> -->
-                    <li><a class="li--Enlaces" href="#Seccion_7">Contacto</a></li>
+                    <li><a class="li--Enlaces" href="../../Inicio_C#Seccion_7">Contacto</a></li>
 				</ul>		
 			</nav>
         </header>

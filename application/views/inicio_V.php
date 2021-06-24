@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
 					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_2">Fauna</a></li>
+							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="Pinturas_C/fauna">Fauna</a></li>
 						</ul> 	
 					</li>
                     <li><a class="li--Enlaces" href="#Seccion_3">PONCHOS</a></li>
@@ -39,20 +39,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<!-- PINTURAS -->
 	<div class="contenedor_3" id="Seccion_2"> 
-		<div class="cont_galeria--principal">
-			<div class="cont_galeria" id="Cont_galeria">	
-				<?php 
-				foreach($Pinturas as $RowPinturas){
-					$ID_Pintura = $RowPinturas['ID_Pintura']; 
-					$Nombre_Pintura = $RowPinturas['nombre_pintura'];            
-					$Nombre_ImgPintura = $RowPinturas['nombre_ImgPintura']  ?>
-					<div class="cont_Galeria--item"">
-						<img class="cont_Galeria--img imagen_2--JS lazyload" id="<?php echo $ID_Pintura?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/pinturas/" . $Nombre_ImgPintura;?>" width="320" height="10" alt=""/>
-					</div>
-					<?php
-				}   ?>
-			</div>
-		</div>
 	</div>
 
 	<!-- PONCHOS -->

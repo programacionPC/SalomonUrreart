@@ -284,8 +284,8 @@ hr{
    	column-fill: balance ;
 }
 .cont_Galeria--item{/*inicio*/
-   border: 2px solid #aa9f9f;
-   box-shadow: 0 1px 3px rgba(20,20,20, 0.4);
+   /* border: 2px solid #aa9f9f;
+   box-shadow: 0 1px 3px rgba(20,20,20, 0.4); */
    display: inline-block;
    margin: 0 5px 20px;
    padding: 10px;
@@ -317,8 +317,8 @@ hr{
 	position: relative;
 }
 .cont_Formulario{/*inicio*/
-	position: relative;
-	top: 40%;
+	position: absolute;
+	top: 10%;
 	left: 68%;
 	width: 30%;
 }
