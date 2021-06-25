@@ -11,7 +11,7 @@ document.getElementById("MenuContenedor").addEventListener('click', function(e){
 
 //************************************************************************************************
 //Por medio de delegación de eventos se detectan las pinturas para ver sus detalles
-document.getElementById("Cont_galeria").addEventListener('click', function(e){
+document.getElementById("Cont_galeria_pinturas").addEventListener('click', function(e){
     if(e.target.classList[1] == "imagen_2--JS"){
         var ID_Pintura = e.target.id
         console.log("ID_Pintura", ID_Pintura)

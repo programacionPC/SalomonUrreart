@@ -5,28 +5,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Se coloca en SDN para la libreria JQuery, necesaria para la previsualización de la imagen--> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-	<div class="contenedor_1" id="Seccion_1">
-		<div class="ContenedorTitulo">
-			<div class="ContenedorTitulo_div1">
-				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
-			</div>
-			<div class="ContenedorTitulo_div2">
-				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
-				<h2 class="ContenedorTitulo--h2_1">Panel de administración</h2>
-			</div>
-            <div class="ContenedorTitulo_secciones">
-                <ul class="ul--panel">
-                    <li><a class="li--Enlaces" href="#Colecciones">Categoria de pinturas</a></li>
-                    <li><a class="li--Enlaces" href="#Pinturas">Pinturas</a></li>
-                    <li><a class="li--Enlaces" href="#Galeria">Ponchos</a></li>
-                    <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
-                    <!-- <li><a class="li--Enlaces" href="#">Contacto</a></li> -->
-                    <li><hr></li>
-                    <li><a class="li--Enlaces" href="<?php echo base_url();?>">Sitio web</a></li>
-                </ul>
+    <div class="ContenedorTitulo">
+        <div class="ContenedorTitulo_div1">
+            <img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo.jpg"/>
+        </div>
+        <div class="Menu_horizontal Menu_horizontal--panel">
+            <div class="Menu_horizontal__div1">
+                <h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
+                <h2 class="ContenedorTitulo--h2_1">Panel de administración</h2>
             </div>
-		</div>
-	</div>
+            <ul class="Menu_horizontal__ul">
+                <li><a class="li--Enlaces" href="#Colecciones">Categoria de pinturas</a></li>
+                <li><a class="li--Enlaces" href="#Pinturas">Pinturas</a></li>
+                <li><a class="li--Enlaces" href="#Galeria">Ponchos</a></li>
+                <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
+                <!-- <li><a class="li--Enlaces" href="#">Contacto</a></li> -->
+                <li><hr></li>
+                <li><a class="li--Enlaces" href="<?php echo base_url();?>">Sitio web</a></li>
+            </ul>
+        </div>
+    </div>
 
     
     <!-- CATEGORIA DE PINTURAS -->

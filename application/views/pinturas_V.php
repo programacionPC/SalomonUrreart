@@ -2,15 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div class="contenedor_3" id="Seccion_2"> 
+<div class="contenedor_3"> 
+	<a class="a_1" href="<?php echo base_url() . 'Inicio_C';?>"><i class="fas fa-times"></i></a>
     <div class="cont_galeria--principal">
-        <div class="cont_galeria" id="Cont_galeria">	
+        <div class="cont_galeria" id="Cont_galeria_pinturas">	
             <?php 
             foreach($pinturas as $RowPinturas){
                 $ID_Pintura = $RowPinturas['ID_Pintura']; 
                 $Nombre_Pintura = $RowPinturas['nombre_pintura'];            
                 $Nombre_ImgPintura = $RowPinturas['nombre_ImgPintura']  ?>
-                <div class="cont_Galeria--item"">
+                <div class="cont_Galeria--item">
                     <img class="cont_Galeria--img imagen_2--JS lazyload" id="<?php echo $ID_Pintura?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/pinturas/" . $Nombre_ImgPintura;?>" width="320" height="10" alt=""/>
                 </div>
                 <?php

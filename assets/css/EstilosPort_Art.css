@@ -24,9 +24,10 @@ li{
 /* ******************************************************************************** */
 	/* DECLARACION DE VARIABLES */
 :root{
-	--Fondo: rgb(27, 30, 39); 
+	--Fondo: rgb(16, 20, 23); 
 	--HoverEnlaces: rgba(27, 30, 39, 0.7);
 	--FuenteInicio: rgb(238, 201, 201);
+	--FondoImagenDetalle: rgb(13, 14, 15);
 	/*--Fallos: rgba(255, 0, 0, 0.3);
 	--Hover: rgb(211, 207, 236);
 	--Alerta: orange;
@@ -35,7 +36,25 @@ li{
 
 /* ******************************************************************************** */
 /*------ fin de reset CSS-----*/
-
+.a_1{/*ponchos - pinturas*/
+	background-color: var(--Fondo);
+	color: white;
+	position: fixed;
+	right: 2%;
+	top: 2%;
+	font-size: 2em;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 50%;
+}
+.a_1:hover{/*ponchos - pinturas*/
+	color: yellow;
+}
+.a_1--oscuro{/*detallePintura - detallePoncho*/
+	background-color: var(--FondoImagenDetalle);
+}
 hr{
 	color: white;
 	width: 30%;
@@ -58,7 +77,7 @@ hr{
     width: 100%;
     /* height: 100vh; */
 }
-.contenedor_2{/*inicio*/
+.contenedor_2{/*inicio*/	
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around; 	
@@ -68,19 +87,11 @@ hr{
 	margin: auto;
 	padding-top: 5%;
 }
-.contenedor_2a{
-	background-color: rgb(16, 20, 23);
-}
 .contenedor_2__div{
 	width: 22%;	
 	margin: auto 25px;
 	margin-top: 10vh;
 	cursor: pointer;
-}
-.contenedor_2__div--animado_1{
-	/* opacity: 1;
-	transition: 2s;
-	transform: translate(0, -15vh); */
 }
 .contenedor_2__div--animado_2{
 	opacity: 1;
@@ -88,16 +99,10 @@ hr{
 	transform: translate(0, -40vh);
 }
 .contenedor_3{/*inicio*/
-	background-color: rgb(16, 20, 23);	
-	/* display: flex; 
-	justify-content: center;
-	align-items: center; */
-	/* padding-top: 7%;
-    width: 100%;
-    height: 100vh; */
+	background-color: var(--Fondo);	
 }
 .contenedor--encargos{
-	background-color: rgb(16, 20, 23);	
+	background-color: var(--Fondo);	
 	display: flex; 
 	justify-content: center;
 	 align-items: center;
@@ -106,14 +111,12 @@ hr{
     height: 100vh;
 }
 .contenedor_4--flex{/*inicio*/
-	background-color: rgb(16, 20, 23);	
+	background-color: var(--Fondo);	
     width: 100%;
     min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* padding-top: 20%; */
-	/* opacity: 0; */
 }
 .contenedor_4-flex--animado{/*inicio*/
 	/* opacity: 1;
@@ -133,7 +136,7 @@ hr{
 	height: 500px;
 }
 .contenedor_4__div2--textarea_1{
-	background-color: rgb(16, 20, 23);
+	background-color: var(--Fondo);
 	color: var(--FuenteInicio);
 	font-size: 1.4em;
 	padding: 2%;
@@ -160,7 +163,7 @@ hr{
 	bottom: -40px;
 }
 .contenedor_5{/*inicio*/
-	background-color: rgb(16, 20, 23);	
+	background-color: var(--Fondo);	
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -220,33 +223,26 @@ hr{
 	/* margin-bottom: 1%; */
 }
 .contador-coleccion{/*cuenta_editar - quienesSomos - registroCom*/
-	/* background-color: blue; */
 	width: 100%;
-	/* margin-top: -15%; */
-	/* margin-left: 85% !important; */
-	/* color: rgba(51, 51, 51, 0.6); */
 	border: none;
 	font-size: 1em;
 	text-align: center;
-	/* margin-bottom: 1%; */
 }
-.cont_ponchoDetalle{
-	display: flex;
-	align-items: center;
-	width: 60%;
+.cont_ponchoDetalle{/*detallePintura*/
+	width: 100%;
 	height: 100vh;
 	margin: auto;
+	display: flex;
+	align-items: center;
 }
-.cont_ponchoDetalle--img{
-	margin-top: 5%;
-	width: 70%;
-	height: 80%;
+.cont_ponchoDetalle--img{/*detallePintura*/
+	width: 100%;
+	height: 90%;
 }
 .cont_ponchoDetalle--leyenda{
-	width: 50%;
-	position: relative;
-	top: 25%;
-	left: 5%;
+	position: absolute;
+	bottom: 5%;
+	right: 3%;
 }
 .cont_ponchoDetalle--h1{
 	width: 100%;
@@ -266,6 +262,26 @@ hr{
 	left: 3%;
 	cursor: pointer;
 }
+.cont_ponchos_galeria{
+	display: flex;	
+	flex-wrap: wrap;
+}
+.cont_ponchos--item{
+	padding-top: 3%;
+	width: 20%;
+	margin: 2%;
+}
+.cont_poncho--img{
+	width: 100%;
+	height: 70%;
+}
+.Cont_poncho--h1_1{
+	color: white;
+	font-weight: normal;
+	font-size: 3em;
+	text-align: center;
+	line-height: 100px;
+}
 .cont_ponchoDetalle--iconoRight{
 	color: rgba(255, 255, 255, 0.7);
 	font-size: 2em;
@@ -275,17 +291,37 @@ hr{
 	left: 95%;
 	cursor: pointer;
 }
-.cont_galeria--principal{
-	padding-top: 8%; 
+.cont_slider--poncho{
+	display: flex;
+	align-items: center;
 }
-.cont_galeria{/*inicio*/
+.cont_slider--poncho--div1{
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.cont_slider--poncho--img{
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	display: block;
+	margin: auto;
+}
+.cont_slider--img{
+	width: 100%;
+	height: 80vh;
+	overflow: hidden;
+	/* text-align: center; */
+}
+.cont_galeria--principal{
+	padding-top: 1%; 
+}
+.cont_galeria{/*pinturas*/
 	column-count: 3 !important;
    	column-gap: 15px;
    	column-fill: balance ;
 }
 .cont_Galeria--item{/*inicio*/
-   /* border: 2px solid #aa9f9f;
-   box-shadow: 0 1px 3px rgba(20,20,20, 0.4); */
    display: inline-block;
    margin: 0 5px 20px;
    padding: 10px;
@@ -315,6 +351,7 @@ hr{
 }
 .cont_contacto{
 	position: relative;
+	z-index: 0;
 }
 .cont_Formulario{/*inicio*/
 	position: absolute;
@@ -351,30 +388,36 @@ hr{
 .cont_contacto--titulo{
 	padding-top: 5%;
 }
-.ContenedorTitulo{
-	background-color: rgb(16, 20, 23);
+.ContenedorTitulo{/*salomonpanel*/
+	background-color: var(--Fondo);
     width: 100%;
-	/* display: flex; */
-	justify-content: space-between;
 	height: 100vh;
-    text-align: center;
 }
 .ContenedorTitulo_div1{
 	overflow: hidden; 
 	width: 100%;
 } 
-.ContenedorTitulo_div2{/*inicio*/
+.Menu_horizontal{/*inicio*/
+	position: fixed;
+	top: 12%;
+	width: 40%;
+	z-index: 1;
+} 
+.Menu_horizontal--panel{/*inicio*/
 	position: absolute;
+} 
+.Menu_horizontal__div1{/*inicio*/
+	padding-left: 10%;
+	/* position: absolute;
 	width: 40%;
 	height: 15%;
-	top: 3%;
+	top: 3%; */
+} 
+.Menu_horizontal__ul{/*inicio - salomonpanel*/
+	margin-left: 20%;
+	padding-top: 10%;
+	text-align: left;
 }
-.ContenedorTitulo_secciones{/*inicio*/
-	position: absolute;
-	top: 30%;
-	/* left: 60%; */
-	width: 30%;
-}  
 .ContenedorTitulo--h1_1{
 	color: white;
 	font-weight: normal;
@@ -409,10 +452,6 @@ hr{
 	color: white;
 	font-size: 2.5em;
 	margin-top: 15%;
-}
-.cont_AcuseRecibo--img{
-	/* width: 60%; */
-	background-color: red;
 }
 .cont_AcuseRecibo--leyenda{
 	position: absolute;
@@ -465,7 +504,7 @@ hr{
 	text-align: center;
 }
 .header{/*header*/
-	background-color:rgb(16, 20, 23);
+	background-color:var(--Fondo);
 	position: fixed;
 	top: 0%;
 	left: 0%;
@@ -475,6 +514,7 @@ hr{
 	z-index: 1 !important;
 	display: flex;
 	align-items: center;
+	display: none;
 }
 .header__a{/*header*/
 	color: white;
@@ -578,10 +618,6 @@ hr{
 	font-size: 1.4em;
 	margin-left: 1%;
 	padding: 0% 2%;
-}
-.ul--panel{
-	margin-left: 20%;
-	text-align: left;
 }
 .label_1{
 	color: darkblue;

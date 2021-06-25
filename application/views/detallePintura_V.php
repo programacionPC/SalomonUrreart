@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-	<div style="background-color: var(--Fondo);">
+	<div style="background-color: var(--FondoImagenDetalle);">
+		<a class="a_1 a_1--oscuro" href="<?php echo base_url() . 'Pinturas_C/fauna';?>"><i class="fas fa-times"></i></a>
 		<div class="cont_ponchoDetalle" id="Cont_PinturaDetalle">
 			<i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft" onclick="Llamar_sliderPintura(<?php echo $detallePintura['ID_Pintura'];?>, 'Retroceder')"></i>
 			<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_sliderPintura(<?php echo $detallePintura['ID_Pintura'];?>, 'Avanzar')"></i>
@@ -15,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<p class="cont_ponchoDetalle--p1"><?php echo $detallePintura['tecnica_pintura'];?></p> 
 			</div>
 		</div>
+		
 	</div>
 	
 <script src="<?php echo base_url();?>assets/javascript/A_DetallesPintura.js?v=<?php echo rand();?>"></script> 

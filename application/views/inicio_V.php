@@ -9,19 +9,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="ContenedorTitulo_div1">
 				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
 			</div>
-			<div class="ContenedorTitulo_div2 ContenedorTitulo_div2--sinfondo">
-				<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
-				<h2 class="ContenedorTitulo--h2_1">Pinto por y para la naturaleza</h2>
-			</div>
-            <div class="ContenedorTitulo_secciones">
-                <ul class="ul--panel">
+			<div class="Menu_horizontal">
+				<div class="Menu_horizontal__div1">
+					<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
+					<!-- <h2 class="ContenedorTitulo--h2_1">Pinto por y para la naturaleza</h2> -->
+				</div>
+                <ul class="Menu_horizontal__ul">
                     <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
 					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="Pinturas_C/fauna">Fauna</a></li>
 						</ul> 	
 					</li>
-                    <li><a class="li--Enlaces" href="#Seccion_3">PONCHOS</a></li>
+                    <li><a class="li--Enlaces" href="Ponchos_C">PONCHOS</a></li>
 					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
 						<ul class="menuContenedor_3" id="MenuContenedor_3">
 							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">Mascota</a></li>
@@ -37,32 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 
-	<!-- PINTURAS -->
-	<div class="contenedor_3" id="Seccion_2"> 
-	</div>
-
-	<!-- PONCHOS -->
-	<div class="contenedor_2a" id="Seccion_3">
-		<div class="contenedor_2" id="Seccion_3a">
-			<?php 
-			foreach($Ponchos as $Row){
-				$ID_Poncho = $Row['ID_Poncho']; 
-				$Nombre_Poncho = $Row['nombrePoncho'];            
-				$Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
-				<div class="contenedor_2__div Poncho_JS"">
-					<img class="imagen_1 lazyload" id="<?php echo $ID_Poncho?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>" width="320" height="320" alt=""/>
-					<h1 class="h1_1"><?php echo $Nombre_Poncho;?></h1> 
-				</div>
-				<?php
-			}   ?>
-		</div>
-	</div>
-	
-	<!-- ENCARGOS -->
-	<!-- <div class="contenedor--encargos" id="Seccion_4">
-		<h1 style="color: white;">ENCARGOS</h1>
-	</div> -->
-
 	<!-- SOBRE MI -->
 	<div class="contenedor_4--flex" id="Seccion_5">
 		<div class="contenedor_4__div1">
@@ -70,35 +44,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="contenedor_4__div2">
 			<textarea class="contenedor_4__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
-			<div class="contenedor_4--redes">
-				<div>
-					<i class="fab fa-facebook contenedor_4--icono_2"></i>
-				</div>
-				<div>
-					<i class="fab fa-pinterest contenedor_4--icono_2"></i>
-				</div>
-				<div>
-					<i class="fab fa-instagram contenedor_4--icono_2"></i>
-				</div>
-				<div>
-					<i class="fas fa-envelope contenedor_4--icono_2"></i>
-				</div>
-				<div>
-					<i class="fab fa-whatsapp contenedor_4--icono_2"></i>
-				</div>
-				<div>
-					<i class="fab fa-twitter contenedor_4--icono_2"></i>
-				</div>
-			</div>
 		</div>
 	</div>
-
-	<!-- TIENDA -->
-	<!-- <div class="contenedor_5" id="Seccion_6">
-		<div class="">
-			<h1 style="color: white;">TIENDA</h1>
-		</div>
-	</div> -->
 	
 	<!-- CONTACTO -->
 	<div class="cont_contacto">

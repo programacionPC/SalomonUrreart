@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
 	<div style="background-color: var(--Fondo);">
+		<a class="a_1" href="<?php echo base_url() . 'Ponchos_C';?>"><i class="fas fa-times"></i></a>
 		<div class="cont_ponchoDetalle" id="Cont_PonchoDetalle">
 			<i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft" onclick="Llamar_sliderPoncho('<?php echo $detallePoncho['ID_Poncho'];?>', 'Retroceder')"></i>
 			<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_sliderPoncho('<?php echo $detallePoncho['ID_Poncho'];?>', 'Avanzar')"></i>
