@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			// $Nombre_Poncho = $Row['nombrePoncho'];            
 			// $Nombre_ImgPoncho = $Row['nombre_ImgPoncho']  ?>
 			<div class="cont_slider--img">
-				<img class="cont_slider--poncho--img imagen_2--JS" id="<?php //echo $ID_Poncho?>" src="<?php echo base_url() . "assets/images/ponchos/" . $ponchos[1]['nombre_ImgPoncho'];?>"/>
+				<img class="cont_slider--poncho--img imagen_2--JS" id="<?php //echo $ID_Poncho?>" src="<?php echo base_url() . "assets/images/ponchos/" . $ponchos[0]['nombre_ImgPoncho'];?>"/>
 			</div>
 			<?php
 		// }   ?>
@@ -26,14 +26,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$NombrePoncho = $RowPonchos['nombrePoncho'];            
 			$Nombre_ImgPoncho = $RowPonchos['nombre_ImgPoncho']  ?>
 			<div class="cont_ponchos--item">
-				<img class="cont_poncho--img imagen_2--JS lazyload" id="<?php echo $ID_Poncho?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/pinturas/" . $Nombre_ImgPoncho;?>" width="320" height="10" alt=""/>
+				<img class="cont_poncho--img imagen_2--JS lazyload" id="<?php echo $ID_Poncho?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>" width="320" height="10" alt=""/>
 			</div>
 			<?php
 		}   ?>
 	</div>
 </div>
-
-<!-- <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script>--> 
+ 
 <script src="<?php echo base_url();?>assets/javascript/E_Ponchos.js?v=<?php echo rand();?>"></script>  
 
 <!-- Script para evaluar si el navegador soporta lazy-load -->

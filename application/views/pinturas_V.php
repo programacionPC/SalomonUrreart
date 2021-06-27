@@ -20,7 +20,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 
-<!-- <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script>--> 
 <script src="<?php echo base_url();?>assets/javascript/E_Pinturas.js?v=<?php echo rand();?>"></script>  
 
 <!-- Script para evaluar si el navegador soporta lazy-load -->

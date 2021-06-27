@@ -17,7 +17,13 @@ class Ponchos_C extends CI_Controller {
 			'ponchos' => $PonchosSalomon //ID_Poncho, nombrePoncho, nombre_ImgPoncho
 		];
 
+		// echo '<pre>';
+		// print_r($Datos);
+		// echo '</pre>';
+		// exit;
+
 		$this->load->view('header/header_pinturas');
 		$this->load->view('ponchos_V', $Datos);
+		$this->load->view('footer/footer');
 	}
 }

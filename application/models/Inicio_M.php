@@ -4,16 +4,16 @@
         public function __construct(){
             parent::__construct();
             // remoto
-            // $Host= 'www.salomonurreart.com';
-            // $Usuario= 'program_salomonurreart';
-            // $Password= '159ADN.';
-            // $Nombre_base= 'galeriaSalomon';
+            $Host= 'www.salomonurreart.com';
+            $Usuario= 'program_salomonurreart';
+            $Password= '159ADN.';
+            $Nombre_base= 'galeriaSalomon';
             
             // local
-            $Host= 'localhost';
-            $Usuario= 'root';
-            $Password= '';
-            $Nombre_base= 'galeriasalomon';
+            // $Host= 'localhost';
+            // $Usuario= 'root';
+            // $Password= '';
+            // $Nombre_base= 'galeriasalomon';
 
             
             $dsn= "mysql:host=" . $Host . ";dbname=" . $Nombre_base;
@@ -87,8 +87,8 @@
         }
 
         //SELECT de los ponchos
-        public function consultarPonchosSalomon(){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho");
+        public function consultarUltimasObrasSalomon(){
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho DESC LIMIT 3");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 

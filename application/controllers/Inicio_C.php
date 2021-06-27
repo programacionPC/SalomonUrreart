@@ -13,8 +13,8 @@ class Inicio_C extends CI_Controller {
 		//CONSULTA las coleciones del sitio web
 		$ColeccionesSalomon = $this->Inicio_M->consultarColeccionSalomon();
 		
-		//CONSULTA los ponchos
-		$PonchosSalomon = $this->Inicio_M->consultarPonchosSalomon();
+		//CONSULTA lAS ULTIMAS OBRAS
+		$UltimasObrasSalomon = $this->Inicio_M->consultarUltimasObrasSalomon();
 
 		//CONSULTA el perfil de Salomon
 		$PerfilSalomon = $this->Inicio_M->consultarPerfilSalomon();
@@ -22,7 +22,7 @@ class Inicio_C extends CI_Controller {
 		$Datos = [
 			'perfilArtista' => $PerfilSalomon, //perfil, nombre_Fotografia
 			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
-			'Ponchos' => $PonchosSalomon, // ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'UltimasObras' => $UltimasObrasSalomon, // ID_Poncho, nombrePoncho, nombre_ImgPoncho
 		];
 
 		// echo '<pre>';
@@ -32,6 +32,7 @@ class Inicio_C extends CI_Controller {
 
 		$this->load->view('header/header_inicio');
 		$this->load->view('inicio_V', $Datos);
+		$this->load->view('footer/footer');
 	}
 
 	public function SUA_panel(){

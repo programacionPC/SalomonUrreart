@@ -15,7 +15,7 @@ document.getElementById("Cont_galeria_ponchos").addEventListener('click', functi
     if(e.target.classList[1] == "imagen_2--JS"){
         var ID_Poncho = e.target.id
         console.log("ID_Poncho", ID_Poncho)
-        
+        return
         window.location.replace("DetallePoncho_C/index/" + ID_Poncho);
     }
 }, false)

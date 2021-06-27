@@ -36,5 +36,6 @@ class Pinturas_C extends CI_Controller {
 
 		$this->load->view('header/header_pinturas');
 		$this->load->view('pinturas_V', $Datos);
+		$this->load->view('footer/footer');
 	}
 }
