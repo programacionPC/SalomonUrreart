@@ -3,12 +3,12 @@ document.getElementById("Label_5").addEventListener('click', clonarSeccion, fals
 document.addEventListener("DOMContentLoaded", function(){autosize('ContenidoPerfil')}, false) 
 document.addEventListener("DOMContentLoaded", function(){resize('ContenidoPerfil')}, false) 
 
-document.addEventListener("DOMContentLoaded", function(){CaracteresAlcanzados('ContenidoPerfil','ID_Contador')}, false)    
+// document.addEventListener("DOMContentLoaded", function(){CaracteresAlcanzados('ContenidoPerfil','ID_Contador')}, false)    
 
-document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){contarCaracteres('ID_Contador','ContenidoPerfil', 700)}, false)
+// document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){contarCaracteres('ID_Contador','ContenidoPerfil', 700)}, false)
 
-document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){valida_LongitudDes(700,'ContenidoPerfil')}, false)
-document.getElementById("ContenidoPerfil").addEventListener('keyup', function(){valida_LongitudDes(700,'ContenidoPerfil')}, false)
+// document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){valida_LongitudDes(700,'ContenidoPerfil')}, false)
+// document.getElementById("ContenidoPerfil").addEventListener('keyup', function(){valida_LongitudDes(700,'ContenidoPerfil')}, false)
 
 
 document.getElementById("ContenidoPerfil").addEventListener('keydown', function(){autosize('ContenidoPerfil')}, false)
@@ -211,7 +211,6 @@ function eliminarPintura(ID_Javascript, ID_PHP){
 
 //************************************************************************************************
 function eliminarPoncho(ID_Javascript, ID_PHP){
-    console.log(ID_Javascript)
 
     //Se obtiene el elemento a eliminar
     // elementoEliminar = document.getElementById(ID_Javascript) 
@@ -226,4 +225,22 @@ function eliminarPoncho(ID_Javascript, ID_PHP){
 
     //Se elimina de la BD
     llamar_eliminarPoncho(ID_PHP)
+}
+
+//************************************************************************************************
+function eliminarUltimaObra(ID_Javascript, ID_PHP){
+
+    //Se obtiene el elemento a eliminar
+    // elementoEliminar = document.getElementById(ID_Javascript) 
+    console.log("div a eliminar", ID_Javascript)
+
+    // Se obtiene el elemento padre donde se encuentra el poncho donde se hizo click
+    elementoPadre = ID_Javascript.parentElement
+    console.log("elemento padre", elementoPadre)
+
+    //Se elimina la sección
+    elementoPadre.removeChild(ID_Javascript)  
+
+    //Se elimina de la BD
+    llamar_eliminarUltimaObra(ID_PHP)
 }

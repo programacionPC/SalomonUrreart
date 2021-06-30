@@ -17,7 +17,7 @@ class SalomonPanel_C extends CI_Controller {
 		// echo '</pre>';
 		// exit;
 
-		//CONSULTA las pinuras del sitio web
+		//CONSULTA las pinturas del sitio web
 		$PinturasSalomon = $this->SalomonPanel_M->consultarpinturas();
 		// echo '<pre>';
 		// print_r($PinturasSalomon);
@@ -28,6 +28,13 @@ class SalomonPanel_C extends CI_Controller {
 		$PonchosSalomon = $this->SalomonPanel_M->consultarponchos();
 		// echo '<pre>';
 		// print_r($PonchosSalomon);
+		// echo '</pre>';
+		// exit;
+
+		//CONSULTA las ultimas obras realizda
+		$UltimasObrasSalomon = $this->SalomonPanel_M->consultar_ultimas_obras();
+		// echo '<pre>';
+		// print_r($UltimasObrasSalomon);
 		// echo '</pre>';
 		// exit;
 
@@ -42,7 +49,8 @@ class SalomonPanel_C extends CI_Controller {
 			'datosArtista' => $PerfilSalomon, //ID_Coleccion, nombre_coleccion
 			'coleccionArtista' => $ColeccionesSalomon, //d
 			'datosPoncho' => $PonchosSalomon, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-			'datosPintura' => $PinturasSalomon //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
+			'datosPintura' => $PinturasSalomon, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
+			'datosUltimasObras' => $UltimasObrasSalomon //ID_UltimaObra, nombre_UltimaObra, tecnica_UltimaObra, tamanio_UltimaObra, nombre_ImgUltimaObra
 		];
 	
 		$this->load->view('header/header_SoloEstilos');
@@ -102,6 +110,42 @@ class SalomonPanel_C extends CI_Controller {
 		redirect('SalomonPanel_C');
 	}
 
+	public function recibeUltimsObras(){
+		if($_FILES['imagen_UltimasObras']["name"][0] != ""){
+			$Nombre_UltimasObras = $_POST['nombre_UltimasObras'];		
+			$Medidas_UltimasObras = $_POST['medidas_UltimasObras'];	
+			$Tecnica_UltimasObras = $_POST['tecnica_UltimasObras'];	
+			$Nombre_ImgUltimasObras = $_FILES['imagen_UltimasObras']['name'];
+			$Tipo_ImgUltimasObras = $_FILES['imagen_UltimasObras']['type'];
+			$Tamanio_ImgUltimasObras = $_FILES['imagen_UltimasObras']['size'];
+
+			// echo "Pintura: " . $Nombre_UltimasObras . '<br>';
+			// echo "Medidas Pintura: " . $Medidas_UltimasObras . '<br>';
+			// echo "Tecnica Pintura: " . $Tecnica_UltimasObras . '<br>';
+			// echo "nombre UltimasObras: " .  $nombre_ImgUltimasObras . '<br>';
+			// echo "tipo_UltimasObras: " .  $tipo_ImgUltimasObras . '<br>';
+			// echo "tamanio_UltimasObras: " .  $tamanio_ImgUltimasObras . '<br>';
+			// exit;
+			
+			//Si existe imagen_UltimasObras y tiene un tamaño correcto se procede a recibirla y guardar en BD
+			if($Nombre_UltimasObras != ""){
+				//Usar en remoto
+				// $Directorio = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/ultimaObra/';
+				
+				// usar en local
+				$Directorio = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/PortafolioArtista_CI/assets/images/ultimaObra/';
+				
+				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
+				move_uploaded_file($_FILES['imagen_UltimasObras']['tmp_name'], $Directorio.$Nombre_ImgUltimasObras);
+
+				//Se INSERTA los datos de la ultima obra en BD
+				$this->SalomonPanel_M->insertarUltimasObras($Nombre_UltimasObras, $Medidas_UltimasObras, $Tecnica_UltimasObras, $Nombre_ImgUltimasObras, $Tipo_ImgUltimasObras, $Tamanio_ImgUltimasObras);
+			}
+		}
+
+		redirect('SalomonPanel_C');
+	}
+	
 	public function recibePintura(){
 		if($_FILES['imagen_Pintura']["name"][0] != ""){
 			$Nombre_Pintura = $_POST['nombre_Pintura'];		
@@ -232,6 +276,13 @@ class SalomonPanel_C extends CI_Controller {
 	public function eliminarPoncho($ID_Poncho){
 		//Se ELIMINA el poncho en BD
 		$this->SalomonPanel_M->eliminar_Poncho($ID_Poncho);
+
+		redirect('SalomonPanel_C');
+	}
+
+	public function eliminarUltimaObra($ID_UltimaObra){
+		//Se ELIMINA el poncho en BD
+		$this->SalomonPanel_M->eliminar_ID_UltimaObra($ID_UltimaObra);
 
 		redirect('SalomonPanel_C');
 	}

@@ -79,6 +79,31 @@ function conexionAJAX(){
         }
     }
 
+    // *************************************************************************************************
+        //Elimina ultima obra
+        function llamar_eliminarUltimaObra(ID_Poncho){
+            console.log("______Desde llamar_eliminarUltimaObra()______", ID_Poncho)
+            
+            var url = "SalomonPanel_C/eliminarUltimaObra/" + ID_Poncho
+            http_request.open('GET', url, true)  
+            peticion.onreadystatechange = respuesta_UltimaObra
+            peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
+            peticion.send("null")
+        }                                                                        
+        function respuesta_UltimaObra(){
+            if(peticion.readyState == 4){
+                if(peticion.status == 200){  
+                    //No hace falta traer una respuesta del servidor, la operacion se hace y ya
+                } 
+                else{
+                    alert('Problemas con la petición.')
+                }
+            }
+            else{ //en caso contrario, mostramos un gif simulando una precarga
+                // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
+            }
+        }
+
 // *************************************************************************************************
     //Elimina una seccion
     function Llamar_EliminarSeccion(ID_Coleccion, CantSeccion){

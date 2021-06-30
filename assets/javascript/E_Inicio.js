@@ -101,7 +101,7 @@ window.addEventListener("scroll",function(){
 //************************************************************************************************ 
 //ajusta la altura de un texarea con respecto al contenido que trae de la BD
 function resize(id){
-    console.log("_____ Desde resize _____", id)
+    // console.log("_____ Desde resize _____", id)
     let text = document.getElementById(id);
     text.style.height = 'auto';
     text.style.height = text.scrollHeight + 'px';

@@ -32,26 +32,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_5">Sobre el artista</a></li>
                     <!-- <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_6">Tienda</a></li> -->
                     <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_7">Contacto</a></li>
-                </ul>
+                </ul> 
             </div>
 		</div>
 	</div>
 
 	<!-- ULTIMAS OBRAS -->
-    <div class="cont_ultimasObras"  id="Seccion_2">
-		<div class="cont--menu"></div>
+    <div class="cont_ultimasObras" id="Seccion_2">
+		<div class="cont--menu cont--menu--UltimoasObras"></div>
 		<?php 
-		foreach($UltimasObras as $RowPonchos){
-			$ID_Poncho = $RowPonchos['ID_Poncho']; 
-			$NombrePoncho = $RowPonchos['nombrePoncho'];            
-			$Nombre_ImgPoncho = $RowPonchos['nombre_ImgPoncho']  ?>
-			<div class="cont_ultimasObras--item">
-				<img class="cont_poncho--img imagen_2--JS lazyload" id="<?php echo $ID_Poncho?>" loading="lazy" data-src="<?php echo base_url() . "assets/images/ponchos/" . $Nombre_ImgPoncho;?>" width="320" height="10" alt=""/>
+		foreach($ultimasObras as $RowUltimasObras){
+			$ID_UltimaObra = $RowUltimasObras['ID_UltimaObra']; 
+			$Nombre_UltimaObra = $RowUltimasObras['nombre_UltimaObra'];            
+			$Nombre_ImgUltimaObra = $RowUltimasObras['nombre_ImgUltimaObra'];  ?>
+			<div class="cont_ultimasObras--item" >
+				<img class="cont_poncho--img imagen_2--JS lazyload" loading="lazy" data-src="<?php echo base_url() . "assets/images/ultimaObra/" . $Nombre_ImgUltimaObra;?>" width="320" height="10" alt="" id="Imagen_<?php echo $ID_UltimaObra?>"/>
 			</div>
 			<?php
 		}   ?>
 	</div>
-
+ 
 	<!-- SOBRE MI -->
 	<div class="contenedor_4--flex" id="Seccion_5">
 		<div class="cont--menu"></div>
@@ -69,25 +69,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="cont_contacto" id="Seccion_7">
 		<div class="cont--menu"></div>
 		<div class="cont_contacto__div-1">
-				<img class="cont_contacto--img lazyload" loading="lazy" data-src="<?php echo base_url();?>assets/images/Pavoreal-min.jpg"  alt=""/>
+			<div class="cont_Formulario">
+				<form action="<?php echo base_url();?>SalomonPanel_C/recibeContacto" method="POST" autocomplete="off" onsubmit="return validarDatos()">
+					<label class="cont_Formulario--label">Preguntas o consultas ¿?</label>
+					<br><br>
+					<label class="cont_Formulario--label">Contactame</label>
+					<input class="cont_Formulario--input" type="text" name="nombre" placeholder="Nombre"/>
+					<input class="cont_Formulario--input" type="text" name="correo" placeholder="correo"/>
+					<input class="cont_Formulario--input" type="text"  name="ciudad" placeholder="ciudad / pais"/>
+					<textarea class="cont_Formulario--textarea" name="asunto" placeholder="asunto"></textarea> 
+					<input class="cont_Formulario--submit" type="submit" value="Enviar"/>
+				</form>
+			</div>
 		</div>	
-		<div class="cont_Formulario">
-			<form action="<?php echo base_url();?>SalomonPanel_C/recibeContacto" method="POST" autocomplete="off" onsubmit="return validarDatos()">
-				<label class="cont_Formulario--label">Contactame</label>
-				<input class="cont_Formulario--input" type="text" name="nombre" placeholder="Nombre"/>
-				<input class="cont_Formulario--input" type="text" name="correo" placeholder="correo"/>
-				<input class="cont_Formulario--input" type="text"  name="ciudad" placeholder="ciudad / pais"/>
-				<textarea class="cont_Formulario--textarea" name="asunto" placeholder="asunto"></textarea> 
-				<input class="cont_Formulario--submit" type="submit" value="Enviar"/>
-			</form>
-		</div>
-	</div>
-
-
-
-
-
-	
+	</div>	
 </div>
 
 
@@ -112,4 +107,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		// script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js";
 		document.body.appendChild(script);
 	}
+</script>
+
+<script>
+	//Muestra el sitio web en pantalla completa
+    window.addEventListener("click", function(e){    
+        var ID_Imagen = e.target.id
+
+		var imagen = document.getElementById(ID_Imagen);
+
+		function getFullscreen(element){
+			// console.log("Elemento ", element)
+			if(element.requestFullscreen) {
+				element.requestFullscreen();		} 
+			else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+			} 
+			else if(element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen();
+			} 
+			else if(element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+			}
+		}
+
+		getFullscreen(imagen);
+
+		imagen.addEventListener("click", function(e){//E= el id dela fotografia donde se hizo click  DOMContentLoaded
+			getFullscreen(this);
+		},false);
+    }, false) 
 </script>

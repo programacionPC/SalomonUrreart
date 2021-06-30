@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
 <div style="background-color: var(--FondoImagenDetalle);" id="Miimagen">
 	<a class="a_1 a_1--oscuro" href="<?php echo base_url() . 'Pinturas_C/fauna';?>"><i class="fas fa-times"></i></a>
@@ -50,7 +48,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	// window.addEventListener("DOMContentLoaded", function(e){
 		getFullscreen(this);
 	},false);
-
-//************************************************************************************************ 
-
 </script>

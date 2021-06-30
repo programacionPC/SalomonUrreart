@@ -13,7 +13,7 @@ class Inicio_C extends CI_Controller {
 		//CONSULTA las coleciones del sitio web
 		$ColeccionesSalomon = $this->Inicio_M->consultarColeccionSalomon();
 		
-		//CONSULTA lAS ULTIMAS OBRAS
+		//CONSULTA las ultimas obras
 		$UltimasObrasSalomon = $this->Inicio_M->consultarUltimasObrasSalomon();
 
 		//CONSULTA el perfil de Salomon
@@ -22,7 +22,7 @@ class Inicio_C extends CI_Controller {
 		$Datos = [
 			'perfilArtista' => $PerfilSalomon, //perfil, nombre_Fotografia
 			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
-			'UltimasObras' => $UltimasObrasSalomon, // ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'ultimasObras' => $UltimasObrasSalomon, // ID_UltimaObra, nombre_UltimaObra, tecnica_UltimaObra, tamanio_UltimaObra, nombre_ImgUltimaObra
 		];
 
 		// echo '<pre>';

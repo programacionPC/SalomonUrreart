@@ -49,6 +49,12 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        //SELECT de las ultimas obras
+        public function consultar_ultimas_obras(){
+            $stmt = $this->dbh->query("SELECT ID_UltimaObra, nombre_UltimaObra, tecnica_UltimaObra, tamanio_UltimaObra, nombre_ImgUltimaObra FROM ultimasobras ORDER BY ID_UltimaObra DESC");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
         //SELECT de los ponchos
         public function consultarpinturas(){
             $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura DESC");
@@ -83,6 +89,28 @@
             $stmt->bindParam(':NOMBRE_IMG', $nombre_ImgPoncho);
             $stmt->bindParam(':TAMANIO_IMG', $tamanio_ImgPoncho);
             $stmt->bindParam(':TIPO_IMG', $tipo_ImgPoncho);
+
+            //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
+            if($stmt->execute()){
+                //se recupera el ID del registro insertado
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        // INSERT de ultimas obras
+        public function insertarUltimasObras($Nombre_UltimasObras, $Medidas_UltimasObras, $Tecnica_UltimasObras, $Nombre_ImgUltimasObras, $Tipo_ImgUltimasObras, $Tamanio_ImgUltimasObras){
+            $stmt = $this->dbh->prepare("INSERT INTO ultimasobras(nombre_UltimaObra, tamanio_UltimaObra, tecnica_UltimaObra, nombre_ImgUltimaObra, tamanio_ImgUltimaObra, tipo_ImgUltimaObra, fecha) VALUES (:NOMBRE_ULTIMAOBRA, :MEDIDAS_ULTIMAOBRA, :TECNICA_ULTIMAOBRA, :NOMBRE_IMG_ULTIMAOBRA, :TAMANIO_IMG_ULTIMAOBRA, :TIPO_IMG_ULTIMAOBRA, CURDATE())");
+
+            //Se vinculan los valores de las sentencias preparadas, stmt es una abreviatura de statement
+            $stmt->bindParam(':NOMBRE_ULTIMAOBRA', $Nombre_UltimasObras);
+            $stmt->bindParam(':MEDIDAS_ULTIMAOBRA', $Medidas_UltimasObras);
+            $stmt->bindParam(':TECNICA_ULTIMAOBRA', $Tecnica_UltimasObras);
+            $stmt->bindParam(':NOMBRE_IMG_ULTIMAOBRA', $Nombre_ImgUltimasObras);
+            $stmt->bindParam(':TAMANIO_IMG_ULTIMAOBRA', $Tipo_ImgUltimasObras);
+            $stmt->bindParam(':TIPO_IMG_ULTIMAOBRA', $Tamanio_ImgUltimasObras);
 
             //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
             if($stmt->execute()){
@@ -191,12 +219,20 @@
             $stmt = $this->dbh->prepare("DELETE FROM ponchos WHERE ID_Poncho = :ID_PONCHO");
             $stmt->bindValue(':ID_PONCHO', $ID_Poncho, PDO::PARAM_INT);
             $stmt->execute();    
-    }
+        }
 
         //DELETE de pinturas
         public function eliminar_Pintura($ID_Pintura){
             $stmt = $this->dbh->prepare("DELETE FROM pinturas WHERE ID_PINTURA = :ID_PINTURA");
             $stmt->bindValue(':ID_PINTURA', $ID_Pintura, PDO::PARAM_INT);
+            $stmt->execute();  
+        }
+        
+
+        //DELETE de ultima obra
+        public function eliminar_ID_UltimaObra($ID_UltimaObra){
+            $stmt = $this->dbh->prepare("DELETE FROM ultimasobras  WHERE ID_UltimaObra = :ID_UltimaObra");
+            $stmt->bindValue(':ID_UltimaObra', $ID_UltimaObra, PDO::PARAM_INT);
             $stmt->execute();  
         }
 }
