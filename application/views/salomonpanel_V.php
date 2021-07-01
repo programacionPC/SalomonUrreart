@@ -35,12 +35,12 @@
                 if(!isset($datosPintura['nombre_ImgPintura'])){
                     $datosPintura['nombre_ImgPintura'] = 'imagen.png';
                 }?>
-                <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
+                <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/portadas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <div id="muestrasImg_2"></div> 
                     <label class="label_1" for="Etiqueta_ImgPrincipal">Añadir imagen</label>
                     <label class="">no mayor a 2 Mb de peso</label> 
-                    <input class="label_4" type="submit" value="Guardar imagen principal"/>
+                    <input class="boton" type="submit" value="Guardar imagen principal"/>
                 </form>
             </fieldset>
         </div>
@@ -103,7 +103,7 @@
                             <label class="label_1" id="Label_5">Añadir categoría</label>
                         </div>
                     </div> 
-                    <input class="label_4" type="submit" value="Guardar categorías"/>
+                    <input class="boton" type="submit" value="Guardar categorías"/>
                 </form>
             </fieldset>
         </div>
@@ -134,7 +134,7 @@
                             <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
                             <input class="ocultar" type="file" name="imagen_Pintura" id="Etiqueta_ImgPintura"/>        
                         </div>   
-                    <input class="label_4" type="submit" value="Guardar pintura"/>
+                    <input class="boton" type="submit" value="Guardar pintura"/>
                 </form>
                 <?php 
                 $ContadorPintura = 1;
@@ -194,7 +194,7 @@
                         <img class="cont_Poncho__img" id="Blah_1" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ponchos/<?php echo $datosPoncho['nombre_ImgPoncho'];?>"/>
                         <input class="ocultar" type="file" name="imagen_Poncho" id="ImgInp_1"/>                  
                     </div>
-                    <input class="label_4" type="submit" value="Guardar poncho"/>
+                    <input class="boton" type="submit" value="Guardar poncho"/>
                 </form>
                 <?php 
                 $Contador = 1;
@@ -254,7 +254,7 @@
                         <img class="cont_Poncho__img" id="Blah_3" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ultimaObra/<?php echo $datosUltimasObras['nombre_ImgUltimaObra'];?>"/>
                         <input class="ocultar" type="file" name="imagen_UltimasObras" id="ImagenUltimasObras"/>        
                     </div>   
-                    <input class="label_4" type="submit" value="Guardar última obra"/>
+                    <input class="boton" type="submit" value="Guardar última obra"/>
                 </form>
                 <?php 
                 $Contador = 1;
@@ -309,7 +309,7 @@
                             </div>
                         </div>
                     </div>   
-                    <input class="label_4" type="submit" value="Guardar perfil"/>
+                    <input class="boton" type="submit" value="Guardar perfil"/>
                 </form> 
             </fieldset>
         </div>
