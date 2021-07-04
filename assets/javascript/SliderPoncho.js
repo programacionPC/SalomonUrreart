@@ -1,10 +1,11 @@
 
 window.onload = function () {
+    //Se establece el tiempo que durará cada imagen enel slider
     var tiempoPresentacion = 4000;
     mySlider('#slider', tiempoPresentacion);
 }
 
-var mySlider = function (id, time) {
+var mySlider = function(id, time){
   var target = document.querySelector(id)
   var childrens = target.children
   var selectedIndex = 0
@@ -20,14 +21,14 @@ var mySlider = function (id, time) {
 
     function transitionLogic(){
       if(!stop){
-          if(selectedIndex === childrensCount - 1) {
+          if(selectedIndex === childrensCount - 1){
               selectedIndex = 0;
           } 
           else{
               selectedIndex++;
           }
 
-          for(var i = 0; i < childrensCount; i++) {
+          for(var i = 0; i < childrensCount; i++){
               childrens[i].style.display = 'none';
           }
 
@@ -40,6 +41,8 @@ var mySlider = function (id, time) {
       stop = true;
   });
 
+  
+  // retoma la rotación cuando el mouse esta posicionado fuera del slider
   target.addEventListener('mouseleave', function(){
       stop = false;
   });
