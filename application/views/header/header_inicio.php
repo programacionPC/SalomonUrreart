@@ -17,29 +17,30 @@
     <body>
 		<header class="header" id="Header">   
 			<!-- icono para responsive -->
-			<label class="header--menu icono_3"><span id="Span_6"><i class="fas fa-bars" id= "Icono_3"></i></span></label>
+			<div>
+				<label class="header--menu"><span id="Span_6"><i class="fas fa-bars" id="Icono_3"></i></span></label>
 
-			<!-- Barra de navegación -->
-			<nav id="MenuResponsive" class="header__menuResponsive">						
-				<ul id="MenuContenedor">
-					<li><a class="header__a li--Enlaces" href="#Seccion_1">Inicio</a></li>
-					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Pinturas</a>
-						<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_3">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="Pinturas_C/fauna">Fauna</a></li>
-						</ul> 	
-					</li>
-					<li><a class="header__a li--Enlaces" href="#Seccion_3">Ponchos</a></li>
-					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">Encargos</a>
-						<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_4">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">Mascota</a></li>
-							<li><a class="menuLi_2 li--Enlaces enlace_JS">Animal favorito</a></li>
-						</ul> 	
-					</li> -->
-                    <li><a class="li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
-                    <!-- <li><a class="li--Enlaces" href="#Seccion_6">Tienda</a></li> -->
-                    <li><a class="li--Enlaces" href="#Seccion_7">Contacto</a></li>
-				</ul>		
-			</nav>
+				<!-- Barra de navegación -->
+				<nav id="MenuResponsive" class="header__menuResponsive">						
+					<ul id="MenuContenedor">
+						<li><a class="header__li--Enlaces" href="#Seccion_1">Inicio</a></li>
+						<li class="header__li--Enlaces menuLi_1"><a class="MostrarSubMenu_JS">Colecciones</a>
+							<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_3">
+								<li><a class="menuLi_2 header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
+							</ul> 	
+						</li>
+						<li><a class="header__li--Enlaces" href="Ponchos_C">Ponchos</a></li>
+						<li><a class="header__li--Enlaces" href="#Seccion_2">Ultimas obras</a></li>
+						<li><a class="header__li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
+						<li><a class="header__li--Enlaces" href="#Seccion_2">Fotografos</a></li>
+						<li><a class="header__li--Enlaces" href="#Seccion_7">Contacto</a></li>
+					</ul>		
+				</nav>
+			</div>
+
+			<a href="<?php echo base_url();?>Inicio_C"><img class="header__logo" src="<?php echo base_url();?>assets/images/logo-Salomon.png"/></a>
+			
+			<a href="<?php echo base_url();?>Inicio_C"><i class="fas fa-cart-arrow-down header--car"></i></a>
         </header>
 		
 		<!--div utilizado para tapar el body mientras esta el menu responsive -->

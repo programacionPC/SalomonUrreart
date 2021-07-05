@@ -161,46 +161,6 @@
         left: 90%;
         z-index: 5;
     }
-    .header__menuResponsive{/*Todas las páginas*/
-        background-color: rgba(0, 0, 0, 0.8);
-        padding-top: 0%;
-        /* width: 100% !important;  */
-        height: 100vh;
-        margin-left: 100%;/*oculta el menu responsive*/
-        transition: all 0.5s;
-        position: initial;
-    }
-    .header__menuResponsive ul{/*Todas las páginas*/
-        /* background-color: rgba(0, 0, 0, 0.8); */
-        flex-direction: column;
-        width: 100%;
-        padding-top: 8%;
-    }
-    .header__menuResponsive li{/*Todas las páginas*/
-        height: 55px;
-        padding-top: 5%;
-        width: 100%;
-        flex-grow: 1;/*distribuye proporcionalmente los elementos internos en el eje horizontal, es necesario que el elemento padre tenga la propiedad display con el valor flex*/
-    }
-    .header__menuResponsive li a{/*header*/
-        color: white;
-        font-size: 1.2em;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        text-align: left;
-        padding-left: 5%;
-    }
-    .header__menuResponsive li a:hover{/*Todas las páginas*/
-        background-color: var(--Hover) !important;
-        color: white !important;
-        font-size: 1.2em;
-        width: 100%;
-    }
-    .icono_3{/*header_inicio*/
-        color: white !important;
-        font-size: 1.5em;
-    }
     .imagen_1{
         width: 100%;
         height: 350px;

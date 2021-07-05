@@ -6,32 +6,7 @@
 		<div class="ContenedorTitulo">
 			<div class="ContenedorTitulo_div1">
 				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
-			</div>
-			<div class="Menu_horizontal">
-				<div class="Menu_horizontal__div1">
-					<h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
-				</div>
-                <ul class="Menu_horizontal__ul">
-                    <li><a class="li--Enlaces" href="#Seccion_1">INICIO</a></li>
-					<li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">PINTURAS</a>
-						<ul class="menuContenedor_3" id="MenuContenedor_3">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="Pinturas_C/fauna">Fauna</a></li>
-						</ul> 	
-					</li>
-                    <li><a class="li--Enlaces" href="Ponchos_C">PONCHOS</a></li>
-                    <li><a class="li--Enlaces" href="#Seccion_2">ULTIMAS OBRAS</a></li>
-					<!-- <li class="menuLi_1"><a class="header__a MostrarSubMenu_JS">ENCARGOS</a>
-						<ul class="menuContenedor_3" id="MenuContenedor_3">
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#Seccion_4">Mascota</a></li>
-							<li><a class="menuLi_2 li--Enlaces enlace_JS" href="#">Animal favorito</a></li>
-						</ul> 	
-					</li> -->
-                    <li><hr class="hr_1"></li>
-                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_5">Sobre el artista</a></li>
-                    <!-- <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_6">Tienda</a></li> -->
-                    <li><a class="li--Enlaces li--Enlaces--minusculas" href="#Seccion_7">Contacto</a></li>
-                </ul> 
-            </div>
+			</div>S
 		</div>
 	</div>
 
@@ -115,84 +90,84 @@
 
 <script>
 	//Muestra el sitio web en pantalla completa
-    window.addEventListener("click", function(e){    
-        var ID_Imagen = e.target
-		// console.log("ID click en", ID_Imagen.id)
+    // window.addEventListener("click", function(e){    
+    //     var ID_Imagen = e.target
+	// 	// console.log("ID click en", ID_Imagen.id)
 
-        localStorage.setItem('ID_cont_img', ID_Imagen.id) 
-        LS_ID_cont_img = localStorage.getItem('ID_cont_img')
-		console.log("localStorage creada", LS_ID_cont_img)
+    //     localStorage.setItem('ID_cont_img', ID_Imagen.id) 
+    //     LS_ID_cont_img = localStorage.getItem('ID_cont_img')
+	// 	console.log("localStorage creada", LS_ID_cont_img)
 
-        //Se obtiene el elemento padre donde se realizó click, este sera el que se muestra en pantalla completa
-		var DivPantallaCompleta = ID_Imagen.parentElement
-		// console.log("Elemento padre", DivPantallaCompleta)
-		var ELementoAmpliar =  DivPantallaCompleta.id
+    //     //Se obtiene el elemento padre donde se realizó click, este sera el que se muestra en pantalla completa
+	// 	var DivPantallaCompleta = ID_Imagen.parentElement
+	// 	// console.log("Elemento padre", DivPantallaCompleta)
+	// 	var ELementoAmpliar =  DivPantallaCompleta.id
 
-		var imagen = document.getElementById(ELementoAmpliar);
-		var LeyendaPantallaCompleta = document.getElementById("Leyenda")
+	// 	var imagen = document.getElementById(ELementoAmpliar);
+	// 	var LeyendaPantallaCompleta = document.getElementById("Leyenda")
 		
 
-		function getFullscreen(element){
-			if(element.requestFullscreen){
-				//Se muestra la leyenda de la obra cuando sea en pantalla completa
-				LeyendaPantallaCompleta.classList.add("mostrar") 
-				imagen.classList.remove("cont_ultimasObras--img") 
-				DivPantallaCompleta.classList.add("mostrar_imgUltimaObra") 
-				document.getElementById(ID_Imagen.id).classList.add("mostrar_img") 
+	// 	function getFullscreen(element){
+	// 		if(element.requestFullscreen){
+	// 			//Se muestra la leyenda de la obra cuando sea en pantalla completa
+	// 			LeyendaPantallaCompleta.classList.add("mostrar") 
+	// 			imagen.classList.remove("cont_ultimasObras--img") 
+	// 			DivPantallaCompleta.classList.add("mostrar_imgUltimaObra") 
+	// 			document.getElementById(ID_Imagen.id).classList.add("mostrar_img") 
 				
-				//Se invoca el metodo de pantalla completa
-				element.requestFullscreen();
-			} 
-			else if(element.mozRequestFullScreen) {
-			element.mozRequestFullScreen();
-			} 
-			else if(element.webkitRequestFullscreen) {
-			element.webkitRequestFullscreen();
-			} 
-			else if(element.msRequestFullscreen) {
-			element.msRequestFullscreen();
-			}
+	// 			//Se invoca el metodo de pantalla completa
+	// 			element.requestFullscreen();
+	// 		} 
+	// 		else if(element.mozRequestFullScreen) {
+	// 		element.mozRequestFullScreen();
+	// 		} 
+	// 		else if(element.webkitRequestFullscreen) {
+	// 		element.webkitRequestFullscreen();
+	// 		} 
+	// 		else if(element.msRequestFullscreen) {
+	// 		element.msRequestFullscreen();
+	// 		}
 
-		}
+	// 	}
 
-		getFullscreen(imagen);
+	// 	getFullscreen(imagen);
 
-		imagen.addEventListener("click", function(ID_Imagen){//E= el id dela fotografia donde se hizo click  DOMContentLoaded
-			getFullscreen(this);
-		},false);
-    }, false) 
+	// 	imagen.addEventListener("click", function(ID_Imagen){//E= el id dela fotografia donde se hizo click  DOMContentLoaded
+	// 		getFullscreen(this);
+	// 	},false);
+    // }, false) 
 
 
 
 
 
 	
-	window.addEventListener("keydown", function(e){
-		console.log("Click en tecla", e)
-		if(e.keyCode == 27){
-			// console.log("SALIENDO")
-			// if(LS_ID_cont_img != ""){
-			// 	console.log("ID_LocalStorage", LS_ID_cont_img)
-				document.getElementById(LS_ID_cont_img).classList.remove("mostrar_img")
-			// }
-			// else{
-			// 	console.log("NO EXISTE")
-			// }
-		}
-	}, false);
+	// window.addEventListener("keydown", function(e){
+	// 	console.log("Click en tecla", e)
+	// 	if(e.keyCode == 27){
+	// 		// console.log("SALIENDO")
+	// 		// if(LS_ID_cont_img != ""){
+	// 		// 	console.log("ID_LocalStorage", LS_ID_cont_img)
+	// 			document.getElementById(LS_ID_cont_img).classList.remove("mostrar_img")
+	// 		// }
+	// 		// else{
+	// 		// 	console.log("NO EXISTE")
+	// 		// }
+	// 	}
+	// }, false);
 	
-	function ExitFullScreenMode(){
-		if(document.exitFullscreen){
-			document.exitFullscreen();
-		}
-		else if(document.webkitExitFullscreen){
-			document.webkitExitFullscreen();
-		} 
-		else if(document.mozCancelFullScreen){
-			document.mozCancelFullScreen();
-		} 
-		else if(document.msExitFullscreen){
-			document.msExitFullscreen();
-		}
-	}
+	// function ExitFullScreenMode(){
+	// 	if(document.exitFullscreen){
+	// 		document.exitFullscreen();
+	// 	}
+	// 	else if(document.webkitExitFullscreen){
+	// 		document.webkitExitFullscreen();
+	// 	} 
+	// 	else if(document.mozCancelFullScreen){
+	// 		document.mozCancelFullScreen();
+	// 	} 
+	// 	else if(document.msExitFullscreen){
+	// 		document.msExitFullscreen();
+	// 	}
+	// }
 </script>
