@@ -741,3 +741,34 @@ ul .menuContenedor_3{/*header_AfiCom*/
 	/* border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px; */
 }
+
+
+
+
+.cont_ponchoDetalle--miniaturas{/*detallePoncho*/
+	display: flex; /*Organiza los elementos horizontalmente*/
+	text-align: center;
+	width: 100%;
+	margin-top: 2%;
+}
+.imagen_11{/*detallePoncho*/
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	cursor: pointer;
+	object-fit: cover; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/
+} 
+.borde_1{/*detallePoncho*/
+	border-color: var(--BordeClaro);
+	border-width: 1px;
+	border-radius: 5px;
+	border-style: solid;	
+} 
+.borde_2{/*detallePoncho*/
+	border-radius: 15px;
+}
+.cont_PrincipalDetalle{
+	background-color: var(--FondoImagenDetalle);
+	background-color: red;
+	height: 100vh;
+}

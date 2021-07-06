@@ -18,7 +18,7 @@ class DetallePoncho_C extends CI_Controller {
 
 		$Datos = [
 			'detallePoncho' => $DetallePoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-			'imagenMiniatura' => $MiniaturaPoncho //
+			'imagenMiniatura' => $MiniaturaPoncho // ID_Poncho, nombre_ImagenMiniatura 
 		];
 
 		// echo '<pre>';
