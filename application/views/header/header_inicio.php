@@ -24,15 +24,15 @@
 				<nav id="MenuResponsive" class="header__menuResponsive">						
 					<ul id="MenuContenedor">
 						<li><a class="header__li--Enlaces" href="#Seccion_1">Inicio</a></li>
-						<li class="header__li--Enlaces menuLi_1"><a class="MostrarSubMenu_JS">Colecciones</a>
-							<ul class="menuContenedor_3 ul--menu" id="MenuContenedor_3">
-								<li><a class="menuLi_2 header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
+						<li class="header__li--Enlaces menuLi_1"><a class="a_2 MostrarSubMenu_JS">Colecciones</a>
+							<ul class="menuContenedor_3" id="MenuContenedor_3">
+								<li><a class=" header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
 							</ul> 	
 						</li>
 						<li><a class="header__li--Enlaces" href="Ponchos_C">Ponchos</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_2">Ultimas obras</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
-						<li><a class="header__li--Enlaces" href="#Seccion_2">Fotografos</a></li>
+						<li><a class="header__li--Enlaces" href="#Fotografos">Fotografos</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_7">Contacto</a></li>
 					</ul>		
 				</nav>

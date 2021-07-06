@@ -25,7 +25,7 @@ li{
 	/* DECLARACION DE VARIABLES */
 :root{
 	--Fondo: rgb(16, 20, 23); 
-	--HoverEnlaces: rgba(27, 30, 39, 0.7);
+	--HoverEnlaces: rgba(13, 14, 15, 0.5);
 	--FuenteInicio: rgb(238, 201, 201);
 	--FondoImagenDetalle: rgb(13, 14, 15);
 	--FondoTextoTransparente: rgba(13, 14, 15, 0.5);
@@ -52,6 +52,9 @@ li{
 }
 .a_1--oscuro{/*detallePintura - detallePoncho*/
 	background-color: var(--FondoImagenDetalle);
+}
+.a_2{
+	color: white;
 }
 hr{
 	color: white;
@@ -108,30 +111,30 @@ hr{
     width: 100%;
     height: 100vh;
 }
-.contenedor_4--flex{/*inicio*/
+.cont_sobreMi{/*inicio*/
 	background-color: var(--Fondo);	
-	display: flex;
 	height: 100vh;
 }
-.contenedor_4{/*inicio*/
+.cont_sobreMi--flex{/*inicio*/
 	display: flex;
-	width: 80%;
+	width: 90%;
+	margin: auto;
 	padding-top: 5%;
 }
-.contenedor_4__div1{
+.cont_sobreMi__div1{
 	width: 35%;
 	text-align: center;
 }
-.contenedor_4__div1__img{
+.cont_sobreMi__div1__img{
 	object-fit: contain !important; /*esta propiedad necesita el ancho y alto de la imagen definidos*/
 	width: 90%;
 	height: 500px;
 }
-.contenedor_4__div2{
+.cont_sobreMi__div2{
 	width: 65%;
 	height: 500px;
 }
-.contenedor_4__div2--textarea_1{
+.cont_sobreMi__div2--textarea_1{
 	background-color: var(--Fondo);
 	color: var(--FuenteInicio);
 	font-size: 1.4em;
@@ -248,7 +251,7 @@ hr{
 	width: 100%;
 	height: 100%;
 }
-.cont_ponchoDetalle{/*detallePintura*/
+.cont_ponchoDetalle{/*detallePintura - detallePoncho*/
 	width: 100%;
 	height: 100vh;
 	margin: auto;
@@ -256,8 +259,9 @@ hr{
 	align-items: center;
 }
 .cont_ponchoDetalle--img{/*detallePintura*/
-	width: 100%;
-	height: 90%;
+	width: 75%;
+	height: 95%;
+	margin: auto;
 }
 .cont_ponchoDetalle--leyenda{
 	background-color: var(--FondoTextoTransparente);
@@ -317,29 +321,29 @@ hr{
 	left: 95%;
 	cursor: pointer;
 }
-.cont--menu{
-	background-color: rgb(16, 20, 23);
-	width: 20%
-}
-.cont--menu--UltimoasObras{
-	margin-right: 5%;
-}
 .cont_ultimasObras{
 	background-color: var(--Fondo);
-	display: flex;	
-	flex-wrap: wrap;
 	min-height: 100vh;
 }
 .cont_ultimasObras--item{
-	padding-top: 5%;
+	padding-top: 3%;
 	width: 70%;
-	margin: 1%;
+	margin: auto;
+	text-align: center;
 }
 .cont_ultimasObras--img{/*inicio*/
-	width: 100%;
-	height: 300px;
+	width: 80%;
+	height: 100%;
 	cursor: pointer;
 	object-fit: cover;
+}
+.cont_ultimasObras--leyenda{
+	position: relative;
+	width: 80%;
+	margin: auto;
+	bottom: 6%;
+	text-align: right;
+	padding: 0.5% 1%;
 }
 .mostrar{/*añadida via JS en inicio_V*/
 	color: white;
@@ -380,16 +384,18 @@ hr{
 	border-style: none;
 }
 .cont_contacto{
-	display: flex;
+	background-color: var(--Fondo);
 	height: 100vh;
-	position: relative;
+	display: flex;
+	align-items: center;
 }
 .cont_contacto__div-1{/*inicio*/
-	background-color: var(--Fondo);
 	width: 80%; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin: auto;
+	/* display: flex; */
+	/*justify-content: center; */
+	/* align-items: center; */
+	text-align: center;
 }
 .cont_contacto--img{/*inicio*/
 	display: block;
@@ -409,8 +415,9 @@ hr{
 	margin: 50% auto 10% auto;
 }
 .cont_Formulario{/*inicio*/
-	margin-left: 20%;
-	width: 60%; 
+	/* margin-left: 20%; */
+	margin: auto;
+	width: 45%; 
 }
 .cont_Formulario--label{/*inicio*/
 	color: white;
@@ -422,7 +429,7 @@ hr{
 }
 .cont_Formulario--input{/*inicio*/
 	background-color: rgba(255, 255, 255, 0.9);
-	width: 80%;
+	width: 100%;
 	display: block;
 	margin-bottom: 2%;
 	border-radius: 5px;
@@ -430,7 +437,7 @@ hr{
 }
 .cont_Formulario--textarea{/*inicio*/
 	background-color: rgba(255, 255, 255, 0.9);
-	width: 80%;
+	width: 100%;
 	height: 25vh;
 	display: block;
 	margin-bottom: 2%;
@@ -529,14 +536,14 @@ hr{
 	text-align: center;
 }
 .header{/*header*/
-	/* background-color:var(--Fondo); */
+	/* background-color: var(--Fondo); */
 	position: fixed;
 	top: 0%;
 	left: 0%;
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-	padding-top: 0.5%;
+	padding-top: 1%;
 }
 .header--car{
 	color: white;
@@ -556,28 +563,23 @@ hr{
 	height: 50px;
 }
 .header__li--Enlaces{
-	background-color: yellow;
 	color: white;
-	text-align: center;
+	/* text-align: center; */
 	font-size: 1.3em !important;
-	padding: 2%;
 	line-height: 40px;
 	height: 55px;
-	padding-top: 5%;
+	/*padding-top: 5%; */
 	/* width: 100%; */
 	/*flex-grow: 1;distribuye proporcionalmente los elementos internos en el eje horizontal, es necesario que el elemento padre tenga la propiedad display con el valor flex*/
 }
 .header__li--Enlaces:hover{
-	background-color: var(--HoverEnlaces);
+	/* background-color: var(--HoverEnlaces);
 	border-radius: 10px;
-	cursor: pointer;
+	cursor: pointer; */
 }
 .header__logo{
-	/* display: block; */
-	/* width: 20%; */
 	height: 8vh;
 	border-radius: 20px;
-	/* margin: 50% auto 10% auto; */
 }
 .header--menu{/*header_inicio*/
 	color: white !important;
@@ -585,19 +587,21 @@ hr{
 	cursor: pointer;
 }
 .header__menuResponsive{/*Todas las páginas*/
-	background-color: rgba(0, 0, 0, 0.8);
-	background-color: blue;
-	/* padding-top: 0%; */
-	/* height: 100vh; */
+	background-color: var(--HoverEnlaces);
 	margin-top: -250%; /*oculta el menu responsive*/
 	transition: all 0.5s;
-	position: initial;
+	position: absolute;
+	padding: 1%;
+	border-radius: 15px;
+	width: 15%;
 }
 .header__menuResponsive ul{/*Todas las páginas*/
+	/* background-color: orange; */
+	/* box-sizing: content-box !important; */
 	/* background-color: rgba(0, 0, 0, 0.8); */
 	/* flex-direction: column; */
-	/* width: 100%; */
 	/* padding-top: 8%; */
+	/* width: 100%; */
 }
 .hr_1{/*inicio*/
 	display: block;
@@ -693,14 +697,14 @@ hr{
 .menuLi_1:hover > ul{/*Se aplica un hover a un elemento, seleccionando otro elemento distinto*/
 	background-color: var(--HoverEnlaces);
 	display: inline-block !important;
-	width: 19%;
+	/* width: 19%; */
 	/* margin-left: 5%; */
 }
 .menuLi_2{/*header_AfiCom*/
 	padding-top: 0%; 
 	display: block !important;
 	/* width: 110% !important; */
-	text-align: left !important;
+	/* text-align: left !important; */
 }
 .ocultar{/*vitrina - carrito* - horario*/
 	color: white;
@@ -722,20 +726,18 @@ hr{
 	cursor: pointer;
 }
 ul .menuContenedor_1{/*header_inicio*/
-	left: 50% !important;
+	/* left: 50% !important; */
 }
 ul .menuContenedor_3{/*header_AfiCom*/
 	display: none;
 	position: absolute;
-	margin-left: 17%;
+	margin-left: 15%;
+	width: 100%;
+	/* margin-left: 20%; */
 	padding-left: 1%;
 	/* padding-top: 5px; */
 	z-index: 5;
 	padding-bottom: 1%; 
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-.ul--menu{
-	padding-top: 1%;
-	margin-left: 6% !important;
+	/* border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px; */
 }

@@ -17,7 +17,7 @@
     <body>
 		<header class="header" id="Header">   
 			<!-- icono para responsive -->
-			<label class="header--menu icono_3"><span id="Span_6"><i class="fas fa-bars" id= "Icono_3"></i></span></label>
+			<!-- <label class="header--menu icono_3"><span id="Span_6"><i class="fas fa-bars" id= "Icono_3"></i></span></label> -->
 
 			<!-- Barra de navegación -->
 			<nav id="MenuResponsive" class="header__menuResponsive">						

@@ -9,6 +9,19 @@ document.getElementById('Icono_3').addEventListener('click', mostrarMenu);
     // }, false)
 
 //************************************************************************************************
+//Muestra el menu principal   
+function mostrarMenu(){  
+    let A = document.getElementById("MenuResponsive")
+
+    if(A.style.marginTop != "0%"){//Se muestra el menu
+        A.style.marginTop = "0%"
+    }
+    else if(A.style.marginTop == "0%"){//Se oculta el menu
+        A.style.marginTop = "-250%"
+    }
+}
+
+//************************************************************************************************
 //Oculta el menu principal en responsive haciendo click por fuera del boton menu
 let div = document.getElementById("MenuResponsive")
 let span = document.getElementById("Span_6")
@@ -18,8 +31,8 @@ window.addEventListener("click", function(e){
     // var click = e.target
     // console.log(click)
     AltoVitrina = document.body.scrollHeight
-    if((div.style.marginLeft == "0%")){
-        div.style.marginLeft = "100%"
+    if((div.style.marginTop == "0%")){
+        div.style.marginTop = "-250%"
         // div.style.transitionDelay = "1s";
         //Se detiene la propagación de los eventos en caso de hacer click en un elemento que contenga algun evento
         e.stopPropagation();
@@ -38,19 +51,6 @@ window.addEventListener("mouseover",function(e){
 }, false)
 
 //************************************************************************************************
-//Muestra el menu principal en formato movil y tablet  
-function mostrarMenu(){  
-    let A = document.getElementById("MenuResponsive")
-
-    if(A.style.marginLeft != "0%"){//Se muestra el menu
-        A.style.marginLeft = "0%"
-    }
-    else if(A.style.marginLeft == "0%"){//Se oculta el menu
-        A.style.marginLeft = "100%"
-    }
-}
-
-// //************************************************************************************************
 //Muestra la galeria
 function mostrarGaleria(e){
     // window.open(`Galeria_C/vistaAmpliada/${e.target.id}`, "ventana1", "self")
