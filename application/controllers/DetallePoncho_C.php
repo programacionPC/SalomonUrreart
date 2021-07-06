@@ -12,9 +12,13 @@ class DetallePoncho_C extends CI_Controller {
 	public function index($ID_Poncho){
 		//CONSULTA los detalles del poncho seleccionado
 		$DetallePoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
+		
+		//CONSULTA las imagenes miniatura del poncho seleccionado
+		$MiniaturaPoncho = $this->DetallePoncho_M->consultarMiniaturaPoncho($ID_Poncho);
 
 		$Datos = [
 			'detallePoncho' => $DetallePoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'imagenMiniatura' => $MiniaturaPoncho //
 		];
 
 		// echo '<pre>';
