@@ -13,6 +13,23 @@
 			<p class="cont_ponchoDetalle--p1"><?php echo $detallePoncho['medidaPoncho'];?></p> 
 			<p class="cont_ponchoDetalle--p1"><?php echo $detallePoncho['tecnicaPoncho'];?></p> 
 		</div>
+	<!-- IMAGENES SECUNDARIAS (MINIATURAS) -->
+	<div class="cont_ponchoDetalle----miniaturas">
+		<?php                
+		//  echo $imagenMiniatura['nombre_ImagenMiniatura'];
+		//  exit;
+		// if($imagenMiniatura != Array()){      
+			$Contador = 1;   
+			//$Datos proviene de      onclick="verMiniatura('Imagen_<?php echo $Contador
+			foreach($imagenMiniatura as $keyImagenMiniatura) :   ?>
+				<img class="imagen_11 borde_1 borde_2" id="Imagen_<?php echo $Contador ?>" alt="Fotografia no disponible" src="<?php echo base_url()?>assets/images/ponchos/miniaturaPonchos/<?php echo $keyImagenMiniatura['nombre_ImagenMiniatura'];?>" />
+				<?php
+				// echo  $Contador;
+				$Contador ++;
+			endforeach;
+		// }
+		?>  
+	</div>
 	</div>
 </div>
 
