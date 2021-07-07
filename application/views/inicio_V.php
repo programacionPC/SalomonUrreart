@@ -1,12 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<div>
 	<!-- PORTADA -->
-	<div class="contenedor_1" id="Seccion_1">
-		<div class="ContenedorTitulo">
-			<div class="ContenedorTitulo_div1">
-				<img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
-			</div>S
+	<div class="cont_portada" id="Seccion_1">
+		<img class="cont_portada--imagen" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
+		<div class="cont_portada__div-1">
+			<p class="cont_portada__p-1">SalomonUrreart</p>
+			<p class="cont_portada__p-2">Pinto por y para la naturaleza</p>
 		</div>
 	</div>
 
@@ -32,6 +31,7 @@
  
 	<!-- SOBRE MI -->
 	<div class="cont_sobreMi" id="Seccion_5">
+		<h1 class="cont_sobreMi__h1 cont_sobreMi__h1--titulo">Sobre el artista</h1>
 		<div class="cont_sobreMi--flex">
 			<div class="cont_sobreMi__div1">
 				<img class="cont_sobreMi__div1__img lazyload" loading="lazy" alt="Fotografia de perfil" data-src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>" width="320" height="320" alt=""/>
@@ -44,6 +44,7 @@
 	
 	<!-- FOTOGRAFOS -->
 	<div class="cont_sobreMi" id="Fotografos">
+		<h1 class="cont_sobreMi__h1">Fotografos</h1>
 		<div class="cont_sobreMi--flex">
 			<div class="cont_sobreMi__div1">
 				<img class="cont_sobreMi__div1__img lazyload" loading="lazy" alt="Fotografia de perfil" data-src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>" width="320" height="320" alt=""/>
@@ -71,7 +72,6 @@
 			</div>
 		</div>	
 	</div>	
-</div>
 
 
 <script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 

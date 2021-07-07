@@ -73,10 +73,34 @@ hr{
 	margin-top: 20%;
 	width: 20%;
 }
-.contenedor_1{/*inicio*/
-	display: flex;
+.cont_portada{/*inicio*/
+	background-color: red;
     width: 100%;
-    /* height: 100vh; */
+	height: 100%;
+}
+.cont_portada--imagen{
+	width: 100%;
+	height: 100vh;
+    object-fit: cover;
+}
+.cont_portada__div-1{/*inicio*/
+	position: absolute;/*para centrar vertical y horizontalmente*/
+	width: 500px; /*para centrar vertical y horizontalmente*/
+	margin-left:-250px;/*para centrar vertical y horizontalmente*/
+	left: 50%;/*para centrar vertical y horizontalmente*/
+	height:100px;/*para centrar vertical y horizontalmente*/
+	margin-top: -50px;/*para centrar vertical y horizontalmente*/
+	top: 50%;/*para centrar vertical y horizontalmente*/
+	text-align: center;
+}
+.cont_portada__p-1{
+	font-size: 4em;
+	color: white;
+}
+.cont_portada__p-2{
+	font-size: 1.5em;
+	color: white;
+
 }
 .contenedor_2{/*inicio*/	
 	display: flex;
@@ -113,13 +137,23 @@ hr{
 }
 .cont_sobreMi{/*inicio*/
 	background-color: var(--Fondo);	
-	height: 100vh;
+	min-height: 100vh;
+}
+.cont_sobreMi__h1{
+	color: white;
+	font-size: 2em;
+	text-align: center;
+	padding-top: 8%;
+	letter-spacing: 90px;
+}
+.cont_sobreMi__h1--titulo{
+	letter-spacing: 50px;
 }
 .cont_sobreMi--flex{/*inicio*/
 	display: flex;
 	width: 90%;
 	margin: auto;
-	padding-top: 5%;
+	padding-top: 3%;
 }
 .cont_sobreMi__div1{
 	width: 35%;
@@ -255,8 +289,8 @@ hr{
 	width: 100%;
 	height: 100vh;
 	margin: auto;
-	display: flex;
-	align-items: center;
+	/* display: flex;
+	align-items: center; */
 }
 .cont_ponchoDetalle--img{/*detallePintura*/
 	width: 75%;
@@ -288,6 +322,15 @@ hr{
 	top: 50% !important;
 	left: 3%;
 	cursor: pointer;
+}
+.cont_ponchoDetalle--miniaturas{/*detallePoncho*/
+	background-color: red;
+	display: flex; /*Organiza los elementos horizontalmente*/
+	text-align: center;
+	width: 50%;
+	left: 5%;
+	position: absolute;
+	bottom: 10pt;
 }
 .cont_ponchos_galeria{
 	display: flex;	
@@ -614,11 +657,6 @@ hr{
 	top: 2%;
 	cursor: pointer;
 }
-.imagen--portada{
-	width: 100%;
-	height: 100vh;
-    object-fit: cover;
-}
 .imagen--evento{
 	width: 100%;
 	/* height: 100vh; */
@@ -745,15 +783,9 @@ ul .menuContenedor_3{/*header_AfiCom*/
 
 
 
-.cont_ponchoDetalle--miniaturas{/*detallePoncho*/
-	display: flex; /*Organiza los elementos horizontalmente*/
-	text-align: center;
-	width: 100%;
-	margin-top: 2%;
-}
 .imagen_11{/*detallePoncho*/
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 	margin: auto;
 	cursor: pointer;
 	object-fit: cover; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/
@@ -769,6 +801,5 @@ ul .menuContenedor_3{/*header_AfiCom*/
 }
 .cont_PrincipalDetalle{
 	background-color: var(--FondoImagenDetalle);
-	background-color: red;
 	height: 100vh;
 }
