@@ -87,7 +87,7 @@ class DetallePintura_C extends CI_Controller {
 				// echo '<pre>';
 				// exit;
 				
-				$this->load->view('A_DiapositivaPintura_V', $Datos);
+				$this->load->view('A_detallePintura_V', $Datos);
 			}
 			else if($Datos['primerID_Pintura']['ID_Pintura'] == $Datos['DiapositivaPintura']['ID_Pintura']){
 				array_push($Datos, 'primero');
@@ -97,7 +97,7 @@ class DetallePintura_C extends CI_Controller {
 				// echo '<pre>';
 				// exit;
 
-				$this->load->view('A_DiapositivaPintura_V', $Datos);
+				$this->load->view('A_detallePintura_V', $Datos);
 			}
 		}
 	}

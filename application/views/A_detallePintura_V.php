@@ -54,4 +54,4 @@
 	<p class="cont_ponchoDetalle--p1"><?php echo $DiapositivaPintura['tecnica_pintura'];?></p> 
 </div>
 
-<script src="<?php echo base_url();?>assets/javascript/A_DetallesPoncho.js?v=<?php echo rand();?>"></script> 
+<script src="<?php echo base_url();?>assets/javascript/A_DetallesPintura.js?v=<?php echo rand();?>"></script> 
