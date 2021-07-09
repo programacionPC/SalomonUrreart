@@ -4,7 +4,7 @@
 	<a class="a_1 a_1--oscuro" href="<?php echo base_url() . 'Pinturas_C/fauna';?>"><i class="fas fa-times"></i></a>
 	<div class="cont_ponchoDetalle" id="Cont_PinturaDetalle">
 		<i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft" onclick="Llamar_sliderPintura('<?php echo $detallePintura['ID_Pintura'];?>', 'Retroceder')"></i>
-		<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_sliderPintura(<?php echo $detallePintura['ID_Pintura'];?>, 'Avanzar')"></i>
+		<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_detallePintura(<?php echo $detallePintura['ID_Pintura'];?>, 'Avanzar')"></i>
 		<div class="cont_ponchoDetalle--img">					
 			<!-- IMAGENES PRINCIPAL -->
 			<div style="height: 90%;" id="Imagen_Detalle">

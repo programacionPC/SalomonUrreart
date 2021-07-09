@@ -7,6 +7,7 @@
 	<div class="cont_ponchoDetalle" id="Cont_PonchoDetalle">
 		<i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft" onclick="Llamar_sliderPoncho('<?php echo $detallePoncho['ID_Poncho'];?>', 'Retroceder')"></i>
 		<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_sliderPoncho('<?php echo $detallePoncho['ID_Poncho'];?>', 'Avanzar')"></i>
+		
 		<div class="cont_ponchoDetalle--img">
 			<div style="height: 100%;">
 				<img class="imagen_3" src="<?php echo base_url() . "assets/images/ponchos/" . $detallePoncho['nombre_ImgPoncho'];?>"/>

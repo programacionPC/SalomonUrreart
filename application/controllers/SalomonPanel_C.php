@@ -52,6 +52,11 @@ class SalomonPanel_C extends CI_Controller {
 			'datosPintura' => $PinturasSalomon, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
 			'datosUltimasObras' => $UltimasObrasSalomon //ID_UltimaObra, nombre_UltimaObra, tecnica_UltimaObra, tamanio_UltimaObra, nombre_ImgUltimaObra
 		];
+
+		// echo '<pre>';
+		// print_r($Datos);
+		// echo '</pre>';
+		// exit;
 	
 		$this->load->view('header/header_SoloEstilos');
 		$this->load->view('salomonpanel_V', $Datos);

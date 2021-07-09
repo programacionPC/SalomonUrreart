@@ -1,28 +1,26 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed');   ?>
 
 <!-- Se coloca el CDN para la libreria JQuery, necesaria para la previsualización de la imagen--> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <div class="ContenedorTitulo">
-        <div class="ContenedorTitulo_div1">
-            <img class="imagen--portada" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
+    <div class="cont_portada--menu">
+        <div class="cont_portada--div-1">
+            <h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
+            <h2 class="ContenedorTitulo--h2_1">Panel de administración</h2>
         </div>
-        <div class="Menu_horizontal Menu_horizontal--panel">
-            <div class="Menu_horizontal__div1">
-                <h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
-                <h2 class="ContenedorTitulo--h2_1">Panel de administración</h2>
-            </div>
-            <ul class="Menu_horizontal__ul">
-                <li><a class="li--Enlaces" href="#Portada">Imagen portada</a></li>
-                <li><a class="li--Enlaces" href="#Colecciones">Categoria de pinturas</a></li>
-                <li><a class="li--Enlaces" href="#Pinturas">Pinturas</a></li>
-                <li><a class="li--Enlaces" href="#Galeria">Ponchos</a></li>
-                <li><a class="li--Enlaces" href="#UltimasObras">Ultimas obras</a></li>
-                <li><a class="li--Enlaces" href="#SobreMi">Sobre el artista</a></li>
-                <li><hr></li>
-                <li><a class="li--Enlaces" href="<?php echo base_url();?>">Sitio web</a></li>
-            </ul>
-        </div>
+        <ul class="cont_portada--ul">
+            <li><a class="cont_portada--li" href="#Portada">Imagen portada</a></li>
+            <li><a class="cont_portada--li" href="#Colecciones">Categoria de pinturas</a></li>
+            <li><a class="cont_portada--li" href="#Pinturas">Pinturas</a></li>
+            <li><a class="cont_portada--li" href="#Galeria">Ponchos</a></li>
+            <li><a class="cont_portada--li" href="#UltimasObras">Ultimas obras</a></li>
+            <li><a class="cont_portada--li" href="#SobreMi">Sobre el artista</a></li>
+            <li><hr></li>
+            <li><a class="cont_portada--li" href="<?php echo base_url();?>">Sitio web</a></li>
+        </ul>
+    </div>
+    <div class="cont_portada">
+        <img class="cont_portada--imagen" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
     </div>
 
     <!-- IMAGEN PORTADA -->
@@ -323,7 +321,7 @@
 <script>     
     //Da una vista previa de las ultimas imagenes
     function readImagenUltimasObras(input, id_Label){
-        console.log("______Desde readImagenUltimasObras()______", input + ' | ' + id_Label)
+        // console.log("______Desde readImagenUltimasObras()______", input + ' | ' + id_Label)
         if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function(e){
@@ -342,7 +340,7 @@
     // *****************************************************************************************
     //Da una vista previa de los ponchos
     function readImagePoncho(input, id_Label){
-        console.log("______Desde readImagePoncho()______", input + ' | ' + id_Label)
+        // console.log("______Desde readImagePoncho()______", input + ' | ' + id_Label)
         if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function(e){
@@ -352,7 +350,7 @@
         }
     }        
     $("#ImgInp_1").change(function(){
-        console.log("Desde cargar poncho")
+        // console.log("Desde cargar poncho")
         // Código a ejecutar cuando se detecta un cambio de imagen de tienda
         var id_Label = $('#Blah_1');
         readImagePoncho(this, id_Label);
@@ -361,7 +359,7 @@
     // *****************************************************************************************
     //Da una vista previa de las pinturas
     function readImagePintura(input, id_Label){
-        console.log("______Desde readImagePintura()______", input + ' | ' + id_Label)
+        // console.log("______Desde readImagePintura()______", input + ' | ' + id_Label)
         if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function(e){
@@ -371,7 +369,7 @@
         }
     }        
     $("#Etiqueta_ImgPintura").change(function(){
-        console.log("Desde cargar poncho")
+        // console.log("Desde cargar poncho")
         // Código a ejecutar cuando se detecta un cambio de imagen de tienda
         var id_Label = $('#Img_Pinturas');
         readImagePintura(this, id_Label);
@@ -381,7 +379,7 @@
     
     //Da una vista previa de la foto de perfil
     function readImage(input, id_Label){
-        console.log("______Desde readImage()______", input + ' | ' + id_Label)
+        // console.log("______Desde readImage()______", input + ' | ' + id_Label)
         if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function(e){
@@ -391,7 +389,7 @@
         }
     }        
     $("#imgInp_2").change(function(){
-        console.log("Desde cargar foto de perfil")
+        // console.log("Desde cargar foto de perfil")
         // Código a ejecutar cuando se detecta un cambio de imagen de tienda
         var id_Label = $('#blah_2');
         readImage(this, id_Label);

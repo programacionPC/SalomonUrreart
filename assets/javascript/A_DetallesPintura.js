@@ -31,10 +31,10 @@ function conexionAJAX(){
 
 // *************************************************************************************************
     //Muestra cada Pintura individualmente en un slider
-    function Llamar_sliderPintura(ID_Pintura, Recorrido){
-        console.log("______Desde Llamar_sliderPintura()______", ID_Pintura + "/" + Recorrido)
+    function Llamar_detallePintura(ID_Pintura, Recorrido){
+        console.log("______Desde Llamar_detallePintura()______", ID_Pintura + "/" + Recorrido)
 
-        var url = "../../DetallePintura_C/slider/" + ID_Pintura  + "/" + Recorrido
+        var url = "../../DetallePintura_C/diapositivaPintura/" + ID_Pintura  + "/" + Recorrido
         http_request.open('GET', url, true)  
         peticion.onreadystatechange = respuesta_sliderPintura
         peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")

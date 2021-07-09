@@ -24,9 +24,9 @@
 				<nav id="MenuResponsive" class="header__menuResponsive">						
 					<ul id="MenuContenedor">
 						<li><a class="header__li--Enlaces" href="#Seccion_1">Inicio</a></li>
-						<li class="header__li--Enlaces menuLi_1"><a class="a_2 MostrarSubMenu_JS">Colecciones</a>
+						<li class="menuLi_1"><a class="header__li--Enlaces MostrarSubMenu_JS">Colecciones</a>
 							<ul class="menuContenedor_3" id="MenuContenedor_3">
-								<li><a class=" header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
+								<li><a class="header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
 							</ul> 	
 						</li>
 						<li><a class="header__li--Enlaces" href="Ponchos_C">Ponchos</a></li>
