@@ -55,4 +55,14 @@
             $stmt = $this->dbh->query("SELECT MIN(ID_Pintura) AS 'ID_Pintura'  FROM pinturas");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
+
+        public function consultarMiniaturaPintura($ID_Pintura){
+            $stmt = $this->dbh->query("SELECT ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura FROM imagenesminiaturas  WHERE ID_Pintura = $ID_Pintura");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function consultarImagenMiniatura($ID_ImagenMiniatura){
+            $stmt = $this->dbh->query("SELECT nombre_ImagenMiniatura FROM  imagenesminiaturas WHERE ID_ImagenMiniatura = $ID_ImagenMiniatura");
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }

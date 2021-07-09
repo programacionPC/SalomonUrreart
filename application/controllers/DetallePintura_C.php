@@ -9,12 +9,17 @@ class DetallePintura_C extends CI_Controller {
 		$this->load->model('DetallePintura_M');
 	}
 
+	//Invocado desde E_Pintura.js
 	public function index($ID_Pintura){
 		//CONSULTA los detalles de la pintura seleccionada
 		$Detalle_Pintura = $this->DetallePintura_M->consultarPintura($ID_Pintura);
+		
+		//CONSULTA las imagenes miniatura del poncho seleccionado
+		$MiniaturaPintura = $this->DetallePintura_M->consultarMiniaturaPintura($ID_Pintura);
 
 		$Datos = [
 			'detallePintura' => $Detalle_Pintura, //ID_Pintura, nombre_pintura, tecnica_pintura, medida_pintura, nombre_ImgPintura
+			'imagenMiniatura' => $MiniaturaPintura // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
 		];
 
 		// echo '<pre>';
@@ -95,5 +100,22 @@ class DetallePintura_C extends CI_Controller {
 				$this->load->view('A_sliderPintura_V', $Datos);
 			}
 		}
+	}
+
+	//Invocado en A_DetallesPintura.js
+	public function VerMiniatura($ID_ImagenMiniatura){
+		// Se consulta el nombre de la imagen miniatura que se va a mostrar
+		$ImagenMiniatura = $this->DetallePintura_M->consultarImagenMiniatura($ID_ImagenMiniatura);
+		
+		$Datos = [
+			'imagenMiniatura' => $ImagenMiniatura, //nombre_ImagenMiniatura
+		];
+
+		// echo '<pre style="color:white">';
+		// print_r($Datos);
+		// echo '</pre>';
+		// exit;
+
+		$this->load->view('A_vistaMiniatura_V', $Datos);
 	}
 }

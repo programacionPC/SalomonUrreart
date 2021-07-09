@@ -55,16 +55,7 @@ if(screen.width > 1024){
     window.addEventListener("scroll",function(){
         //Se consulta la distancia en px desde el top de la pantalla hasta el borde superior de la seccion "SOBRE MI"
         let ProfundidadSeccion_5 = document.getElementById("Seccion_5")
-        let A = ProfundidadSeccion_5.getBoundingClientRect().top
-
-        // let ProfundidadImagen_3 = document.getElementById("Seccion_3")
-        // let B = ProfundidadImagen_3.getBoundingClientRect().top
-
-        // let ProfundidadImagen_4 = document.getElementById("Seccion_4")
-        // let C = ProfundidadImagen_4.getBoundingClientRect().top
-        
-        // let ProfundidadImagen_5 = document.getElementById("Seccion_5")
-        // let D = ProfundidadImagen_5.getBoundingClientRect().top        
+        let A = ProfundidadSeccion_5.getBoundingClientRect().top     
             
         if(A < 50){//50 es la distancia arbitaria que se selecciono para comenzar a realizar la transsión de color
             document.getElementById("Header").style.backgroundColor = "rgb(16, 20, 23)"
@@ -72,78 +63,8 @@ if(screen.width > 1024){
         else if(A > 50){   
             document.getElementById("Header").style.backgroundColor = "initial";
         }
-        // else if(C < 55 && D > 55){          
-        //     document.getElementById("Header").style.backgroundColor = "rgb(110, 44, 0)" //Cuando es sobre mi
-        //     document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(110, 44, 0)" 
-        //     document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(110, 44, 0)" 
-        //     document.getElementById("Header").style.transitionDuration = "2s"
-        //     let enlacesMenu = document.querySelectorAll("li a.header__a")
-        //     for(let i = 0; i < enlacesMenu.length; i++){
-        //         enlacesMenu[i].style.color = "white"
-        //     }
-        // }
-        // else if(D < 55){           
-        //     document.getElementById("Header").style.backgroundColor = "rgb(51, 0, 0)" //Cuando es tienda
-        //     document.getElementById("MenuContenedor_3").style.backgroundColor = "rgb(51, 0, 0)" 
-        //     document.getElementById("MenuContenedor_4").style.backgroundColor = "rgb(51, 0, 0)" 
-        //     // document.getElementById("Header").style.borderBottomColor = "rgb(11, 7, 42)"
-        //     // document.getElementById("Header").style.borderBottomStyle = "solid"
-        //     // document.getElementById("Header").style.borderBottomWidth = "1px"
-        //     document.getElementById("Header").style.transitionDuration = "2s"
-        //     let enlacesMenu = document.querySelectorAll("li a.header__a")
-        //     for(let i = 0; i < enlacesMenu.length; i++){
-        //         enlacesMenu[i].style.color = "white"
-        //     }
-        // }
-        // else{
-        //     document.getElementById("Header").style.backgroundColor = "initial" //color superior
-        //     document.getElementById("MenuContenedor_3").style.backgroundColor = "initial" 
-        //     document.getElementById("MenuContenedor_4").style.backgroundColor = "initial" 
-        //     document.getElementById("Header").style.borderBottomColor = "transparent "
-        //     let enlacesMenu = document.querySelectorAll("li a.header__a")
-        //     for(let i = 0; i < enlacesMenu.length; i++){
-        //         enlacesMenu[i].style.color = "white"
-        //     }
-        // }  
     })
-}//Se cambia el color del icono hamburguesa del menu principal solo en resolucion menores a 800px
-// else if(screen.width < 1024){ 
-//     window.addEventListener("scroll",function(){
-//         //Se consulta la distancia en px desde el top de la pantalla hasta el borde superior de cada sección
-//         let ProfundidadImagen_2 = document.getElementById("Seccion_2")
-//         let A = ProfundidadImagen_2.getBoundingClientRect().top
-
-//         let ProfundidadImagen_3 = document.getElementById("Seccion_3")
-//         let B = ProfundidadImagen_3.getBoundingClientRect().top
-
-//         let ProfundidadImagen_4 = document.getElementById("Seccion_4")
-//         let C = ProfundidadImagen_4.getBoundingClientRect().top
-        
-//         let ProfundidadImagen_5 = document.getElementById("Seccion_5")
-//         let D = ProfundidadImagen_5.getBoundingClientRect().top
-            
-//         if(A < 55 && B > 55){
-//             document.getElementById("Header").style.backgroundColor = "rgb(11, 83, 69)"            
-//             document.getElementById("Header").style.transitionDuration = "2s"
-//         }
-//         else if(B < 55 && C > 55){   
-//             document.getElementById("Header").style.backgroundColor = "rgb(0, 0, 51)"          
-//             document.getElementById("Header").style.transitionDuration = "2s"
-//         }
-//         else if(C < 55 && D > 55){          
-//             document.getElementById("Header").style.backgroundColor = "rgb(110, 44, 0)"         
-//             document.getElementById("Header").style.transitionDuration = "2s"
-//         }
-//         else if(D < 55){           
-//             document.getElementById("Header").style.backgroundColor = "rgb(51, 0, 0)"          
-//             document.getElementById("Header").style.transitionDuration = "2s"
-//         }
-//         else{
-//             document.getElementById("Header").style.backgroundColor = "initial"         
-//             document.getElementById("Header").style.transitionDuration = "2s"
-//         }  
-//     })
-// }
+}
 
 //************************************************************************************************
 //Muestra la galeria

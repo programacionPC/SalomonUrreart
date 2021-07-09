@@ -12,13 +12,9 @@ class DetallePoncho_C extends CI_Controller {
 	public function index($ID_Poncho){
 		//CONSULTA los detalles del poncho seleccionado
 		$DetallePoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
-		
-		//CONSULTA las imagenes miniatura del poncho seleccionado
-		$MiniaturaPoncho = $this->DetallePoncho_M->consultarMiniaturaPoncho($ID_Poncho);
 
 		$Datos = [
 			'detallePoncho' => $DetallePoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-			'imagenMiniatura' => $MiniaturaPoncho // ID_Poncho, nombre_ImagenMiniatura 
 		];
 
 		// echo '<pre>';
@@ -30,6 +26,7 @@ class DetallePoncho_C extends CI_Controller {
 		$this->load->view('detallePoncho_V', $Datos);
 	}
 
+	//Este funcion hace el cambio de imagenes por medio de las flechas, ()no es el slider del poncho
 	public function slider($ID_Poncho, $Recorrido){
 		if($Recorrido == 'Retroceder'){
 			// Se consulta el nombre de la imagen que se va amostrar en detalle

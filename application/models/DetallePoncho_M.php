@@ -35,11 +35,6 @@
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
-        public function consultarMiniaturaPoncho($ID_Poncho){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombre_ImagenMiniatura FROM imagenesminiaturas  WHERE ID_Poncho = $ID_Poncho");
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        }
-
         public function consultarPonchoAnterior($ID_Poncho){
             $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho FROM ponchos WHERE ID_Poncho < $ID_Poncho ORDER BY ID_Poncho DESC LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);

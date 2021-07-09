@@ -32,7 +32,7 @@
 						<li><a class="header__li--Enlaces" href="Ponchos_C">Ponchos</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_2">Ultimas obras</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_5">Sobre el artista</a></li>
-						<li><a class="header__li--Enlaces" href="#Fotografos">Fotografos</a></li>
+						<li><a class="header__li--Enlaces" href="#">Fotografos</a></li>
 						<li><a class="header__li--Enlaces" href="#Seccion_7">Contacto</a></li>
 					</ul>		
 				</nav>

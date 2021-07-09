@@ -1,11 +1,10 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <!-- CARGA LOS ESTILOS DEL SLIDER -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/EstilosSliderPoncho.css?v=<?php echo rand();?>"/>
 
 <div class="contenedor_3"> 
+	<!-- ICONO DE CERRAR PAGINA -->
 	<a class="a_1" href="<?php echo base_url() . 'Inicio_C';?>"><i class="fas fa-times"></i></a>
 
 	<!-- SLIDER -->

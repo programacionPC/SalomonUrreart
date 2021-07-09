@@ -18,7 +18,6 @@
 				$Nombre_UltimaObra = $RowUltimasObras['nombre_UltimaObra'];            
 				$Nombre_ImgUltimaObra = $RowUltimasObras['nombre_ImgUltimaObra'];  ?>
 				<div style="padding-top: 5%" id="Cont_UltimaObra_<?php echo $ID_UltimaObra?>">
-					<!-- <a class="" href="<?php echo base_url() . 'Inicio_C';?>"><i class="fas fa-times"></i></a> -->
 					<img class="cont_ultimasObras--img imagen_2--JS lazyload" loading="lazy" data-src="<?php echo base_url() . "assets/images/ultimaObra/" . $Nombre_ImgUltimaObra;?>" width="320" height="10" alt="" id="Imagen_<?php echo $ID_UltimaObra?>"/>
 					<div class="cont_ultimasObras--leyenda" id="Leyenda">
 						<h1 class="cont_ponchoDetalle--h1"><?php echo $Nombre_UltimaObra;?></h1>
@@ -31,20 +30,7 @@
  
 	<!-- SOBRE MI -->
 	<div class="cont_sobreMi" id="Seccion_5">
-		<h1 class="cont_sobreMi__h1 cont_sobreMi__h1--titulo">Sobre el artista</h1>
-		<div class="cont_sobreMi--flex">
-			<div class="cont_sobreMi__div1">
-				<img class="cont_sobreMi__div1__img lazyload" loading="lazy" alt="Fotografia de perfil" data-src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>" width="320" height="320" alt=""/>
-			</div>
-			<div class="cont_sobreMi__div2">
-				<textarea class="cont_sobreMi__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
-			</div>
-		</div>
-	</div>
-	
-	<!-- FOTOGRAFOS -->
-	<div class="cont_sobreMi" id="Fotografos">
-		<h1 class="cont_sobreMi__h1">Fotografos</h1>
+		<h1 class="cont_sobreMi__h1">Sobre el artista</h1>
 		<div class="cont_sobreMi--flex">
 			<div class="cont_sobreMi__div1">
 				<img class="cont_sobreMi__div1__img lazyload" loading="lazy" alt="Fotografia de perfil" data-src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>" width="320" height="320" alt=""/>
