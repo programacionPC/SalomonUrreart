@@ -32,7 +32,6 @@ class Inicio_C extends CI_Controller {
 
 		$this->load->view('header/header_inicio');
 		$this->load->view('inicio_V', $Datos);
-		$this->load->view('footer/footer');
 	}
 
 	public function SUA_panel(){

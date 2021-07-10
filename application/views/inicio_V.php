@@ -17,7 +17,7 @@
 				$ID_UltimaObra = $RowUltimasObras['ID_UltimaObra']; 
 				$Nombre_UltimaObra = $RowUltimasObras['nombre_UltimaObra'];            
 				$Nombre_ImgUltimaObra = $RowUltimasObras['nombre_ImgUltimaObra'];  ?>
-				<div style="padding-top: 5%" id="Cont_UltimaObra_<?php echo $ID_UltimaObra?>">
+				<div class="cont_ultimasObras__div-1" id="Cont_UltimaObra_<?php echo $ID_UltimaObra?>">
 					<img class="cont_ultimasObras--img imagen_2--JS lazyload" loading="lazy" data-src="<?php echo base_url() . "assets/images/ultimaObra/" . $Nombre_ImgUltimaObra;?>" width="320" height="10" alt="" id="Imagen_<?php echo $ID_UltimaObra?>"/>
 					<div class="cont_ultimasObras--leyenda" id="Leyenda">
 						<h1 class="cont_ponchoDetalle--h1"><?php echo $Nombre_UltimaObra;?></h1>
@@ -36,7 +36,7 @@
 				<img class="cont_sobreMi__div1__img lazyload" loading="lazy" alt="Fotografia de perfil" data-src="<?php echo base_url();?>assets/images/<?php echo $perfilArtista['nombre_Fotografia'];?>" width="320" height="320" alt=""/>
 			</div>
 			<div class="cont_sobreMi__div2">
-				<textarea class="cont_sobreMi__div2--textarea_1" id="Cont_Perfil" name="sobreMi"><?php echo $perfilArtista['perfil']?></textarea>
+				<textarea class="cont_sobreMi__div2--textarea_1" id="Cont_Perfil" name="sobreMi" readonly><?php echo $perfilArtista['perfil']?></textarea>
 			</div>
 		</div>
 	</div>

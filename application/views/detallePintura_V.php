@@ -64,6 +64,6 @@
 		console.log("click en  ", e)
 		
 	// window.addEventListener("DOMContentLoaded", function(e){
-		// getFullscreen(this);
+		getFullscreen(this);
 	},false);
 </script>

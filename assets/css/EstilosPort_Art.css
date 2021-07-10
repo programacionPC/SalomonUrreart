@@ -373,6 +373,9 @@ hr{
 	background-color: var(--Fondo);
 	min-height: 100vh;
 }
+.cont_ultimasObras__div-1{
+	margin-top: 5%;
+}
 .cont_ultimasObras--item{
 	padding-top: 3%;
 	width: 70%;
@@ -439,9 +442,6 @@ hr{
 .cont_contacto__div-1{/*inicio*/
 	width: 80%; 
 	margin: auto;
-	/* display: flex; */
-	/*justify-content: center; */
-	/* align-items: center; */
 	text-align: center;
 }
 .cont_contacto--img{/*inicio*/
@@ -462,7 +462,6 @@ hr{
 	margin: 50% auto 10% auto;
 }
 .cont_Formulario{/*inicio*/
-	/* margin-left: 20%; */
 	margin: auto;
 	width: 45%; 
 }
@@ -583,7 +582,6 @@ hr{
 	text-align: center;
 }
 .header{/*header*/
-	/* background-color: var(--Fondo); */
 	position: fixed;
 	top: 0%;
 	left: 0%;

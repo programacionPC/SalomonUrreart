@@ -50,8 +50,7 @@ window.addEventListener("mouseover",function(e){
 }, false)
 
 //************************************************************************************************
-//Cambia el color de la cinta del menu principal solo en resolucion mayor a 1024px
-if(screen.width > 1024){ 
+//Cambia el color de la cinta del menu principal cuando llega a la sección "SOBRE EL ARTISTA"
     window.addEventListener("scroll",function(){
         //Se consulta la distancia en px desde el top de la pantalla hasta el borde superior de la seccion "SOBRE MI"
         let ProfundidadSeccion_5 = document.getElementById("Seccion_5")
@@ -64,11 +63,5 @@ if(screen.width > 1024){
             document.getElementById("Header").style.backgroundColor = "initial";
         }
     })
-}
 
 //************************************************************************************************
-//Muestra la galeria
-function mostrarGaleria(e){
-    // window.open(`Galeria_C/vistaAmpliada/${e.target.id}`, "ventana1", "self")
-    window.open("../Galeria_C", "ventana1", "self")
-}
