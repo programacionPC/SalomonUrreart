@@ -21,7 +21,7 @@
 				<label class="header--menu"><span id="Span_6"><i class="fas fa-bars" id="Icono_3"></i></span></label>
 
 				<!-- Barra de navegación -->
-				<nav id="MenuResponsive" class="header__menuResponsive">						
+				<nav id="MenuResponsive" class="header__menuResponsive" >						
 					<ul id="MenuContenedor">
 						<li><a class="header__li--Enlaces" href="#Seccion_1">Inicio</a></li>
 						<li class="menuLi_1"><a class="header__li--Enlaces MostrarSubMenu_JS">Colecciones</a>

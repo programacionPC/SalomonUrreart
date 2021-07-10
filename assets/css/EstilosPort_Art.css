@@ -617,11 +617,6 @@ hr{
 	/* width: 100%; */
 	/*flex-grow: 1;distribuye proporcionalmente los elementos internos en el eje horizontal, es necesario que el elemento padre tenga la propiedad display con el valor flex*/
 }
-.header__li--Enlaces:hover{
-	/* background-color: var(--HoverEnlaces);
-	border-radius: 10px;
-	cursor: pointer; */
-}
 .header__logo{
 	height: 8vh;
 	border-radius: 20px;
@@ -639,14 +634,9 @@ hr{
 	padding: 1%;
 	border-radius: 15px;
 	width: 15%;
+	z-index: -21;
 }
 .header__menuResponsive ul{/*Todas las páginas*/
-	/* background-color: orange; */
-	/* box-sizing: content-box !important; */
-	/* background-color: rgba(0, 0, 0, 0.8); */
-	/* flex-direction: column; */
-	/* padding-top: 8%; */
-	/* width: 100%; */
 }
 .menuLi_1:hover > ul{/*Se aplica un hover a un elemento, seleccionando otro elemento distinto*/
 	background-color: var(--HoverEnlaces);
