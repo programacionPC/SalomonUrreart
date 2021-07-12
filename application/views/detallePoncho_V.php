@@ -46,6 +46,6 @@
 	getFullscreen(imagen);
 	
 	imagen.addEventListener("click", function(e){//E= el id dela fotografia donde se hizo click  DOMContentLoaded	
-		getFullscreen(this);
+		// getFullscreen(this);
 	},false);
 </script>

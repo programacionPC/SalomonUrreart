@@ -47,12 +47,12 @@
         }
 
         public function consultarUltimoID_Pintura(){
-            $stmt = $this->dbh->query("SELECT MAX(ID_Pintura) AS 'ID_Pintura' FROM pinturas");
+            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura DESC LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarprimerID_Pintura(){
-            $stmt = $this->dbh->query("SELECT MIN(ID_Pintura) AS 'ID_Pintura'  FROM pinturas");
+            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 

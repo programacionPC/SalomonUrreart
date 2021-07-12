@@ -42,57 +42,61 @@ class DetallePoncho_C extends CI_Controller {
 
 		$Datos = [
 			'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-			'finslider' => false,
+			// 'finslider' => false,
 		];
 
-		// echo '<pre style="color:white">';
-		// print_r($SliderPoncho);
-		// echo '<pre>';
+		echo '<pre style="color:white">';
+		print_r($SliderPoncho);
+		echo '<pre>';
 		// exit;
-		
-
 		
 		//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio
 		if($SliderPoncho != Array()){
-			$this->load->view('A_sliderPoncho_V', $Datos);
+			$this->load->view('A_detallePoncho_V', $Datos);
 		}
 		else{ //Cuando el slider llega a un extremo
-			//Se consulta cual es el ultimo ID_Poncho de la tabla "ponchos"
-			$UltimoID_Poncho = $this->DetallePoncho_M->consultarUltimoID_Poncho();
-			
 			//Se consulta cual es el primer ID_Poncho de la tabla "ponchos"
 			$PrimerID_Poncho = $this->DetallePoncho_M->consultarprimerID_Poncho();
 
-			// Se consulta el nombre de la imagen que se va amostrar en detalle
+			//Se consulta cual es el ultimo ID_Poncho de la tabla "ponchos"
+			$UltimoID_Poncho = $this->DetallePoncho_M->consultarUltimoID_Poncho();
+			
+			// Se consulta el nombre de la imagen que se va a mostrar en detalle
 			$SliderPoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
 
 			$Datos = [
 				'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-				'ultimoID_Poncho' => $UltimoID_Poncho, //ID_Poncho
-				'primerID_Poncho' => $PrimerID_Poncho, //ID_Poncho
 			];
-			// echo $Datos['ultimoID_Poncho']['ID_Poncho']; 
-			// echo '<br>';
-			// echo $Datos['sliderPoncho']['ID_Poncho'];
-			if($Datos['ultimoID_Poncho']['ID_Poncho'] == $Datos['sliderPoncho']['ID_Poncho']){
+			// echo '<pre style="color:white">';
+			// print_r($Datos);			
+			// echo '<pre>';
+			// exit; 
+
+			if($UltimoID_Poncho['ID_Poncho'] == $Datos['sliderPoncho']['ID_Poncho']){
+				$Datos = [
+					'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+					'primerID_Poncho' => $PrimerID_Poncho, //ID_Poncho, nombre_ImgPoncho,					
+				];
 			
-				// echo '<pre style="color:white">';
-				// print_r($Datos);
-				// echo '<pre>';
-				// exit;
+			// echo '<pre style="color:white">';
+			// print_r($Datos);
+			// echo '<pre>';
+			// exit;
 				
-				$this->load->view('A_sliderPoncho_V', $Datos);
+				$this->load->view('A_detallePoncho_V', $Datos);
 			}
-			else if($Datos['primerID_Poncho']['ID_Poncho'] == $Datos['sliderPoncho']['ID_Poncho']){
-				array_push($Datos, 'primero');
+			else if($PrimerID_Poncho['ID_Poncho'] == $Datos['sliderPoncho']['ID_Poncho']){
+				$Datos = [
+					'sliderPoncho' => $SliderPoncho, //ID_Poncho, nombrePoncho, nombre_ImgPonch
+					'ultimoID_Poncho' => $UltimoID_Poncho, //ID_Poncho, nombre_ImgPoncho
+				];
 			
 				// echo '<pre style="color:white">';
 				// print_r($Datos);
 				// echo '<pre>';
 				// exit;
 
-				$this->load->view('A_sliderPoncho_V', $Datos);
-
+				$this->load->view('A_detallePoncho_V', $Datos);
 			}
 		}
 	}

@@ -46,12 +46,12 @@
         }
 
         public function consultarUltimoID_Poncho(){
-            $stmt = $this->dbh->query("SELECT MAX(ID_Poncho) AS 'ID_Poncho' FROM ponchos");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho DESC LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarprimerID_Poncho(){
-            $stmt = $this->dbh->query("SELECT MIN(ID_Poncho) AS 'ID_Poncho'  FROM ponchos");
+            $stmt = $this->dbh->query("SELECT ID_Poncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho LIMIT 1");
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
