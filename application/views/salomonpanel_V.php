@@ -10,7 +10,7 @@
         </div>
         <ul class="cont_portada--ul">
             <li><a class="cont_portada--li" href="#Portada">Imagen portada</a></li>
-            <li><a class="cont_portada--li" href="#Colecciones">Categoria de pinturas</a></li>
+            <li><a class="cont_portada--li" href="#Colecciones">Colecciones</a></li>
             <li><a class="cont_portada--li" href="#Pinturas">Pinturas</a></li>
             <li><a class="cont_portada--li" href="#Galeria">Ponchos</a></li>
             <li><a class="cont_portada--li" href="#UltimasObras">Ultimas obras</a></li>
@@ -33,7 +33,7 @@
                 if(!isset($datosPintura['nombre_ImgPintura'])){
                     $datosPintura['nombre_ImgPintura'] = 'imagen.png';
                 }?>
-                <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/portadas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
+                <img class="cont_Poncho__img" id="" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/portadas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <div id="muestrasImg_2"></div> 
                     <label class="label_1" for="Etiqueta_ImgPrincipal">Añadir imagen</label>
@@ -44,13 +44,13 @@
         </div>
     </div>
 
-    <!-- CATEGORIA DE PINTURAS -->
+    <!-- COLECCIONES -->
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>        
         <div style="width: 50%; margin-left:10%;">
             <fieldset class="fieldset_1 fieldset_3" id="Colecciones">
                 <a id="Colecciones" class="ancla_2"></a>
-                <legend class="legend_1">Categoría de pinturas</legend>
+                <legend class="legend_1">Colecciones</legend>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeColecciones" method="POST" autocomplete="off">       
                     <div>
                         <div id="Contenedor_79">
@@ -120,15 +120,24 @@
                             if(!isset($datosPintura['nombre_ImgPintura'])){
                                 $datosPintura['nombre_ImgPintura'] = 'imagen.png';
                             }?>
+                            <select class="input_1" name="coleccion">
+                                <option>Colección</option>
+                                <?php 
+                                foreach($coleccionArtista as $Key) : ?>
+                                    <option value="<?php echo $Key['ID_Coleccion'];?>"><?php echo $Key['nombre_coleccion']?></option>
+                                    <?php
+                                endforeach;?>
+                            </select>
+                            
                             <input class="input_1" type="text" name="nombre_Pintura" placeholder="Nombre de la obra"/>
-                            <br>
+                            
                             <input class="input_1" type="text" name="medidas_Pintura" placeholder="Medidas de la obra"/>
-                            <br>
+                            
                             <input class="input_1" type="text" name="tecnica_Pintura" placeholder="Tecnica de la obra"/>
-                            <br>
+                            
                             <label class="label_1" for="Etiqueta_ImgPintura">Añadir imagen</label>
                             <label class="">no mayor a 2 Mb de peso</label> 
-                            <br>
+                            
                             <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
                             <input class="ocultar" type="file" name="imagen_Pintura" id="Etiqueta_ImgPintura"/>        
                         </div>   
@@ -139,6 +148,7 @@
                 foreach($datosPintura as $Row) :                
                     $file_data = array(
                     'ID_Pintura' => isset($Row['ID_Pintura']) ? $Row['ID_Pintura'] : '',
+                    'Nombre_Coleccion' => isset($Row['nombre_coleccion']) ? $Row['nombre_coleccion'] : '',
                     'Nombre_Pintura' => isset($Row['nombre_pintura']) ? $Row['nombre_pintura'] : '', 
                     'Medida_Pintura' => isset($Row['medida_pintura']) ? $Row['medida_pintura'] : '', 
                     'Tecnica_Pintura' => isset($Row['tecnica_pintura']) ? $Row['tecnica_pintura'] : '', 
@@ -151,6 +161,8 @@
                             <img class="imagen_2" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $file_data['Nombre_ImgPintura']?>"/>    
                         </div>
                         <div>
+                            <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Coleccion'];?>"/>
+                            <br>
                             <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Pintura'];?>"/>
                             <br>
                             <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Medida_Pintura'];?>"/>

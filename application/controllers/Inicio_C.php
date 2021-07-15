@@ -30,7 +30,7 @@ class Inicio_C extends CI_Controller {
 		// echo '</pre>';
 		// exit;
 
-		$this->load->view('header/header_inicio');
+		$this->load->view('header/header_inicio', $Datos);
 		$this->load->view('inicio_V', $Datos);
 	}
 

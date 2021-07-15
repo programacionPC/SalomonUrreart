@@ -74,6 +74,9 @@
         background-color: white;
         font-size: 1.5em;
     }    
+    .cont_poncho--label{
+        display: none;
+    }
     .cont_ponchos--item{
         padding-top: 1%;
         width: 80%;
@@ -91,25 +94,26 @@
     }
     .cont_ponchoDetalle--img{
         margin-top: 0%;
-        width: 100%;
+        width: 95%;
         height: auto;
+        margin-left: 2.5%;
     }
     .cont_ponchoDetalle--iconoLeft{
         font-size: 1.5em;
         padding: 3%;
+    	top: 75% !important;
     }
     .cont_ponchoDetalle--iconoRight{
         font-size: 1.5em;
         left: 86%;
         padding: 3%;
+    	top: 75% !important;
     }
     .cont_ponchoDetalle--leyenda{
-        background-color:rgba(45, 40, 38, 0.6) ;
         width: 100%;
         position: fixed;
         top: 85%; 
         left: 0%;
-        /* height: 80px; */
     }
     .cont_ponchoDetalle--h1{
         font-size: 1.7em;
@@ -118,6 +122,10 @@
     .cont_ponchoDetalle--p1{
         font-size: 1.1em;
         padding-left: 3%;
+    }
+    .cont_portada{/*inicio*/
+        position: relative;	
+        z-index: -1 !important;
     }
     .cont_portada__div-1{/*inicio*/
         width: 100%; /*para centrar vertical y horizontalmente*/
@@ -184,15 +192,27 @@
     }
     .cont_ultimasObras--item{
         padding-top: initial;
-        width: 80%;
+        width: 95%;
     }
     .cont_ultimasObras--img{/*inicio*/
+        width: 100%;
         margin-top: 25%;
     }
     .header{/*header_inicio*/
         padding-top: 3%;
         display: block;
         height: 45px;
+    }
+    .header__menuResponsive{/*Todas las páginas*/
+        transition: all 0.5s;
+        position: absolute;
+        top: 0%;
+        margin-top: -250%; /*oculta el menu responsive*/
+        padding: 20% 5%;
+        border-radius: 0px;
+        width: 100%;
+        height: 100vh;
+        z-index: 31;
     }
     .header--car{
        display: none !important;
@@ -215,6 +235,10 @@
         height: 350px;
         object-fit: cover;
     }
+    .imagen_11{/*detallePintura*/
+        width: 50px;
+        height: 50px;
+    } 
     .li--Enlaces{/*header*/
         color: white;
         width: 30%;

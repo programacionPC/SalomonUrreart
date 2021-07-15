@@ -41,24 +41,23 @@ class DetallePintura_C extends CI_Controller {
 			// Se consulta el nombre de la imagen posterior que se va amostrar en detalle
 			$DiapositivaPintura = $this->DetallePintura_M->consultarPinturaPosterior($ID_Pintura);
 		}
-
-		// Se consultan las vistas miniaturas de la diapositiva
-		// $MiniaturaPintura = $this->DetallePintura_M->consultarMiniaturaPintura($DiapositivaPintura['ID_Pintura']);
+		
+		// Se consultan las vistas miniaturas de la diapositiva,
+		if(!empty($DiapositivaPintura['ID_Pintura'])){
+			$MiniaturaPintura = $this->DetallePintura_M->consultarMiniaturaPintura($DiapositivaPintura['ID_Pintura']);
+		}
+		else{
+			$MiniaturaPintura = '';
+		}
 
 		$Datos = [
 			'DiapositivaPintura' => $DiapositivaPintura, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
-			// 'imagenMiniatura' => $MiniaturaPintura // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
-		];
-
-		// echo '<pre style="color:white">';
-		// print_r($Datos);
-		// echo '<pre>';
-		// exit;
-				
+			'imagenMiniatura' => $MiniaturaPintura // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
+		];				
 			
-		//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio
+		//Se evalua cuando la imagen llegua al extremo izquierdo o derecho arrojara un array vacio
 		if($DiapositivaPintura != Array()){
-			$this->load->view('A_detallePintura_V', $Datos);
+			$this->load->view('A_detallePintura_V', $Datos);			
 		}
 		else{ //Cuando el slider llega a un extremo
 			//Se consulta cual es el ultimo ID_Pintura de la tabla "pinturas"
@@ -69,21 +68,19 @@ class DetallePintura_C extends CI_Controller {
 
 			// Se consulta el nombre de la imagen que se va amostrar en detalle
 			$DiapositivaPintura = $this->DetallePintura_M->consultarPintura($ID_Pintura);
-			
+						
 			$Datos = [
 				'DiapositivaPintura' => $DiapositivaPintura, //ID_Pintura, nombrePintura, nombre_ImgPintura
-				// 'ultimoID_Pintura' => $UltimoID_Pintura, //ID_Pintura
-				// 'primerID_Pintura' => $PrimerID_Pintura, //ID_Pintura
 			];
-			
-			// echo '<pre style="color:white">';
-			// print_r($Datos);
-			// echo '<pre>';
-			// exit;
 
 			if($UltimoID_Pintura['ID_Pintura'] == $Datos['DiapositivaPintura']['ID_Pintura']){
+				
+				// Se consultan las vistas miniaturas de la diapositiva
+				$MiniaturaPintura = $this->DetallePintura_M->consultarMiniaturaPintura($PrimerID_Pintura['ID_Pintura']);
+
 				$Datos = [
 					'DiapositivaPintura' => $DiapositivaPintura, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+					'imagenMiniatura' => $MiniaturaPintura, // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
 					'primerID_Pintura' => $PrimerID_Pintura, //ID_Poncho, nombre_ImgPoncho,					
 				];
 			
@@ -95,8 +92,13 @@ class DetallePintura_C extends CI_Controller {
 				$this->load->view('A_detallePintura_V', $Datos);
 			}
 			else if($PrimerID_Pintura['ID_Pintura'] == $Datos['DiapositivaPintura']['ID_Pintura']){
+				
+				// Se consultan las vistas miniaturas de la diapositiva
+				$MiniaturaPintura = $this->DetallePintura_M->consultarMiniaturaPintura($UltimoID_Pintura['ID_Pintura']);
+
 				$Datos = [
 					'DiapositivaPintura' => $DiapositivaPintura, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+					'imagenMiniatura' => $MiniaturaPintura, // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
 					'ultimoID_Pintura' => $UltimoID_Pintura, //ID_Poncho, nombre_ImgPoncho,					
 				];
 			

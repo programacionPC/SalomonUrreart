@@ -32,37 +32,80 @@
 
         //SELECT de las pinturas
         public function consultarPintura($ID_Pintura){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, tecnica_pintura, medida_pintura, nombre_ImgPintura FROM pinturas WHERE ID_Pintura = $ID_Pintura");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_pintura, tecnica_pintura, medida_pintura, nombre_ImgPintura 
+                FROM pinturas 
+                WHERE ID_Pintura = $ID_Pintura"
+            );
+
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarPinturaAnterior($ID_Pintura){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura FROM pinturas WHERE ID_Pintura < $ID_Pintura ORDER BY ID_Pintura DESC LIMIT 1");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura 
+                FROM pinturas 
+                WHERE ID_Pintura < $ID_Pintura
+                ORDER BY ID_Pintura 
+                DESC 
+                LIMIT 1"
+            );
+
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarPinturaPosterior($ID_Pintura){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura FROM pinturas WHERE ID_Pintura > $ID_Pintura ORDER BY ID_Pintura LIMIT 1");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura 
+                FROM pinturas 
+                WHERE ID_Pintura > $ID_Pintura 
+                ORDER BY ID_Pintura 
+                LIMIT 1"
+            );
+
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarUltimoID_Pintura(){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura DESC LIMIT 1");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_ImgPintura 
+                FROM pinturas 
+                ORDER BY ID_Pintura 
+                DESC 
+                LIMIT 1"
+            );
+            
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarprimerID_Pintura(){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura LIMIT 1");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_ImgPintura 
+                FROM pinturas 
+                ORDER BY ID_Pintura 
+                LIMIT 1"
+            );
+
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function consultarMiniaturaPintura($ID_Pintura){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura FROM imagenesminiaturas  WHERE ID_Pintura = $ID_Pintura");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
+                FROM imagenesminiaturas
+                WHERE ID_Pintura = $ID_Pintura"
+            );
+
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function consultarImagenMiniatura($ID_ImagenMiniatura){
-            $stmt = $this->dbh->query("SELECT nombre_ImagenMiniatura FROM  imagenesminiaturas WHERE ID_ImagenMiniatura = $ID_ImagenMiniatura");
+            $stmt = $this->dbh->query(
+                "SELECT nombre_ImagenMiniatura 
+                FROM imagenesminiaturas 
+                WHERE ID_ImagenMiniatura = $ID_ImagenMiniatura"
+            );
+
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }

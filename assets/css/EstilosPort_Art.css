@@ -25,7 +25,7 @@ li{
 	/* DECLARACION DE VARIABLES */
 :root{
 	--Fondo: rgb(16, 20, 23); 
-	--HoverEnlaces: rgba(13, 14, 15, 0.5);
+	--HoverEnlaces: rgba(13, 14, 15, 0.8);
 	--FuenteInicio: rgb(238, 201, 201);
 	--FondoImagenDetalle: rgb(13, 14, 15);
 	--FondoTextoTransparente: rgba(13, 14, 15, 0.5);
@@ -35,20 +35,21 @@ li{
 /* ******************************************************************************** */
 /*------ fin de reset CSS-----*/
 .a_1{/*ponchos - pinturas*/
-	background-color: var(--Fondo);
+	/* background-color: var(--Fondo); */
 	color: white;
 	position: fixed;
 	right: 2%;
-	top: 2%;
+	top: 1%;
 	font-size: 2em;
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
 	border-radius: 50%;
+	z-index: 2;
 }
 .a_1--oscuro{/*detallePintura - detallePoncho*/
-	background-color: var(--FondoImagenDetalle);
+	/* background-color: var(--FondoImagenDetalle); */
 }
 .a_2{
 	/* color: white; */
@@ -261,7 +262,6 @@ hr{
 	height: 100%;
 }
 .contador{/*cuenta_editar - quienesSomos - registroCom*/
-	/* background-color: blue; */
 	width: 9%;
 	margin-left: 85% !important;
 	border: none;
@@ -323,10 +323,19 @@ hr{
 .cont_ponchoDetalle--iconoLeft{
 	color: rgba(255, 255, 255, 0.7);
 	font-size: 2em;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	top: 50% !important;
 	left: 3%;
+	cursor: pointer;
+}
+.cont_ponchoDetalle--iconoRight{
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 2em;
+	position: fixed;
+	z-index: 1;
+	top: 50% !important;
+	left: 95%;
 	cursor: pointer;
 }
 .cont_ponchoDetalle--miniaturas{/*detallePoncho*/
@@ -360,18 +369,20 @@ hr{
 	text-align: center;
 	/* line-height: 100px; */
 }
-.cont_ponchoDetalle--iconoRight{
-	color: rgba(255, 255, 255, 0.7);
-	font-size: 2em;
-	position: absolute;
-	z-index: 1;
-	top: 50% !important;
-	left: 95%;
-	cursor: pointer;
+.cont_poncho--label{
+	font-size: 1.8em;
+	position: fixed;
+	right: 8%;
+	top: 3%;
+	cursor: pointer
 }
 .cont_ultimasObras{
 	background-color: var(--Fondo);
+	display: flex;
 	min-height: 100vh;
+}
+.cont_ultimasObras--aside{
+	background-color: red;
 }
 .cont_ultimasObras__div-1{
 	margin-top: 5%;
@@ -414,6 +425,10 @@ hr{
 .cont_slider--poncho{
 	display: flex;
 	align-items: center;
+}
+.cont_miniaturas{
+	height: 10%; 
+	text-align:center;
 }
 .cont_muestrasImgPanel{
 	padding: 1%;
@@ -581,7 +596,7 @@ hr{
 	font-size: 3em;
 	text-align: center;
 }
-.header{/*header*/
+.header{/*header_inicio*/
 	position: fixed;
 	top: 0%;
 	left: 0%;
@@ -634,7 +649,7 @@ hr{
 	padding: 1%;
 	border-radius: 15px;
 	width: 15%;
-	z-index: -21;
+	/* z-index: -21; */
 }
 .header__menuResponsive ul{/*Todas las páginas*/
 }
@@ -690,9 +705,13 @@ ul .menuContenedor_3{/**/
     object-fit: contain; 
 }
 .input_1{/*salomonpanel*/
+	background-color: initial;
+	display: block;
 	padding: 0.5%;
+	padding-left: 2%;
 	font-size: 1em;
 	width: 40%;
+	margin-bottom: 2%;
 }
 .input_12{/*salomonpanel*/
 	width: 95% !important;
@@ -763,13 +782,9 @@ ul .menuContenedor_3{/**/
 .span_18:hover{/*cuenta_publicar - cuenta_editar_prod  - cuenta_editar*/
 	cursor: pointer;
 }
-
-
-
-
-.imagen_11{/*detallePoncho*/
-	width: 10%;
-	height: 100%;
+.imagen_11{/*detallePintura*/
+	width: 60px;
+	height: 60px;
 	margin: auto;
 	cursor: pointer;
 	object-fit: cover; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/

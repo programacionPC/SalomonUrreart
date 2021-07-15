@@ -28,7 +28,12 @@
 // ********************************************************************************************************
         //SELECT de las pinturas
         public function consultarPonchosSalomon(){
-            $stmt = $this->dbh->query("SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho FROM ponchos ORDER BY ID_Poncho");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho 
+                FROM ponchos 
+                ORDER BY ID_Poncho"
+            );
+            
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

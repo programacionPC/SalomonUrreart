@@ -29,7 +29,12 @@
 // ********************************************************************************************************
         //SELECT de las pinturas
         public function consultarPinturasSalomon(){
-            $stmt = $this->dbh->query("SELECT ID_Pintura, nombre_pintura, nombre_ImgPintura FROM pinturas ORDER BY ID_Pintura");
+            $stmt = $this->dbh->query(
+                "SELECT ID_Pintura, nombre_pintura, nombre_ImgPintura 
+                FROM pinturas 
+                ORDER BY ID_Pintura"
+            );
+            
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

@@ -26,7 +26,11 @@
 						<li><a class="header__li--Enlaces" href="#Seccion_1">Inicio</a></li>
 						<li class="menuLi_1"><a class="header__li--Enlaces MostrarSubMenu_JS">Colecciones</a>
 							<ul class="menuContenedor_3" id="MenuContenedor_3">
-								<li><a class="header__li--Enlaces enlace_JS" href="Pinturas_C/fauna">Alma silvestre</a></li>
+								<?php 
+								foreach($coleccionArtista as $Row)	:	?>
+									<li><a class="header__li--Enlaces enlace_JS" href="Pinturas_C/fauna"><?php echo $Row['nombre_coleccion'];?></a></li>
+									<?php
+								endforeach;	?>
 							</ul> 	
 						</li>
 						<li><a class="header__li--Enlaces" href="Ponchos_C">Ponchos</a></li>

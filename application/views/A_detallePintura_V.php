@@ -31,7 +31,6 @@
 			foreach($imagenMiniatura as $keyImagenMiniatura) :   ?>
 				<img class="imagen_11 borde_1" id="Imagen_<?php echo $Contador ?>" alt="Fotografia no disponible" src="<?php echo base_url()?>assets/images/pinturas/miniaturaPinturas/<?php echo $keyImagenMiniatura['nombre_ImagenMiniatura'];?>" onclick="Llamar_VerMiniatura('<?php echo $keyImagenMiniatura['ID_ImagenMiniatura']?>')"/>
 				<?php
-				echo  $Contador;
 			$Contador ++;
 			endforeach;
 		}

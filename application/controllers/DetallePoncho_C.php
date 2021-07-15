@@ -45,9 +45,9 @@ class DetallePoncho_C extends CI_Controller {
 			// 'finslider' => false,
 		];
 
-		echo '<pre style="color:white">';
-		print_r($SliderPoncho);
-		echo '<pre>';
+		// echo '<pre style="color:white">';
+		// print_r($SliderPoncho);
+		// echo '<pre>';
 		// exit;
 		
 		//Cuando llegue a la imagen del extremo izquierdo o derecho arrojara un array vacio

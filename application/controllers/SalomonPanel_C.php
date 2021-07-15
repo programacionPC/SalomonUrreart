@@ -49,7 +49,7 @@ class SalomonPanel_C extends CI_Controller {
 			'datosArtista' => $PerfilSalomon, //ID_Coleccion, nombre_coleccion
 			'coleccionArtista' => $ColeccionesSalomon, //d
 			'datosPoncho' => $PonchosSalomon, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-			'datosPintura' => $PinturasSalomon, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura
+			'datosPintura' => $PinturasSalomon, //ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura, nombre_coleccion
 			'datosUltimasObras' => $UltimasObrasSalomon //ID_UltimaObra, nombre_UltimaObra, tecnica_UltimaObra, tamanio_UltimaObra, nombre_ImgUltimaObra
 		];
 
@@ -153,6 +153,7 @@ class SalomonPanel_C extends CI_Controller {
 	
 	public function recibePintura(){
 		if($_FILES['imagen_Pintura']["name"][0] != ""){
+			$ID_Coleccion = $_POST['coleccion'];
 			$Nombre_Pintura = $_POST['nombre_Pintura'];		
 			$Medidas_Pintura = $_POST['medidas_Pintura'];	
 			$Tecnica_Pintura = $_POST['tecnica_Pintura'];	
@@ -179,8 +180,8 @@ class SalomonPanel_C extends CI_Controller {
 				//Se mueve la imagen desde el directorio temporal a nuestra ruta indicada anteriormente utilizando la función move_uploaded_files
 				move_uploaded_file($_FILES['imagen_Pintura']['tmp_name'], $Directorio.$nombre_ImgPintura);
 
-				//Se INSERTA los datos del poncho en BD
-				$this->SalomonPanel_M->insertarPintura($Nombre_Pintura, $Medidas_Pintura, $Tecnica_Pintura, $nombre_ImgPintura, $tipo_ImgPintura, $tamanio_ImgPintura);
+				//Se INSERTA los datos de la pintura en BD
+				$this->SalomonPanel_M->insertarPintura($ID_Coleccion, $Nombre_Pintura, $Medidas_Pintura, $Tecnica_Pintura, $nombre_ImgPintura, $tipo_ImgPintura, $tamanio_ImgPintura);
 			}
 		}
 
