@@ -9,33 +9,24 @@ class Pinturas_C extends CI_Controller {
 		$this->load->model('Pinturas_M');
 	}
 
+	// Metodo invocado desde E_Carrito.js
 	public function index(){
-		//CONSULTA los detalles del poncho seleccionado
-		// $DetallePoncho = $this->DetallePoncho_M->consultarPoncho($ID_Poncho);
-
-		// $Datos = [
-		// 	'detallePoncho' => $DetallePoncho, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
-		// ];
-
-		// // echo '<pre>';
-		// // print_r($Datos);
-		// // echo '</pre>';
-		// // exit;
-
-		// $this->load->view('header/header_DetallesPonchos');
-		// $this->load->view('detallePoncho_V', $Datos);
+		$this->fauna();
 	}
 
 	public function fauna(){
+		//CONSULTA las coleciones del sitio web
+		$ColeccionesSalomon = $this->Pinturas_M->consultarColeccionSalomon();
+
 		//CONSULTA las pinturas
 		$PinturasSalomon = $this->Pinturas_M->consultarPinturasSalomon();
         
 		$Datos = [
-			'pinturas' => $PinturasSalomon //ID_Pintura, nombre_pintura, nombre_ImgPintura
+			'pinturas' => $PinturasSalomon, //ID_Pintura, nombre_pintura, nombre_ImgPintura 
+			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
 		];
 
-		$this->load->view('header/header_pinturas');
+		$this->load->view('header/header_inicio', $Datos);
 		$this->load->view('pinturas_V', $Datos);
-		$this->load->view('footer/footer');
 	}
 }

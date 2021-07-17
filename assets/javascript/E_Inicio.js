@@ -1,15 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){resize('Cont_Perfil')}, false) 
 
 //************************************************************************************************
-//Función autoejecuble que oculta el menu horizontal
-// var ImagenesGaleria = (function(){ 
-//     let ProfundidadImagen_2 = document.getElementById("Seccion_2")
-//         let A = ProfundidadImagen_2.getBoundingClientRect().top
-        
-//     if(A <= 620 ){
-//         document.getElementById("Header").style.display = "none" 
-//     }
-// })();
+//Función autoejecuble que muestra la ventana modal
+var VentanaModal = (function(){ 
+    setTimeout(function(){mostrarModal();}, 2000)
+})();
 
 //************************************************************************************************
 //Por medio de delegación de eventos se detectan los item del submenu para oculatrlo al hacer click
@@ -32,3 +27,13 @@ function resize(id){
 }
 
 //************************************************************************************************
+
+function mostrarModal(){        
+    document.getElementById("VentanaModal").classList.add("mostrarModal")
+}
+
+//************************************************************************************************
+// Oculata la ventana modal
+function ocultarModal(){
+    document.getElementById("VentanaModal").classList.add("quitarModal")
+}

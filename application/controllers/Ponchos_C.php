@@ -10,11 +10,15 @@ class Ponchos_C extends CI_Controller {
 	}
 
 	public function index(){
+		//CONSULTA las coleciones del sitio web
+		$ColeccionesSalomon = $this->Ponchos_M->consultarColeccionSalomon();
+
 		//CONSULTA las ponchos en BD
 		$PonchosSalomon = $this->Ponchos_M->consultarPonchosSalomon();
         
 		$Datos = [
-			'ponchos' => $PonchosSalomon //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'ponchos' => $PonchosSalomon, //ID_Poncho, nombrePoncho, nombre_ImgPoncho
+			'coleccionArtista' => $ColeccionesSalomon, //ID_Coleccion, nombre_coleccion
 		];
 
 		// echo '<pre>';
@@ -22,8 +26,7 @@ class Ponchos_C extends CI_Controller {
 		// echo '</pre>';
 		// exit;
 
-		$this->load->view('header/header_pinturas');
+		$this->load->view('header/header_inicio', $Datos);
 		$this->load->view('ponchos_V', $Datos);
-		$this->load->view('footer/footer');
 	}
 }

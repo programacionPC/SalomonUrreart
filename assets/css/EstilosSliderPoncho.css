@@ -9,9 +9,9 @@ h1{
     padding-bottom:20px;
     margin-top:60px;
 }
-.cont_slider--poncho--div1{
+.cont_slider--poncho--div1{/*PONCHOS*/
 	height: 100vh;
-	display: flex;
+	display: flex;/*SOLO PARA CENTRAR VERTICAL Y HORIZONTALMENTE*/
 	align-items: center;
 	justify-content: center;
 }

@@ -28,14 +28,13 @@ li{
 	--HoverEnlaces: rgba(13, 14, 15, 0.8);
 	--FuenteInicio: rgb(238, 201, 201);
 	--FondoImagenDetalle: rgb(13, 14, 15);
-	--FondoTextoTransparente: rgba(13, 14, 15, 0.5);
+	--FondoModal: rgba(13, 14, 15, 0.8);
 	--boton: rgb(16, 20, 23);
 }
 
 /* ******************************************************************************** */
 /*------ fin de reset CSS-----*/
 .a_1{/*ponchos - pinturas*/
-	/* background-color: var(--Fondo); */
 	color: white;
 	position: fixed;
 	right: 2%;
@@ -47,12 +46,6 @@ li{
 	text-align: center;
 	border-radius: 50%;
 	z-index: 2;
-}
-.a_1--oscuro{/*detallePintura - detallePoncho*/
-	/* background-color: var(--FondoImagenDetalle); */
-}
-.a_2{
-	/* color: white; */
 }
 hr{
 	color: white;
@@ -101,7 +94,6 @@ hr{
 .cont_portada--menu{/*salomonpanel*/
 	position: fixed !important;
 	z-index: 27 !important;
-	/* height: 100%; */
 	padding-left: 1%;
 }
 .cont_portada--div-1{
@@ -138,6 +130,7 @@ hr{
 }
 .contenedor_3{/*inicio*/
 	background-color: var(--Fondo);	
+	padding-top: 5%;
 }
 .contenedor--encargos{
 	background-color: var(--Fondo);	
@@ -295,6 +288,41 @@ hr{
 	width: 100%;
 	height: 100%;
 }
+.cont_carrito{/*detallePintura*/
+	background-color: var(--FondoModal);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: 2;
+	display: none;
+	text-align: center;
+}
+.cont_carrito--principal{
+	padding-top: 3%;
+}
+.cont_carrito--flex{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 50%;
+}
+.cont_carrito--leyenda{
+	padding-left: 5%;
+	text-align: left;
+}
+.cont_carrito--boton{
+	font-size: 1.4em;
+	font-weight: bold;
+	color:black; 
+	background-color:orange;
+	padding: 0.5%;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 200px;
+	display: inline-block;
+}
 .cont_ponchoDetalle{/*detallePintura - detallePoncho*/
 	width: 100%;
 	height: 100vh;
@@ -370,10 +398,10 @@ hr{
 	/* line-height: 100px; */
 }
 .cont_poncho--label{
-	font-size: 1.8em;
+	font-size: 1.7em;
 	position: fixed;
 	right: 8%;
-	top: 3%;
+	top: 2.5%;
 	cursor: pointer
 }
 .cont_ultimasObras{
@@ -473,8 +501,8 @@ hr{
 }
 .cont_footer--imagen{
 	height: 12vh;
-	border-radius: 20px;
-	margin: 50% auto 10% auto;
+	/* border-radius: 20px;
+	margin: 50% auto 10% auto; */
 }
 .cont_Formulario{/*inicio*/
 	margin: auto;
@@ -574,6 +602,15 @@ hr{
 	margin-top: 5%;
 	padding-left: 20%;
 }
+.disponible{
+	color: white;
+	position: absolute;
+	top: 2%;
+	left: 2%;
+}
+.disponible--true{
+	cursor: pointer;
+}
 .fieldset_1{/*salomonpanel*/
 	width: 40%;
 	margin: auto;
@@ -608,6 +645,7 @@ hr{
 .header--car{
 	color: white;
 	font-size: 1.5em;
+	cursor: pointer;
 }
 .header--galeria__h1{
 	line-height: 55px;
@@ -773,7 +811,7 @@ ul .menuContenedor_3{/**/
 	position: relative;
 	top: -95%;
 	left: 40%;
-	display: inline !important;
+	display: none;
 	border-color: black;
 	border-width: 1px;
 	border-radius: 30px;
@@ -807,4 +845,62 @@ ul .menuContenedor_3{/**/
 	display:flex;
 	align-items: center;
 	justify-content: center;
+}
+
+
+.cont_modal{/*inicio*/
+	background-color: rgba(15, 13, 13, 0.95);
+	position: fixed;
+	top: 2%;
+	left: 5%;
+	z-index: 10;
+	width: 90%;
+	height: 95%;
+	margin: auto;
+	border-radius: 20px;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	opacity: 0;
+}
+.cont_modal--label{
+	background-color: white;
+	font-size: 1.2em;
+	font-weight: bolder;
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	padding: 0.2% 0.8%;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.cont_modal--p{
+	color: white;
+	margin-top: 5%;
+	font-size: 3em;
+}
+.cont_modal--logo{
+	height: 30vh;
+	position: absolute;
+	bottom: 45pt;
+	left: 25%;
+}
+.mostrarModal{	
+	animation-duration: 3s;
+	animation-name: fade;
+	animation-fill-mode: forwards;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+
+  }
+}
+.quitarModal{
+	display: none;
 }

@@ -36,4 +36,14 @@
             
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+        
+        // SELECT de las colecciones existentes
+        public function consultarColeccionSalomon(){
+            $stmt = $this->dbh->query(
+                "SELECT ID_Coleccion, nombre_coleccion 
+                FROM colecciones"
+            );
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }

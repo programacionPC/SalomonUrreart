@@ -42,7 +42,7 @@
 				</nav>
 			</div>
 
-			<a href="<?php echo base_url();?>Inicio_C" onclick="borrar()"><img class="header__logo" src="<?php echo base_url();?>assets/images/logo-Salomon.png"/></a>
+			<a href="<?php echo base_url();?>Inicio_C"><img class="header__logo" src="<?php echo base_url();?>assets/images/logo-Salomon.png"/></a>
 			
 			<!-- ICONO CARRITO DE COMPRAS -->
 			<label onclick="Carrito()" id="Carrito"><i class="fas fa-cart-arrow-down header--car"></i></label>

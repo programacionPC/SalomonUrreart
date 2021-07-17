@@ -65,3 +65,17 @@ window.addEventListener("mouseover",function(e){
     })
 
 //************************************************************************************************
+//Invocada en icono de carrito en menu principal
+function Carrito(){
+    if(localStorage.getItem('ContenidoCarrito')){
+        alert("Carrito cargado");
+    }
+    else{
+        alert("Carrito vacio");
+    }    
+}
+
+// funcion invocada desde el logo
+function borrar(){
+    localStorage.removeItem('ContenidoCarrito');
+}

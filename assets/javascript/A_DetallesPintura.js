@@ -78,3 +78,29 @@ function conexionAJAX(){
             // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
         }
     }
+
+// *************************************************************************************************
+// Invocada desde detallePintura_V.php - A_detallePintura_V.php
+    function Llamar_carrito(NombreImgPintura, NombrePintura, TecnicaPintura, MedidaPintura){
+        console.log("______Desde Llamar_carrito()______", NombreImgPintura + NombrePintura + TecnicaPintura + MedidaPintura)
+        var url = "../../Carrito_C/carrito_pinturas/" + NombreImgPintura  + "/" + NombrePintura  + "/" + TecnicaPintura  + "/" + MedidaPintura;
+        http_request.open('GET', url, true)  
+        peticion.onreadystatechange = respuesta_carrito
+        peticion.setRequestHeader("content-type","application/x-www-form-urlencoded")
+        peticion.send("null")
+    }                                                                        
+    function respuesta_carrito(){
+        if(peticion.readyState == 4){
+            if(peticion.status == 200){  
+                document.getElementById('Modal_carrito').style.display = "block"
+                document.getElementById('Modal_carrito').innerHTML = peticion.responseText 
+            } 
+            else{
+                alert('Problemas con la petición.')
+            }
+        }
+        else{ //en caso contrario, mostramos un gif simulando una precarga
+            // document.getElementById('Mostrar_Maquinas').innerHTML='Cargando registros';
+        }
+
+    }

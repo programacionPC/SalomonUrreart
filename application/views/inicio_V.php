@@ -1,5 +1,14 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+	<!-- VENTANA MODAL -->
+	<div class="cont_modal" id="VentanaModal">				
+		<label class="cont_modal--label" onclick="ocultarModal()">cerrar</label>
+		<p class="cont_modal--p">Sitio web en construcción.</p>
+		<img class="cont_modal--logo" src="<?php echo base_url();?>assets/images/logo-Salomon.png"/>
+	</div>
+
+	<!-- ****************************************************************************************************** -->
+
 	<!-- PORTADA -->
 	<div class="cont_portada" id="Seccion_1">
 		<img class="cont_portada--imagen" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>

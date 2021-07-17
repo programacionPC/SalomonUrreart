@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 <div class="contenedor_3"> 
-	<a class="a_1" href="<?php echo base_url() . 'Inicio_C';?>"><i class="fas fa-times"></i></a>
     <div class="cont_galeria--principal">
         <div class="cont_galeria" id="Cont_galeria_pinturas">	
             <?php 
@@ -20,6 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 
+<script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
 <script src="<?php echo base_url();?>assets/javascript/E_Pinturas.js?v=<?php echo rand();?>"></script>  
 
 <!-- Script para evaluar si el navegador soporta lazy-load -->

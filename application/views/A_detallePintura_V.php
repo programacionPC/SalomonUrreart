@@ -1,23 +1,48 @@
-<!-- Archivo llamado via AJAX por medio de la función Llamar_DiapositivaPintura() ubicada en detallePintura_V.php reemplaza el contenido del div id="Imagen_Detalle"-->
+<!-- Archivo llamado via AJAX por medio de la función Llamar_diapositivaPintura() ubicada en detallePintura_V.php reemplaza el contenido del div id="Imagen_Detalle"-->
 <?php
 	if(!empty($ultimoID_Pintura['ID_Pintura'])){	
 		$ID_MostrarPintura = $ultimoID_Pintura['ID_Pintura'];	
 		$NombreImgPintura = $ultimoID_Pintura['nombre_ImgPintura'];
+		if($ultimoID_Pintura['disponible']){	?>
+			<label class="disponible disponible--true" onclick="Llamar_carrito()">disponible</label>
+			<?php
+		}
+		else{	?>
+			<label class="disponible">vendido</label>
+			<?php
+		}	
 	}
 	else if(!empty($primerID_Pintura['ID_Pintura'])){	
 		$ID_MostrarPintura = $primerID_Pintura['ID_Pintura'];	
 		$NombreImgPintura = $primerID_Pintura['nombre_ImgPintura'];
+		if($primerID_Pintura['disponible']){	?>
+			<label class="disponible disponible--true" onclick="Llamar_carrito()">disponible</label>
+			<?php
+		}
+		else{	?>
+			<label class="disponible">vendido</label>
+			<?php
+		}	
 	}
 	else{
-		$ID_MostrarPintura = $DiapositivaPintura['ID_Pintura'];
-		$NombreImgPintura= $DiapositivaPintura['nombre_ImgPintura'];
+		$ID_MostrarPintura = $diapositivaPintura['ID_Pintura'];
+		$NombreImgPintura= $diapositivaPintura['nombre_ImgPintura'];
+		if($diapositivaPintura['disponible']){	?>
+			<label class="disponible disponible--true" onclick="Llamar_carrito()">disponible</label>
+			<?php
+		}
+		else{	?>
+			<label class="disponible">vendido</label>
+			<?php
+		}	
 	}
 ?>
 
 <i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft primerPoncho" onclick="Llamar_detallePintura('<?php echo $ID_MostrarPintura;?>', 'Retroceder')"></i>
 <i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight ultimoPoncho" onclick="Llamar_detallePintura('<?php echo $ID_MostrarPintura;?>', 'Avanzar')"></i>
 
-<div class="cont_ponchoDetalle--img">					
+<div class="cont_ponchoDetalle--img">	
+	<?php				?>
 	<!-- IMAGENES PRINCIPAL -->
 	<div style="height: 90%;" id="Imagen_Detalle">
 		<img class="imagen_3" src="<?php echo base_url() . "assets/images/pinturas/" . $NombreImgPintura;?>"/>
@@ -38,9 +63,9 @@
 	</div>
 </div>
 <div class="cont_ponchoDetalle--leyenda">
-	<h1 class="cont_ponchoDetalle--h1"><?php echo $DiapositivaPintura['nombre_pintura'];?></h1>
-	<p class="cont_ponchoDetalle--p1"><?php echo $DiapositivaPintura['medida_pintura'];?></p> 
-	<p class="cont_ponchoDetalle--p1"><?php echo $DiapositivaPintura['tecnica_pintura'];?></p> 
+	<h1 class="cont_ponchoDetalle--h1"><?php echo $diapositivaPintura['nombre_pintura'];?></h1>
+	<p class="cont_ponchoDetalle--p1"><?php echo $diapositivaPintura['medida_pintura'];?></p> 
+	<p class="cont_ponchoDetalle--p1"><?php echo $diapositivaPintura['tecnica_pintura'];?></p> 
 </div>
 
 <script src="<?php echo base_url();?>assets/javascript/A_DetallesPintura.js?v=<?php echo rand();?>"></script> 

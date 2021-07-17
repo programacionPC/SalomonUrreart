@@ -4,15 +4,12 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/EstilosSliderPoncho.css?v=<?php echo rand();?>"/>
 
 <div class="contenedor_3"> 
-	<!-- ICONO DE CERRAR PAGINA -->
-	<a class="a_1" href="<?php echo base_url() . 'Inicio_C';?>"><i class="fas fa-times"></i></a>
-
 	<!-- SLIDER -->
-	<div class="cont_slider--poncho--div1" id="">
+	<div class="cont_slider--poncho--div1">
 		<div id="slider" class="my-slider">
 			<?php
 			foreach($ponchos as $Row) :	?>
-				<div class="item">
+				<div class="">
 					<img class="cont_slider--poncho--img imagen_2--JS" id="<?php //echo $ID_Poncho?>" src="<?php echo base_url() . "assets/images/ponchos/" . $Row['nombre_ImgPoncho'];?>"/>
 				</div>
 				<?php
@@ -37,6 +34,7 @@
 	</div>
 </div>
  
+<script src="<?php echo base_url();?>assets/javascript/funcionesVarias.js?v=<?php echo rand();?>"></script> 
 <script src="<?php echo base_url();?>assets/javascript/E_Ponchos.js?v=<?php echo rand();?>"></script>  
 <script src="<?php echo base_url();?>assets/javascript/SliderPoncho.js?v=<?php echo rand();?>"></script>  
 
