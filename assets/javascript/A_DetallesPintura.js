@@ -32,7 +32,7 @@ function conexionAJAX(){
 // *************************************************************************************************
     //Muestra cada Pintura individualmente en un slider
     function Llamar_detallePintura(ID_Pintura, Recorrido){
-        console.log("______Desde Llamar_detallePintura()______", ID_Pintura + "/" + Recorrido)
+        // console.log("______Desde Llamar_detallePintura()______", ID_Pintura + "/" + Recorrido)
 
         var url = "../../DetallePintura_C/diapositivaPintura/" + ID_Pintura  + "/" + Recorrido
         http_request.open('GET', url, true)  
@@ -82,7 +82,7 @@ function conexionAJAX(){
 // *************************************************************************************************
 // Invocada desde detallePintura_V.php - A_detallePintura_V.php
     function Llamar_carrito(NombreImgPintura, NombrePintura, TecnicaPintura, MedidaPintura){
-        console.log("______Desde Llamar_carrito()______", NombreImgPintura + NombrePintura + TecnicaPintura + MedidaPintura)
+        // console.log("______Desde Llamar_carrito()______", NombreImgPintura + NombrePintura + TecnicaPintura + MedidaPintura)
         var url = "../../Carrito_C/carrito_pinturas/" + NombreImgPintura  + "/" + NombrePintura  + "/" + TecnicaPintura  + "/" + MedidaPintura;
         http_request.open('GET', url, true)  
         peticion.onreadystatechange = respuesta_carrito

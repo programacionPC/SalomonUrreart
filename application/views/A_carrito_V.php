@@ -1,5 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-
+<!-- Alimenta div en detallePintura_V.php mediante AJAX -->
 <div class="cont_carrito--principal" >
 	<!-- ICONO CERRAR -->
 	<a class="a_1" href="<?php echo base_url() . 'Pinturas_C/fauna';?>"><i class="fas fa-times"></i></a>

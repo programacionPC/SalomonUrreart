@@ -22,7 +22,5 @@
 </div>
 <div class="cont_ponchoDetalle--leyenda">
 	<h1 class="cont_ponchoDetalle--h1"><?php echo $sliderPoncho['nombrePoncho'];?></h1>
-	<p class="cont_ponchoDetalle--p1"><?php echo $sliderPoncho['medidaPoncho'];?></p> 
-	<p class="cont_ponchoDetalle--p1"><?php echo $sliderPoncho['tecnicaPoncho'];?></p> 
 </div>
 

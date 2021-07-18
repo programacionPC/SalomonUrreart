@@ -32,7 +32,7 @@
         //SELECT de los ponchos
         public function consultarPoncho($ID_Poncho){
             $stmt = $this->dbh->query(
-                "SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho 
+                "SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho 
                 FROM ponchos 
                 WHERE ID_Poncho = $ID_Poncho"
             );
@@ -42,7 +42,7 @@
 
         public function consultarPonchoAnterior($ID_Poncho){
             $stmt = $this->dbh->query(
-                "SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho 
+                "SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho 
                 FROM ponchos 
                 WHERE ID_Poncho < $ID_Poncho 
                 ORDER BY ID_Poncho 
@@ -55,7 +55,7 @@
 
         public function consultarPonchoPosterior($ID_Poncho){
             $stmt = $this->dbh->query(
-                "SELECT ID_Poncho, nombrePoncho, medidaPoncho, tecnicaPoncho, nombre_ImgPoncho 
+                "SELECT ID_Poncho, nombrePoncho, nombre_ImgPoncho 
                 FROM ponchos 
                 WHERE ID_Poncho > $ID_Poncho 
                 ORDER BY ID_Poncho 

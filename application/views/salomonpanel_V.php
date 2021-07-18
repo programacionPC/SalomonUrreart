@@ -12,7 +12,7 @@
             <li><a class="cont_portada--li" href="#Portada">Imagen portada</a></li>
             <li><a class="cont_portada--li" href="#Colecciones">Colecciones</a></li>
             <li><a class="cont_portada--li" href="#Pinturas">Pinturas</a></li>
-            <li><a class="cont_portada--li" href="#Galeria">Ponchos</a></li>
+            <li><a class="cont_portada--li" href="#Ponchos">Ponchos</a></li>
             <li><a class="cont_portada--li" href="#UltimasObras">Ultimas obras</a></li>
             <li><a class="cont_portada--li" href="#SobreMi">Sobre el artista</a></li>
             <li><hr></li>
@@ -183,7 +183,7 @@
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>
         <div style="width: 50%; margin-left:10%;">
-            <fieldset class="fieldset_1 fieldset_3" id="Galeria"> 
+            <fieldset class="fieldset_1 fieldset_3" id="Ponchos"> 
                 <legend class="legend_1">Ponchos</legend>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <div id="muestrasImg_2"></div> 
@@ -192,11 +192,7 @@
                         if(!isset($datosPoncho['nombre_ImgPoncho'])){
                             $datosPoncho['nombre_ImgPoncho'] = 'imagen.png';
                         }?>
-                        <input class="input_1" type="text" name="nombre_Poncho" placeholder="Nombre de la obra"/>
-                        <br>
-                        <input class="input_1" type="text" name="medidas_Poncho" placeholder="Medidas de la obra"/>
-                        <br>
-                        <input class="input_1" type="text" name="tecnica_Poncho" placeholder="Tecnica de la obra"/>
+                        <input class="input_1" type="text" name="nombre_Poncho" placeholder="Nombre del poncho"/>
                         <br>
                         <label class="label_1" for="ImgInp_1">Añadir imagen</label>
                         <label class="">no mayor a 2 Mb de peso</label> 
@@ -212,8 +208,6 @@
                     $file_data = array(
                     'ID_Poncho' => isset($Row['ID_Poncho']) ? $Row['ID_Poncho'] : '',
                     'Nombre_Poncho' => isset($Row['nombrePoncho']) ? $Row['nombrePoncho'] : '', 
-                    'Medida_Poncho' => isset($Row['medidaPoncho']) ? $Row['medidaPoncho'] : '', 
-                    'Tecnica_Poncho' => isset($Row['tecnicaPoncho']) ? $Row['tecnicaPoncho'] : '', 
                     'Nombre_ImgPoncho' => isset($Row['nombre_ImgPoncho']) ? $Row['nombre_ImgPoncho'] : '',   
                     );  
                     ?>
@@ -224,10 +218,6 @@
                         </div>
                         <div>
                             <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Nombre_Poncho'];?>"/>
-                            <br>
-                            <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Medida_Poncho'];?>"/>
-                            <br>
-                            <input class="cont_muestrasImgPanel--flex___input" id="<?php //echo $ID_Poncho;?>" type="text" readonly value="<?php echo $file_data['Tecnica_Poncho'];?>"/>
                             <br>
                             <label class="label_1" onclick="eliminarPoncho(<?php echo 'EliminarPoncho_' . $Contador;?>, <?php echo $file_data['ID_Poncho'];?>)">Eliminar</label>
                         </div> 

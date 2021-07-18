@@ -55,7 +55,7 @@ class DetallePintura_C extends CI_Controller {
 			'imagenMiniatura' => $MiniaturaPintura // ID_Pintura, ID_ImagenMiniatura, nombre_ImagenMiniatura 
 		];				
 			
-		//Se evalua cuando la imagen llegua al extremo izquierdo o derecho arrojara un array vacio
+		//Se evalua si la imagen llegua al extremo izquierdo o derecho, en este caso arrojará un array vacio
 		if($DiapositivaPintura != Array()){
 			$this->load->view('A_detallePintura_V', $Datos);			
 		}

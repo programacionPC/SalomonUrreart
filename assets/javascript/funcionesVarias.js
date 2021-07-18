@@ -67,6 +67,7 @@ window.addEventListener("mouseover",function(e){
 //************************************************************************************************
 //Invocada en icono de carrito en menu principal
 function Carrito(){
+    //El localStorage fue creadao en 
     if(localStorage.getItem('ContenidoCarrito')){
         alert("Carrito cargado");
     }

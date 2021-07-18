@@ -60,11 +60,6 @@ class SalomonPanel_C extends CI_Controller {
 	
 		$this->load->view('header/header_SoloEstilos');
 		$this->load->view('salomonpanel_V', $Datos);
-
-        // public function estudioAmpliado($Data){
-        //     $Certificado['certificado'] = $Data; 
-        //     $this->load->view('zoom_V', $Certificado);
-        // }
 	}
 
 	public function recibeColecciones(){
@@ -190,16 +185,12 @@ class SalomonPanel_C extends CI_Controller {
 	
 	public function recibePoncho(){
 		if($_FILES['imagen_Poncho']["name"][0] != ""){
-			$Nombre_Poncho = $_POST['nombre_Poncho'];		
-			$Medidas_Poncho = $_POST['medidas_Poncho'];	
-			$Tecnica_Poncho = $_POST['tecnica_Poncho'];	
+			$Nombre_Poncho = $_POST['nombre_Poncho'];	
 			$nombre_ImgPoncho = $_FILES['imagen_Poncho']['name'];
 			$tipo_ImgPoncho = $_FILES['imagen_Poncho']['type'];
 			$tamanio_ImgPoncho = $_FILES['imagen_Poncho']['size'];
 
 			// echo "Nombre Poncho: " . $Nombre_Poncho . '<br>';
-			// echo "Medidas Poncho: " . $Medidas_Poncho . '<br>';
-			// echo "Tecnica sPoncho: " . $Tecnica_Poncho . '<br>';
 			// echo "nombre_ImgPoncho: " .  $nombre_ImgPoncho . '<br>';
 			// echo "tipo_ImgPoncho: " .  $tipo_ImgPoncho . '<br>';
 			// echo "tamanio_ImgPoncho: " .  $tamanio_ImgPoncho . '<br>';
@@ -217,7 +208,7 @@ class SalomonPanel_C extends CI_Controller {
 				move_uploaded_file($_FILES['imagen_Poncho']['tmp_name'], $Directorio.$nombre_ImgPoncho);
 
 				//Se INSERTA los datos del poncho en BD
-				$this->SalomonPanel_M->insertarPoncho($Nombre_Poncho, $Medidas_Poncho, $Tecnica_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
+				$this->SalomonPanel_M->insertarPoncho($Nombre_Poncho, $nombre_ImgPoncho, $tipo_ImgPoncho, $tamanio_ImgPoncho);
 			}
 		}
 

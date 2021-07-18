@@ -16,8 +16,6 @@
 			</div>
 			<div class="cont_ponchoDetalle--leyenda">
 				<h1 class="cont_ponchoDetalle--h1"><?php echo $detallePoncho['nombrePoncho'];?></h1>
-				<p class="cont_ponchoDetalle--p1"><?php echo $detallePoncho['medidaPoncho'];?></p> 
-				<p class="cont_ponchoDetalle--p1"><?php echo $detallePoncho['tecnicaPoncho'];?></p> 
 			</div>
 		</div>
 	</div>

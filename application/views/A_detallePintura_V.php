@@ -1,6 +1,6 @@
 <!-- Archivo llamado via AJAX por medio de la función Llamar_diapositivaPintura() ubicada en detallePintura_V.php reemplaza el contenido del div id="Imagen_Detalle"-->
 <?php
-	if(!empty($ultimoID_Pintura['ID_Pintura'])){	
+	if(!empty($ultimoID_Pintura['ID_Pintura'])){//cuando llega al ultimo cuadro y muestra nuevamente el primero	
 		$ID_MostrarPintura = $ultimoID_Pintura['ID_Pintura'];	
 		$NombreImgPintura = $ultimoID_Pintura['nombre_ImgPintura'];
 		if($ultimoID_Pintura['disponible']){	?>
@@ -12,7 +12,7 @@
 			<?php
 		}	
 	}
-	else if(!empty($primerID_Pintura['ID_Pintura'])){	
+	else if(!empty($primerID_Pintura['ID_Pintura'])){//cuando llega al primer cuadro y muestra nuevamente el ultimo		
 		$ID_MostrarPintura = $primerID_Pintura['ID_Pintura'];	
 		$NombreImgPintura = $primerID_Pintura['nombre_ImgPintura'];
 		if($primerID_Pintura['disponible']){	?>
@@ -27,8 +27,12 @@
 	else{
 		$ID_MostrarPintura = $diapositivaPintura['ID_Pintura'];
 		$NombreImgPintura= $diapositivaPintura['nombre_ImgPintura'];
-		if($diapositivaPintura['disponible']){	?>
-			<label class="disponible disponible--true" onclick="Llamar_carrito()">disponible</label>
+		if($diapositivaPintura['disponible']){	
+			$NombreImgPintura = $diapositivaPintura['nombre_ImgPintura'];
+			$Nombre_pintura = $diapositivaPintura['nombre_pintura'];
+			$Tecnica_pintura = $diapositivaPintura['tecnica_pintura'];
+			$Medida_pintura = $diapositivaPintura['medida_pintura'];	?>
+			<label class="disponible disponible--true" onclick="Llamar_carrito('<?php echo $NombreImgPintura?>','<?php echo $Nombre_pintura?>','<?php echo $Tecnica_pintura?>','<?php echo $Medida_pintura?>')">disponible</label>
 			<?php
 		}
 		else{	?>
