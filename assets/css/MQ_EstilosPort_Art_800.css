@@ -271,4 +271,26 @@
         padding-top: 1%;
         margin-left: 40% !important;
     }
+
+
+
+    .cont_modal{
+        background-color: rgba(15, 13, 13, 0.8);
+    }
+    .cont_modal--label{/*inicio*/
+        font-size: 1em;
+        font-weight: bolder;
+        position: absolute;
+        top: 2%;
+        right: 4%;
+    }
+    .cont_modal--p{/*inicio*/
+        margin-top: 20%;
+        font-size: 2em;
+    }
+    .cont_modal--logo{/*inicio*/
+        height: 15vh;
+        bottom: 45pt;
+        left: 1%;
+    }
 }
