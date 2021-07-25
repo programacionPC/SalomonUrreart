@@ -24,7 +24,7 @@
 			<?php
 		}	
 	}
-	else{
+	else{//Cuando se encuantra entre los cuadros intermedios (Entre el primero y el ultimo)
 		$ID_MostrarPintura = $diapositivaPintura['ID_Pintura'];
 		$NombreImgPintura= $diapositivaPintura['nombre_ImgPintura'];
 		if($diapositivaPintura['disponible']){	

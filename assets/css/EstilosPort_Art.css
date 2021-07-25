@@ -245,14 +245,24 @@ hr{
 .cont_panel{/*salomonpanel*/
 	display: flex;
 }
+.cont_panel--datos{/*salomonpanel*/
+	display: flex;
+	align-items: center;
+}
+.cont_panel--datos__did-1{
+	width: 60%;
+}
+.cont_panel--datos__did-2{/*salomonpanel*/
+	width: 40%;
+}
 .cont_panel__did-1{/*salomonpanel*/
 	background-color: var(--Fondo);
 	width: 30%;
 }
 .cont_Poncho__img{/*salomonpanel*/
 	object-fit: contain !important; /*esta propiedad necesita el ancho y alto de la imagen definidos*/
-	width: 30%;
-	height: 100%;
+	width: 100%;
+	/* height: 100%; */
 }
 .contador{/*cuenta_editar - quienesSomos - registroCom*/
 	width: 9%;
@@ -327,7 +337,7 @@ hr{
 	width: 100%;
 	height: 100vh;
 }
-.cont_ponchoDetalle--img{/*detallePintura*/
+.cont_ponchoDetalle--img{/*A_detallePintura*/
 	width: 70%;
 	height: 100%;
 	margin-left: 5%;
@@ -348,7 +358,7 @@ hr{
 	color: white;
 	font-size: 0.9em;
 }
-.cont_ponchoDetalle--iconoLeft{
+.cont_ponchoDetalle--iconoLeft{/*A_detallePintura_V*/
 	color: rgba(255, 255, 255, 0.7);
 	font-size: 2em;
 	position: fixed;
@@ -459,6 +469,7 @@ hr{
 }
 .cont_muestrasImgPanel{
 	padding: 1%;
+	margin-bottom: 10%;
 	border-radius: 10px;
 	border-color: black;
 	border-width: 1px;
@@ -467,6 +478,9 @@ hr{
 .cont_muestrasImgPanel--flex{
 	display: flex;
 	margin-bottom: 20px;
+}
+.cont_muestrasImgPanel--div{
+	display: flex;
 }
 .cont_muestrasImgPanel--flex__div-1{/*salomonpanel*/
 	width: 30%;
@@ -741,13 +755,23 @@ ul .menuContenedor_3{/**/
 	height: 100%;
     object-fit: contain; 
 }
+.imagen_4{/*salomonpanel_V*/
+	background-color: red;
+}
+.imagen_11{/*detallePintura*/
+	width: 60px;
+	height: 60px;
+	margin: auto;
+	cursor: pointer;
+	object-fit: cover; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/
+} 
 .input_1{/*salomonpanel*/
 	background-color: initial;
 	display: block;
 	padding: 0.5%;
 	padding-left: 2%;
 	font-size: 1em;
-	width: 40%;
+	width: 95%;
 	margin-bottom: 2%;
 }
 .input_12{/*salomonpanel*/
@@ -819,13 +843,6 @@ ul .menuContenedor_3{/**/
 .span_18:hover{/*cuenta_publicar - cuenta_editar_prod  - cuenta_editar*/
 	cursor: pointer;
 }
-.imagen_11{/*detallePintura*/
-	width: 60px;
-	height: 60px;
-	margin: auto;
-	cursor: pointer;
-	object-fit: cover; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/
-} 
 .borde_1{/*detallePoncho*/
 	border-color: var(--BordeClaro);
 	border-width: 1px;

@@ -73,7 +73,7 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        //SELECT de los ponchos
+        //SELECT de las pinturas
         public function consultarpinturas(){
             $stmt = $this->dbh->query(
                 "SELECT ID_Pintura, nombre_pintura, medida_pintura, tecnica_pintura, nombre_ImgPintura, nombre_coleccion
@@ -84,6 +84,15 @@
             );
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        //SELECT de las miniaturas de pinturas
+        public function consultarminiaturas(){
+            $stmt = $this->dbh->query(
+                "SELECT ID_ImagenMiniatura, ID_Pintura, nombre_ImagenMiniatura FROM imagenesminiaturas"
+            );
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
 
 
 // ********************************************************************************************************
@@ -171,14 +180,34 @@
 
             //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
             if($stmt->execute()){
-                return TRUE;
+                //se recupera el ID del registro insertado
+                return $this->dbh->lastInsertId();
             }
             else{
                 return die("No pudo insertarse la pintura");
             }
         }
     
+        public function insertarMniaturas($ID_Pintura, $nombre_imgMiniaturas, $tipo_imgMiniaturas, $tamanio_imgMiniaturas){
+            $stmt = $this->dbh->prepare(
+                "INSERT INTO imagenesminiaturas(ID_Pintura, nombre_ImagenMiniatura, tipo_Miniatura, tamanio_Miniatura) 
+                VALUES (:ID_PINTURA, :NOMBRE_IMG, :TIPO_IMG, :TAMANIO_IMG)"
+            );
 
+            //Se vinculan los valores de las sentencias preparadas, stmt es una abreviatura de statement
+            $stmt->bindParam(':ID_PINTURA', $ID_Pintura);
+            $stmt->bindParam(':NOMBRE_IMG', $nombre_imgMiniaturas);
+            $stmt->bindParam(':TIPO_IMG', $tipo_imgMiniaturas);
+            $stmt->bindParam(':TAMANIO_IMG', $tamanio_imgMiniaturas);
+
+            //Se ejecuta la inserción de los datos en la tabla(ejecuta una sentencia preparada )
+            if($stmt->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 
 // ********************************************************************************************************
 // UPDATE
@@ -281,7 +310,16 @@
             $stmt->bindValue(':ID_PINTURA', $ID_Pintura, PDO::PARAM_INT);
             $stmt->execute();  
         }
-        
+
+        //DELETE de miniaturas de pinturas
+        public function eliminar_Miniaturas($ID_Pintura){
+            $stmt = $this->dbh->prepare(
+                "DELETE FROM imagenesminiaturas  
+                WHERE ID_PINTURA = :ID_PINTURA"
+            );
+            $stmt->bindValue(':ID_PINTURA', $ID_Pintura, PDO::PARAM_INT);
+            $stmt->execute();  
+        }
 
         //DELETE de ultima obra
         public function eliminar_ID_UltimaObra($ID_UltimaObra){

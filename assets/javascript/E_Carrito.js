@@ -1,4 +1,6 @@
+//Invocada desde A_carrito_V.php
 function AlmacenarObra(NombreImgPintura, NombrePintura, TecnicaPintura, MedidaPintura){
+    console.log("______Desde AlmacenarObra()______", NombreImgPintura + NombrePintura + TecnicaPintura + MedidaPintura)
     
     let ContenidoCarrito = {
         NombreImg_Pintura: NombreImgPintura,

@@ -192,18 +192,15 @@ function clonarSeccion(){
 
 //************************************************************************************************
 function eliminarPintura(ID_Javascript, ID_PHP){
-    console.log(ID_Javascript)
 
-    //Se obtiene el elemento a eliminar
-    // elementoEliminar = document.getElementById(ID_Javascript) 
-    console.log("div a eliminar", ID_Javascript)
-
-    // Se obtiene el elemento padre donde se encuentra el poncho donde se hizo click
+    // Se obtiene el elemento padre donde se encuentra la pintura donde se hizo click
     elementoPadre = ID_Javascript.parentElement
-    console.log("elemento padre", elementoPadre)
 
-    //Se elimina la sección
-    elementoPadre.removeChild(ID_Javascript)  
+    // Elimina todos los hijos del nodo, es decir, la pintura y su miniaturas
+    while(elementoPadre.childNodes.length > 1){
+        elementoPadre.removeChild(elementoPadre.firstChild) 
+        elementoPadre.classList.remove("cont_muestrasImgPanel")
+    } 
 
     //Se elimina de la BD
     llamar_eliminarPintura(ID_PHP)

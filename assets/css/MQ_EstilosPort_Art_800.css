@@ -95,19 +95,19 @@
     .cont_ponchoDetalle--img{
         margin-top: 0%;
         width: 95%;
-        height: auto;
+        height: 65%; /*auto*/
         margin-left: 2.5%;
     }
     .cont_ponchoDetalle--iconoLeft{
         font-size: 1.5em;
         padding: 3%;
-    	top: 75% !important;
+    	top: 78% !important;
     }
     .cont_ponchoDetalle--iconoRight{
         font-size: 1.5em;
         left: 86%;
         padding: 3%;
-    	top: 75% !important;
+    	top: 78% !important;
     }
     .cont_ponchoDetalle--leyenda{
         width: 100%;

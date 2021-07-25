@@ -3,6 +3,7 @@
 <!-- Se coloca el CDN para la libreria JQuery, necesaria para la previsualización de la imagen--> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- MENU LATERAL -->
     <div class="cont_portada--menu">
         <div class="cont_portada--div-1">
             <h1 class="ContenedorTitulo--h1_1">Salomon UrreArt</h1> 
@@ -19,11 +20,13 @@
             <li><a class="cont_portada--li" href="<?php echo base_url();?>">Sitio web</a></li>
         </ul>
     </div>
+
+    <!-- IMAGEN PORTADA -->
     <div class="cont_portada">
         <img class="cont_portada--imagen" src="<?php echo base_url();?>assets/images/Caballo-min.jpg"/>
     </div>
 
-    <!-- IMAGEN PORTADA -->
+    <!--PANEL IMAGEN PORTADA -->
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>
         <div style="width: 50%; margin-left:10%;">
@@ -37,14 +40,14 @@
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <div id="muestrasImg_2"></div> 
                     <label class="label_1" for="Etiqueta_ImgPrincipal">Añadir imagen</label>
-                    <label class="">no mayor a 2 Mb de peso</label> 
+                    <label>no mayor a 2 Mb de peso</label> 
                     <input class="boton" type="submit" value="Guardar imagen principal"/>
                 </form>
             </fieldset>
         </div>
     </div>
 
-    <!-- COLECCIONES -->
+    <!--PANEL COLECCIONES -->
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>        
         <div style="width: 50%; margin-left:10%;">
@@ -107,15 +110,16 @@
         </div>
     </div>
 
-    <!-- AÑADIR PINTURAS -->
+    <!--PANEL AÑADIR PINTURAS -->
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>
         <div style="width: 50%; margin-left:10%;">
             <fieldset class="fieldset_1 fieldset_3" id="Pinturas"> 
                 <legend class="legend_1">Pinturas</legend>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePintura" method="POST" enctype="multipart/form-data" autocomplete="off">
-                    <div id="muestrasImg_2"></div> 
-                        <div>
+                    <div id="muestrasImg_2" ></div> 
+                    <div class="cont_panel--datos">
+                        <div class="cont_panel--datos__did-1">
                             <?php 
                             if(!isset($datosPintura['nombre_ImgPintura'])){
                                 $datosPintura['nombre_ImgPintura'] = 'imagen.png';
@@ -134,15 +138,35 @@
                             <input class="input_1" type="text" name="medidas_Pintura" placeholder="Medidas de la obra"/>
                             
                             <input class="input_1" type="text" name="tecnica_Pintura" placeholder="Tecnica de la obra"/>
-                            
+                        </div>
+                        <div class="cont_panel--datos__did-2">   
                             <label class="label_1" for="Etiqueta_ImgPintura">Añadir imagen</label>
-                            <label class="">no mayor a 2 Mb de peso</label> 
-                            
+                            <br>
+                            <label>no mayor a 2 Mb de peso</label>                             
                             <img class="cont_Poncho__img" id="Img_Pinturas" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $datosPintura['nombre_ImgPintura'];?>"/>
-                            <input class="ocultar" type="file" name="imagen_Pintura" id="Etiqueta_ImgPintura"/>        
-                        </div>   
+                            <input class="ocultar" type="file" name="imagen_Pintura" id="Etiqueta_ImgPintura"/>   
+                        </div>  
+                    </div>       
+                    <hr>
+
+                    <!-- CONTENEDOR PARA CARGAR A BD LAS MINIATURAS -->
+                    <div class="contenedor_170"> 
+                        <div class="contenedor_49">
+                            <input class="ocultar" type="file" name="imagen_Miniaturas[]" multiple="multiple" id="ImgInp_2" onchange="muestraMiniaturas()"/>
+                            <p class="">Añada hasta 5 imagenes no mayor a 2 Mb / C.U</p>
+                            <br> 
+                            <label class="label_1" for="ImgInp_2" id="ioo">Añadir miniaturas</label>
+                        </div>  
+
+                        <!-- div que muestra la previsualización de las imagenes añadidas-->
+                        <div class="contenedor_134" id="PrevisualizarMiniaturas"></div> 
+                    </div>
                     <input class="boton" type="submit" value="Guardar pintura"/>
                 </form>
+  
+                <hr>
+
+                <!-- SE MUESTRAN LAS PINTURAS CARGADAS EN BD -->
                 <?php 
                 $ContadorPintura = 1;
                 foreach($datosPintura as $Row) :                
@@ -155,22 +179,38 @@
                     'Nombre_ImgPintura' => isset($Row['nombre_ImgPintura']) ? $Row['nombre_ImgPintura'] : '',   
                     );  
                     ?>
-                    <!-- div que muestra las pinturas cargadas en BD -->
-                    <div class="cont_muestrasImgPanel--flex" id="<?php echo 'EliminarPintura_' . $ContadorPintura;?>">
-                        <div class="cont_muestrasImgPanel--flex__div-1">
-                            <img class="imagen_2" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $file_data['Nombre_ImgPintura']?>"/>    
+                    <div class="cont_muestrasImgPanel">
+                        <div class="cont_muestrasImgPanel--flex" id="<?php echo 'EliminarPintura_' . $ContadorPintura;?>">
+                            <div class="cont_muestrasImgPanel--flex__div-1">
+                                <img class="imagen_2" alt="Fotografia de pintura" src="<?php echo base_url();?>assets/images/pinturas/<?php echo $file_data['Nombre_ImgPintura']?>"/>    
+                            </div>
+                            <div>
+                                <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Coleccion'];?>"/>
+                                <br>
+                                <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Pintura'];?>"/>
+                                <br>
+                                <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Medida_Pintura'];?>"/>
+                                <br>
+                                <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Tecnica_Pintura'];?>"/>
+                                <br>
+                                <label class="label_1" onclick="eliminarPintura(<?php echo 'EliminarPintura_' . $ContadorPintura;?>, <?php echo $file_data['ID_Pintura'];?>)">Eliminar</label>
+                            </div> 
                         </div>
-                        <div>
-                            <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Coleccion'];?>"/>
-                            <br>
-                            <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Nombre_Pintura'];?>"/>
-                            <br>
-                            <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Medida_Pintura'];?>"/>
-                            <br>
-                            <input class="cont_muestrasImgPanel--flex___input" type="text" readonly value="<?php echo $file_data['Tecnica_Pintura'];?>"/>
-                            <br>
-                            <label class="label_1" onclick="eliminarPintura(<?php echo 'EliminarPintura_' . $ContadorPintura;?>, <?php echo $file_data['ID_Pintura'];?>)">Eliminar</label>
-                        </div> 
+
+                        <!-- DIV QUE MUESTRA LAS MINITURAS -->
+                        <div class="cont_muestrasImgPanel--div">
+                            <?php
+                            foreach($miniaturasSalomon as $RowMiniaturas) :
+                                if($file_data['ID_Pintura'] == $RowMiniaturas['ID_Pintura']){   ?>
+                                    <img class="imagen_11" alt="Fotografia miniatura" src="<?php echo base_url();?>assets/images/pinturas/miniaturaPinturas/<?php echo $RowMiniaturas['nombre_ImagenMiniatura']?>"/> 
+                                    <br> <br>
+                                    <!-- <p class="" onclick="eliminarMiniatura(<?php echo 'EliminarMiniatura_' . $ContadorPintura;?>, <?php echo $file_data['ID_Pintura'];?>)">X</p> -->
+
+                                    <?php
+                                }
+                            endforeach;  ?>
+                                        
+                        </div>
                     </div>
                     <?php                
                     $ContadorPintura ++;
@@ -179,7 +219,7 @@
         </div>
     </div>
 
-    <!-- PONCHOS -->
+    <!--PANEL PONCHOS -->
     <div class="cont_panel">
         <div class="cont_panel__did-1"></div>
         <div style="width: 50%; margin-left:10%;">
@@ -187,18 +227,21 @@
                 <legend class="legend_1">Ponchos</legend>
                 <form action="<?php echo base_url(); ?>SalomonPanel_C/recibePoncho" method="POST" enctype="multipart/form-data" autocomplete="off">
                     <div id="muestrasImg_2"></div> 
-                    <div>
-                        <?php 
-                        if(!isset($datosPoncho['nombre_ImgPoncho'])){
-                            $datosPoncho['nombre_ImgPoncho'] = 'imagen.png';
-                        }?>
-                        <input class="input_1" type="text" name="nombre_Poncho" placeholder="Nombre del poncho"/>
-                        <br>
-                        <label class="label_1" for="ImgInp_1">Añadir imagen</label>
-                        <label class="">no mayor a 2 Mb de peso</label> 
-                        <br>
-                        <img class="cont_Poncho__img" id="Blah_1" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ponchos/<?php echo $datosPoncho['nombre_ImgPoncho'];?>"/>
-                        <input class="ocultar" type="file" name="imagen_Poncho" id="ImgInp_1"/>                  
+                    <div class="cont_panel--datos">
+                        <div class="cont_panel--datos__did-1">
+                            <?php 
+                            if(!isset($datosPoncho['nombre_ImgPoncho'])){
+                                $datosPoncho['nombre_ImgPoncho'] = 'imagen.png';
+                            }?>
+                            <input class="input_1" type="text" name="nombre_Poncho" placeholder="Nombre del poncho"/>
+                            <label class="label_1" for="ImgInp_1">Añadir imagen</label>
+                            <br>
+                            <label>no mayor a 2 Mb de peso</label> 
+                        </div>
+                        <div class="cont_panel--datos__did-2">
+                            <img class="cont_Poncho__img" id="Blah_1" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ponchos/<?php echo $datosPoncho['nombre_ImgPoncho'];?>"/>
+                            <input class="ocultar" type="file" name="imagen_Poncho" id="ImgInp_1"/>                  
+                        </div>
                     </div>
                     <input class="boton" type="submit" value="Guardar poncho"/>
                 </form>
@@ -235,25 +278,31 @@
         <div style="width: 50%; margin-left:10%;">
             <fieldset class="fieldset_1 fieldset_3" id="UltimasObras"> 
                 <legend class="legend_1">Ultimas obras</legend>
-                <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeUltimsObras" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <form action="<?php echo base_url(); ?>SalomonPanel_C/recibeUltimsObras" method="POST" enctype="multipart/form-data" autocomplete="off">                
+                    <!-- CONTENEDOR PARA CARGAR IMAGEN PREVISUALIZADA -->
                     <div id="muestrasImg_2"></div> 
-                    <div>
-                        <?php 
-                        if(!isset($datosUltimasObras['nombre_UltimaObra'])){
-                            $datosUltimasObras['nombre_ImgUltimaObra'] = 'imagen.png';
-                        }?>
-                        <input class="input_1" type="text" name="nombre_UltimasObras" placeholder="Nombre de la obra"/>
-                        <br>
-                        <input class="input_1" type="text" name="medidas_UltimasObras" placeholder="Medidas de la obra"/>
-                        <br>
-                        <input class="input_1" type="text" name="tecnica_UltimasObras" placeholder="Tecnica de la obra"/>
-                        <br>
-                        <label class="label_1" for="ImagenUltimasObras">Añadir imagen</label>
-                        <label class="">no mayor a 2 Mb de peso</label> 
-                        <br>
-                        <img class="cont_Poncho__img" id="Blah_3" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ultimaObra/<?php echo $datosUltimasObras['nombre_ImgUltimaObra'];?>"/>
-                        <input class="ocultar" type="file" name="imagen_UltimasObras" id="ImagenUltimasObras"/>        
-                    </div>   
+                    <!-- CONTENEDOR PARA CARGAR DATOS DE LA OBRA -->
+                    <div class="cont_panel--datos">
+                        <div class="cont_panel--datos__did-1">
+                            <?php 
+                            if(!isset($datosUltimasObras['nombre_UltimaObra'])){
+                                $datosUltimasObras['nombre_ImgUltimaObra'] = 'imagen.png';
+                            }?>
+                            <input class="input_1" type="text" name="nombre_UltimasObras" placeholder="Nombre de la obra"/>
+                            <br>
+                            <input class="input_1" type="text" name="medidas_UltimasObras" placeholder="Medidas de la obra"/>
+                            <br>
+                            <input class="input_1" type="text" name="tecnica_UltimasObras" placeholder="Tecnica de la obra"/>
+                            <br>
+                            <label class="label_1" for="ImagenUltimasObras">Añadir imagen</label>
+                            <br>
+                            <label>no mayor a 2 Mb de peso</label>  
+                        </div>  
+                        <div class="cont_panel--datos__did-2">
+                            <img class="cont_Poncho__img" id="Blah_3" alt="Fotografia de perfil" src="<?php echo base_url();?>assets/images/ultimaObra/<?php echo $datosUltimasObras['nombre_ImgUltimaObra'];?>"/>
+                            <input class="ocultar" type="file" name="imagen_UltimasObras" id="ImagenUltimasObras"/>   
+                        </div>
+                    </div>
                     <input class="boton" type="submit" value="Guardar última obra"/>
                 </form>
                 <?php 
@@ -376,6 +425,22 @@
         var id_Label = $('#Img_Pinturas');
         readImagePintura(this, id_Label);
     });
+
+    // *****************************************************************************************
+    //Da una vista previa de las miniaturas
+    function muestraMiniaturas(){
+        var contenedor = document.getElementById("PrevisualizarMiniaturas");
+        var archivos = document.getElementById("ImgInp_2").files;
+        for(i = 0; i < archivos.length; i++){
+            imgTag = document.createElement("img");
+            imgTag.height = 100;//ESTAS LINEAS NO SON "NECESARIAS"
+            imgTag.width = 200; //ÚNICAMENTE HACEN QUE LAS IMÁGENES SE VEAN
+            // imgTag.class = "imagen_6";
+            imgTag.id = i;      // ORDENADAS CON UN TAMAÑO ESTÁNDAR
+            imgTag.src = URL.createObjectURL(archivos[i]);
+            contenedor.appendChild(imgTag);
+        }
+    }
 
     // *****************************************************************************************
     
