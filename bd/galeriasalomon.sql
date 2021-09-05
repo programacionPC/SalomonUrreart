@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 08-07-2021 a las 16:43:16
+-- Tiempo de generación: 19-08-2021 a las 06:35:22
 -- Versión del servidor: 5.7.33-log-cll-lve
 -- Versión de PHP: 7.3.6
 
@@ -60,7 +60,7 @@ CREATE TABLE `colecciones` (
 --
 
 INSERT INTO `colecciones` (`ID_Coleccion`, `nombre_coleccion`, `fecha_creacion`) VALUES
-(1, 'Borra', '2021-06-02');
+(1, 'fauna', '2021-06-02');
 
 -- --------------------------------------------------------
 
@@ -71,19 +71,39 @@ INSERT INTO `colecciones` (`ID_Coleccion`, `nombre_coleccion`, `fecha_creacion`)
 CREATE TABLE `imagenesminiaturas` (
   `ID_ImagenMiniatura` int(11) NOT NULL,
   `ID_Pintura` int(11) NOT NULL,
-  `nombre_ImagenMiniatura` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
+  `nombre_ImagenMiniatura` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `tamanio_Miniatura` varchar(50) NOT NULL,
+  `tipo_Miniatura` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `imagenesminiaturas`
 --
 
-INSERT INTO `imagenesminiaturas` (`ID_ImagenMiniatura`, `ID_Pintura`, `nombre_ImagenMiniatura`) VALUES
-(1, 3, 'Buho-Cabeza-min.jpg'),
-(2, 3, 'Buho-Ojo-min.jpg'),
-(3, 3, 'Buho-Patas-min.jpg'),
-(4, 3, 'Buho-Pico-min.jpg'),
-(5, 3, 'Buho-Plumas-min.jpg');
+INSERT INTO `imagenesminiaturas` (`ID_ImagenMiniatura`, `ID_Pintura`, `nombre_ImagenMiniatura`, `tamanio_Miniatura`, `tipo_Miniatura`) VALUES
+(1, 7, 'Buho-Cabeza-min.jpg', '', ''),
+(2, 7, 'Buho-Ojo-min.jpg', '', ''),
+(3, 7, 'Buho-Patas-min.jpg', '', ''),
+(4, 7, 'Buho-Pico-min.jpg', '', ''),
+(5, 7, 'Buho-Plumas-min.jpg', '', ''),
+(7, 1, 'Lapa-Ojo-min.jpg', '', ''),
+(8, 1, 'Lapa-Oreja-min.jpg', '', ''),
+(9, 1, 'Lapa-Trompa-min.jpg', '', ''),
+(10, 1, 'Lapa-Pata-min.jpg', '', ''),
+(11, 1, 'Lapa-Pelaje-min.jpg', '', ''),
+(12, 2, 'Pajaro-Arbol-min.jpg', '', ''),
+(13, 2, 'Pajaro-Ojo-min.jpg', '', ''),
+(14, 2, 'Pajaro-Pata-min.jpg', '', ''),
+(15, 2, 'Pajaro-Pico-min.jpg', '', ''),
+(16, 9, 'Pavoreal-Cabeza-min.jpg', '', ''),
+(17, 9, 'Pavoreal-Cola-min.jpg', '', ''),
+(18, 9, 'Pavoreal-Plumas-min.jpg', '', ''),
+(19, 8, 'Cachirre-Ojo-min.jpg', '', ''),
+(20, 8, 'Cachirre-Piel-min.jpg', '', ''),
+(21, 8, 'Cachirre-Trompa-min.jpg', '', ''),
+(22, 8, 'Cachirre-Reflejo-min.jpg', '', ''),
+(23, 11, 'Camaleon-Cielo-min.jpg', '2689', 'image/jpeg'),
+(24, 11, 'Camaleon-Ojo-min.jpg', '3246', 'image/jpeg');
 
 -- --------------------------------------------------------
 
@@ -93,12 +113,15 @@ INSERT INTO `imagenesminiaturas` (`ID_ImagenMiniatura`, `ID_Pintura`, `nombre_Im
 
 CREATE TABLE `pinturas` (
   `ID_Pintura` int(11) NOT NULL,
+  `ID_Coleccion` int(11) NOT NULL,
   `nombre_pintura` varchar(50) NOT NULL,
   `tecnica_pintura` varchar(50) NOT NULL,
   `medida_pintura` varchar(50) NOT NULL,
   `nombre_ImgPintura` varchar(100) NOT NULL,
   `tamanio_ImgPintura` varchar(20) NOT NULL,
   `tipo_ImgPintura` varchar(20) NOT NULL,
+  `disponible` tinyint(1) NOT NULL,
+  `precio_pintura` varchar(20) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -106,13 +129,14 @@ CREATE TABLE `pinturas` (
 -- Volcado de datos para la tabla `pinturas`
 --
 
-INSERT INTO `pinturas` (`ID_Pintura`, `nombre_pintura`, `tecnica_pintura`, `medida_pintura`, `nombre_ImgPintura`, `tamanio_ImgPintura`, `tipo_ImgPintura`, `fecha`) VALUES
-(1, 'Oso hormiguero', 'Oleo', '23 cm x 50 cm', 'Lapa.jpg', '4575442', 'image/jpeg', '2021-06-18'),
-(2, 'Pajarillo', 'Acuarella', '50 cm x 60 cm ', 'Pajaro.jpg', '5339539', 'image/jpeg', '2021-06-18'),
-(5, 'Garza', '', '', 'Garza.jpg', '3496041', 'image/jpeg', '2021-06-18'),
-(6, 'Camaleon', 'Oleo', '35 cm x 50 cm', 'Camaleon.png', '546578', 'image/png', '2021-06-18'),
-(7, 'Buho', 'Tinta', '120 cm x 80 cm', 'Buho.jpg', '6248529', 'image/jpeg', '2021-06-18'),
-(8, 'Cachirre', 'Óleo sobre lienzo', '90 x 60 cm', 'IMG_7945.jpeg', '3509940', 'image/jpeg', '2021-06-18');
+INSERT INTO `pinturas` (`ID_Pintura`, `ID_Coleccion`, `nombre_pintura`, `tecnica_pintura`, `medida_pintura`, `nombre_ImgPintura`, `tamanio_ImgPintura`, `tipo_ImgPintura`, `disponible`, `precio_pintura`, `fecha`) VALUES
+(1, 1, 'Oso hormiguero', 'Oleo', '23 cm x 50 cm', 'Lapa-min.jpg', '4575442', 'image/jpeg', 1, '12,3', '2021-06-18'),
+(2, 1, 'Pajarillo', 'Acuarella', '50 cm x 60 cm ', 'Pajaro-min.jpg', '5339539', 'image/jpeg', 1, '34,4', '2021-06-18'),
+(9, 1, 'Pavorreal', 'Oleo', '40 cm x 50 cm', 'Pavoreal-min.jpg', '', '', 0, '45,5', '0000-00-00'),
+(5, 1, 'Garza', '', '', 'Garza-min.jpg', '3496041', 'image/jpeg', 0, '73,8', '2021-06-18'),
+(7, 1, 'Buho', 'Tinta', '120 cm x 80 cm', 'Buho-min.jpg', '6248529', 'image/jpeg', 0, '88,4', '2021-06-18'),
+(8, 1, 'Cachirre', 'Óleo sobre lienzo', '90 x 60 cm', 'Cachirre-min.jpeg', '', '', 0, '90,5', '2021-06-18'),
+(11, 1, 'Camaleon morado', 'Oleo extremo', '60 cn X 40 cm', 'Camaleon.png', '546578', 'image/png', 0, '', '2021-07-25');
 
 -- --------------------------------------------------------
 
@@ -123,8 +147,6 @@ INSERT INTO `pinturas` (`ID_Pintura`, `nombre_pintura`, `tecnica_pintura`, `medi
 CREATE TABLE `ponchos` (
   `ID_Poncho` int(11) NOT NULL,
   `nombrePoncho` varchar(50) NOT NULL,
-  `medidaPoncho` varchar(20) NOT NULL,
-  `tecnicaPoncho` varchar(50) NOT NULL,
   `nombre_ImgPoncho` varchar(100) NOT NULL,
   `tamanio_ImgPoncho` varchar(10) NOT NULL,
   `tipo_ImgPoncho` varchar(10) NOT NULL,
@@ -135,11 +157,9 @@ CREATE TABLE `ponchos` (
 -- Volcado de datos para la tabla `ponchos`
 --
 
-INSERT INTO `ponchos` (`ID_Poncho`, `nombrePoncho`, `medidaPoncho`, `tecnicaPoncho`, `nombre_ImgPoncho`, `tamanio_ImgPoncho`, `tipo_ImgPoncho`, `fecha`) VALUES
-(3, 'Poncho de Buho', '102 cm x 89 cm', 'Oleo', 'Buho-min.jpg', '6248529', 'image/jpeg', '2021-06-10'),
-(2, 'Poncho de Lapa', '45 cm x 87 cm', 'Pintura al frio', 'Lapa-min.jpg', '4575442', 'image/jpeg', '2021-06-08'),
-(6, 'Poncho de Pajaro', 'Acrilico', '100 cm x 100 cm', 'Pajaro-min.jpg', '5339539', 'image/jpeg', '2021-06-13'),
-(7, 'Pavorreal_sito', '45 cm x 45 cm', 'Oleo frio', 'Pavoreal-min.jpg', '1277412', 'image/jpeg', '2021-06-29');
+INSERT INTO `ponchos` (`ID_Poncho`, `nombrePoncho`, `nombre_ImgPoncho`, `tamanio_ImgPoncho`, `tipo_ImgPoncho`, `fecha`) VALUES
+(8, 'muui', 'Poncho-Caballo-01-min.JPG', '1183744', 'image/jpeg', '2021-07-16'),
+(9, 'de', 'Poncho-Caballo-02-min.JPG', '561152', 'image/jpeg', '2021-07-16');
 
 -- --------------------------------------------------------
 
@@ -227,19 +247,19 @@ ALTER TABLE `colecciones`
 -- AUTO_INCREMENT de la tabla `imagenesminiaturas`
 --
 ALTER TABLE `imagenesminiaturas`
-  MODIFY `ID_ImagenMiniatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_ImagenMiniatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `pinturas`
 --
 ALTER TABLE `pinturas`
-  MODIFY `ID_Pintura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_Pintura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `ponchos`
 --
 ALTER TABLE `ponchos`
-  MODIFY `ID_Poncho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_Poncho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `ultimasobras`

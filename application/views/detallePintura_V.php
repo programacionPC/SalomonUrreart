@@ -3,6 +3,7 @@
 <div style="color: white; background-color:var(--FondoImagenDetalle)">
 	<!-- ICONO FULLSCREEM -->
 	<label class="cont_poncho--label" id="Abrir"><i class="fas fa-expand-alt"></i></label>
+
 	<div style="background-color: var(--FondoImagenDetalle);" id="Miimagen">
 		<!-- ICONO CERRAR -->
 		<a class="a_1" href="<?php echo base_url() . 'Pinturas_C/fauna';?>"><i class="fas fa-times"></i></a>
@@ -21,23 +22,24 @@
 					<?php
 				}	
 			?>
+
 			<i class="fas fa-chevron-left cont_ponchoDetalle--iconoLeft" onclick="Llamar_detallePintura('<?php echo $detallePintura['ID_Pintura'];?>', 'Retroceder')"></i>
 			<i class="fas fa-chevron-right cont_ponchoDetalle--iconoRight" onclick="Llamar_detallePintura(<?php echo $detallePintura['ID_Pintura'];?>, 'Avanzar')"></i>
+
 			<div class="cont_ponchoDetalle--img">					
 				<!-- IMAGENES PRINCIPAL -->
 				<div style="height: 90%;" id="Imagen_Detalle">
 					<img class="imagen_3" src="<?php echo base_url() . "assets/images/pinturas/" . $detallePintura['nombre_ImgPintura'];?>"/>
 				</div>
-				<!-- IMAGENES SECUNDARIAS (MINIATURAS) -->
+				<!-- IMAGENES MINIATURAS -->
 				<div class="cont_miniaturas">
 					<?php                
 					// if($imagenMiniatura != Array()){      
 						$Contador = 1;   
-						//$Datos proviene de      
+						//    
 						foreach($imagenMiniatura as $keyImagenMiniatura) :   ?>
 							<img class="imagen_11 borde_1" id="Imagen_<?php echo $Contador ?>" alt="Fotografia no disponible" src="<?php echo base_url()?>assets/images/pinturas/miniaturaPinturas/<?php echo $keyImagenMiniatura['nombre_ImagenMiniatura'];?>" onclick="Llamar_VerMiniatura('<?php echo $keyImagenMiniatura['ID_ImagenMiniatura']?>')"/>
 							<?php
-							// echo  $Contador;
 							$Contador ++;
 						endforeach;
 					// }

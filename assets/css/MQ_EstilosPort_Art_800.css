@@ -52,6 +52,41 @@
     .contenedor_2__div--animado_2{
         transform: translate(0, -5vh);
     }
+    .cont_carrito--flex{
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .cont_carrito--h1{
+        color:white; 
+        font-size: 1.5em;
+        font-family: Gruppo !important;
+        margin: auto;
+        margin-top: 10%;
+        width: 80%;
+    }
+    .cont_carrito--div-1{
+        width: 60%;
+    }
+    .cont_carrito--boton{
+        margin-bottom: 10%; 
+        font-size: 1.2em;
+        padding: 0.2%;
+        width: 150px;
+        display: inline-block;
+    }
+    .cont_carrito--MetodoPago{
+        /* background-color: red; */
+    }
+    .cont_carrito--label{
+        padding-left: 5%;
+    }
+    .cont_carrito--MetodoPago--items{
+        margin: auto;
+        width: 50%;
+        text-align: left;
+        margin-bottom: 3%;
+    }
     .cont_contacto{
         display: block;
         height: initial;
@@ -74,6 +109,10 @@
         background-color: white;
         font-size: 1.5em;
     }    
+    .cont_miniaturas{
+        width: 100%;
+        margin-top: 2%;
+    }
     .cont_poncho--label{
         display: none;
     }
@@ -101,18 +140,18 @@
     .cont_ponchoDetalle--iconoLeft{
         font-size: 1.5em;
         padding: 3%;
-    	top: 78% !important;
+    	top: 80% !important;
     }
     .cont_ponchoDetalle--iconoRight{
         font-size: 1.5em;
         left: 86%;
         padding: 3%;
-    	top: 78% !important;
+    	top: 80% !important;
     }
     .cont_ponchoDetalle--leyenda{
         width: 100%;
         position: fixed;
-        top: 85%; 
+        top: 88%; 
         left: 0%;
     }
     .cont_ponchoDetalle--h1{
@@ -289,8 +328,8 @@
         font-size: 2em;
     }
     .cont_modal--logo{/*inicio*/
-        height: 15vh;
+	    width: 100%;
         bottom: 45pt;
-        left: 1%;
+        left: 0%;
     }
 }

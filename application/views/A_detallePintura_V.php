@@ -51,8 +51,8 @@
 	<div style="height: 90%;" id="Imagen_Detalle">
 		<img class="imagen_3" src="<?php echo base_url() . "assets/images/pinturas/" . $NombreImgPintura;?>"/>
 	</div>
-	<!-- IMAGENES SECUNDARIAS (MINIATURAS) -->
-	<div style="height: 10%; text-align:center">
+	<!-- IMAGENES MINIATURAS -->
+	<div  class="cont_miniaturas" style="height: 10%; text-align:center">
 		<?php                
 		if($imagenMiniatura != Array()){      
 			$Contador = 1;   
