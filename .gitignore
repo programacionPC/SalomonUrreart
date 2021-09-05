@@ -29,3 +29,11 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# Ignorar el contenido de las carpeta:
+images/
+bd/
+
+#Ignorar los siguientes archivos:
+Notas.txt
+Configurar.php
