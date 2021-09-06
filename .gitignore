@@ -31,9 +31,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/results/
 
 # Ignorar el contenido de las carpeta:
-images/
+assets/images/
 bd/
 
-#Ignorar los siguientes archivos:
-Notas.txt
-Configurar.php
