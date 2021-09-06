@@ -1,9 +1,5 @@
 El sitio web esta construido en Codeigniter, para las consultas a la BD no se utilizo la forma que da el framework, se hicieron en PHP nativo, la conexión es con PDO y todas las consultas son realizdas con sentencias preparadas.
-
-Datos de acceso a servidor remoto en https://www.godaddy.com/es-es
-    - USUARIO : salo.uj@hotmail.com
-    - CONTRAEÑA : pablo7programa
-     
+    
 
 Los siguientes archivos tienen variables que deben ser configurads tanto en remoto como para local
     - application/controllers/SalomonPanel_C, 

@@ -34,3 +34,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 assets/images/
 bd/
 
+*Ignorar el contenido de los archivos
+#Configuracion.txt
+
